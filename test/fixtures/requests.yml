@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2017-06-06
+  startd: 2017-06-06 11:38:58
+  endd: 2017-06-06 11:38:58
+  desc: MyText
+  requestby: MyString
+  email: MyString
+  reschedule: false
+  projector: false
+  refreshment: false
+  special: MyText
+  attendees: 1
+  status: MyString
+  approval: MyString
+  final: MyString
+  remarks: MyText
+
+two:
+  title: MyString
+  date: 2017-06-06
+  startd: 2017-06-06 11:38:58
+  endd: 2017-06-06 11:38:58
+  desc: MyText
+  requestby: MyString
+  email: MyString
+  reschedule: false
+  projector: false
+  refreshment: false
+  special: MyText
+  attendees: 1
+  status: MyString
+  approval: MyString
+  final: MyString
+  remarks: MyText

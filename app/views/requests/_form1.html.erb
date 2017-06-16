@@ -1,0 +1,97 @@
+<%= form_for(request) do |f| %>
+  <% if request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :startd %>
+    <%= f.time_select :startd %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endd %>
+    <%= f.time_select :endd %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Description" %>
+    <%= f.text_area :desc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :requestby %>
+    <%= f.text_field :requestby %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reschedule %>
+    <%= f.text_field :reschedule %>
+  </div>
+
+  <div class="field">
+    <%= f.label :projector %>
+    <%= f.check_box :projector %>
+  </div>
+
+  <div class="field">
+    <%= f.label :refreshment %>
+    <%= f.check_box :refreshment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :special %>
+    <%= f.text_area :special %>
+  </div>
+
+  <div class="field">
+    <%= f.label :attendees %>
+    <%= f.number_field :attendees %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :approval %>
+    <%= f.text_field :approval %>
+  </div>
+
+  <div class="field">
+    <%= f.label :final %>
+    <%= f.text_field :final %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remarks %>
+    <%= f.text_area :remarks %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

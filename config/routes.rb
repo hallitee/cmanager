@@ -22,6 +22,6 @@ Rails.application.routes.draw do
 get 'requests/status/', to: 'requests#status', as: 'status'
   resources :requests
  # resources :users
-  root to: 'admin#index'
+  root to: 'index#dashboard'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

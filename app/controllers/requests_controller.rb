@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
     before_filter :authenticate_user!,
-    :only => [:destroy, :show, :index, :edit, :update]
+    :only => [:destroy,  :index]
 
   # GET /requests
   # GET /requests.json
@@ -24,7 +24,7 @@ end
   # GET /requests/1
   # GET /requests/1.json
   def show
-      :authenticate_user!
+      #:authenticate_user!
   end
 
   # GET /requests/new
@@ -47,6 +47,7 @@ end
       if @request.save
         format.html { redirect_to index_dashboard_url, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
+        RequestMailer.newreq(@request).deliver
       else
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }
@@ -59,8 +60,28 @@ end
   def update
     respond_to do |format|
       if @request.update(request_params)
-        format.html { redirect_to @request, notice: 'Request was successfully updated.' }
+            if @request.status == 'approved'
+            RequestMailer.approved(@request).deliver
+          elsif @request.status == 'reschedule'
+            if user_signed_in?
+            RequestMailer.reschedule(@request).deliver
+          else
+            RequestMailer.reminder(@request).deliver
+          end
+          elsif @request.status == 'rejected'
+            RequestMailer.rejected(@request).deliver
+          elsif @request.status == 'pending'
+            RequestMailer.reminder(@request).deliver
+          end 
+              
+        if user_signed_in?
+
+              
+        format.html { redirect_to admin_index_url, notice: 'Request was successfully updated.' }
+        else
+        format.html { redirect_to index_dashboard_url, notice: 'Request was successfully updated.' }
         format.json { render :show, status: :ok, location: @request }
+      end 
       else
         format.html { render :edit }
         format.json { render json: @request.errors, status: :unprocessable_entity }

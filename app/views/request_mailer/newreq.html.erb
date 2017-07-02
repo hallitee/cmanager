@@ -1,0 +1,24 @@
+  
+<br>
+<%= @greeting %> <b> <%= @req.requestby %></b>
+
+<br>
+<br>
+
+<p>
+Your Booking for NPRNL Conference Room has been received and placed under review for approval, <br>
+
+Please find details to your request below:
+ <br>
+ 
+ <p> Reference/Booking Number   : <%= @req.id %> </p>
+
+ <p> Email Address       		: <%= @req.email %></p>
+
+
+<h4> 
+To view status of your booking at any time please click the link below <br>
+<br>
+<%= link_to 'Show Booking status', request_url(@req) %>
+
+</h4>

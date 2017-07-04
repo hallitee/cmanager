@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  codename: MyString
+  company: MyString
+  location: MyString
+  capacity: 1
+  condition: MyString
+  status: MyString
+
+two:
+  name: MyString
+  codename: MyString
+  company: MyString
+  location: MyString
+  capacity: 1
+  condition: MyString
+  status: MyString

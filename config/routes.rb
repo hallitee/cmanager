@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
  
-
+match '/check_email' =>"requests#check_email", :via => :post, :as => :chk_email
+  resources :rooms
+  resources :staffs
       devise_for :users, controllers: {
         sessions: 'users/sessions',
         registrations: 'users/registrations'

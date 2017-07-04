@@ -10,30 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614222047) do
+ActiveRecord::Schema.define(version: 20170702145653) do
 
-  create_table "requests", force: :cascade do |t|
+  create_table "requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.date     "date"
     t.time     "startd"
     t.time     "endd"
-    t.text     "desc"
+    t.text     "desc",        limit: 65535
     t.string   "requestby"
     t.string   "email"
     t.date     "reschedule"
     t.boolean  "projector"
     t.boolean  "refreshment"
-    t.text     "special"
+    t.text     "special",     limit: 65535
     t.integer  "attendees"
     t.string   "status"
     t.string   "approval"
     t.string   "final"
-    t.text     "remarks"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "remarks",     limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "codename"
+    t.string   "company"
+    t.string   "location"
+    t.integer  "capacity"
+    t.string   "condition"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "staffs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "company"
+    t.string   "location"
+    t.integer  "priviledge",    default: 0
+    t.boolean  "crossplatform", default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -44,8 +67,8 @@ ActiveRecord::Schema.define(version: 20170614222047) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end

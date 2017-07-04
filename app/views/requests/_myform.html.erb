@@ -27,7 +27,24 @@
                           <%= f.text_field(:title, style: 'margin-bottom: 10px', class:'input-md emailinput form-control') %>
                             </div>
                         </div> 
+   
 
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.text_field(:email, style:'margin-bottom: 10px', class:'input-md emailinput form-control',data: {trigger: "blur"}, data: {required: "true" }, remote: true, id: 'email_box')%>
+                               <p id="email_error" style="display:none"> You are not eligible to request, contact Admin </p>
+                            </div>     
+                        </div> 
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Request By<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.text_field(:requestby, style:'margin-bottom: 10px', id: 'requester_name', class:'input-md emailinput form-control')%>
+
+                            </div>     
+                        </div>                      
                         <div id="div_id_As" class="form-group required">
                             <label for="id_As"  class="control-label col-md-4  requiredField">Meeting Date<span class="asteriskField">*</span></label>
                             <div class="controls col-md-8 "  style="margin-bottom: 10px">
@@ -63,23 +80,7 @@
                             </div>     
                         </div>   
 
-                         <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Request By<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                            
-                              <%= f.text_field(:requestby, style:'margin-bottom: 10px', class:'input-md emailinput form-control')%>
-
-                            </div>     
-                        </div>   
-
-                         <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                            
-                              <%= f.text_field(:email, style:'margin-bottom: 10px', class:'input-md emailinput form-control')%>
-
-                            </div>     
-                        </div>   
+  
                          <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Attendees<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">

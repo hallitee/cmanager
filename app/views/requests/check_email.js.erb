@@ -1,0 +1,9 @@
+
+<% if @staff.nil? %>
+$('#email_error').css({'display':'block','color':'red'})
+$('#requester_name').val("")
+<% else %>
+$('#email_error').css({'display':'none','color':'red'})
+$('#requester_name').val("<%= @staff.name %>")
+$('#email_box').val("<%= @staff.email %>")
+<% end %>

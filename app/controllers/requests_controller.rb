@@ -41,8 +41,13 @@ end
   # POST /requests
   # POST /requests.json
   def create
-    @request = Request.new(request_params)
+    @staff =  Staff.where("email= '#{params[:request][:email]}'")[0]
 
+      if @staff.nil?
+        redirect_back fallback_location: new_request_url
+       # redirect_to new_request_url, alert: "Email Record not found"
+      else
+     @request = Request.new(request_params)
     respond_to do |format|
       if @request.save
         format.html { redirect_to index_dashboard_url, notice: 'Request was successfully created.' }
@@ -53,8 +58,13 @@ end
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
     end
+        end 
   end
-  
+  def check_email
+    @staff =  Staff.where("email= '#{params[:email]}'").first
+
+    #render js: "alert('The number is: #{@staff.name}')"
+  end
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
   def update
@@ -109,7 +119,11 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
+      
       params.require(:request).permit(:title, :date, :startd, :endd, :desc, :requestby,
        :email, :reschedule, :projector, :refreshment, :special, :attendees, :status, :approval, :final, :remarks)
     end
+
+
+
 end

@@ -2,13 +2,13 @@
 
 one:
   title: MyString
-  date: 2017-06-06
-  startd: 2017-06-06 11:38:58
-  endd: 2017-06-06 11:38:58
+  date: 2017-07-04
+  startd: 2017-07-04 13:30:43
+  endd: 2017-07-04 13:30:43
   desc: MyText
   requestby: MyString
   email: MyString
-  reschedule: false
+  reschedule: 2017-07-04
   projector: false
   refreshment: false
   special: MyText
@@ -17,16 +17,18 @@ one:
   approval: MyString
   final: MyString
   remarks: MyText
+  staff: one
+  room: one
 
 two:
   title: MyString
-  date: 2017-06-06
-  startd: 2017-06-06 11:38:58
-  endd: 2017-06-06 11:38:58
+  date: 2017-07-04
+  startd: 2017-07-04 13:30:43
+  endd: 2017-07-04 13:30:43
   desc: MyText
   requestby: MyString
   email: MyString
-  reschedule: false
+  reschedule: 2017-07-04
   projector: false
   refreshment: false
   special: MyText
@@ -35,3 +37,5 @@ two:
   approval: MyString
   final: MyString
   remarks: MyText
+  staff: two
+  room: two

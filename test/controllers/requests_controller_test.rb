@@ -17,7 +17,7 @@ class RequestsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create request" do
     assert_difference('Request.count') do
-      post requests_url, params: { request: { approval: @request.approval, attendees: @request.attendees, date: @request.date, desc: @request.desc, email: @request.email, endd: @request.endd, final: @request.final, projector: @request.projector, refreshment: @request.refreshment, remarks: @request.remarks, requestby: @request.requestby, reschedule: @request.reschedule, special: @request.special, startd: @request.startd, status: @request.status, title: @request.title } }
+      post requests_url, params: { request: { approval: @request.approval, attendees: @request.attendees, date: @request.date, email: @request.email, endd: @request.endd, final: @request.final, projector: @request.projector, refreshment: @request.refreshment, remarks: @request.remarks, requestby: @request.requestby, reschedule: @request.reschedule, room_id: @request.room_id, special: @request.special, staff_id: @request.staff_id, startdd: @request.startdd, status: @request.status, title: @request.title } }
     end
 
     assert_redirected_to request_url(Request.last)
@@ -34,7 +34,7 @@ class RequestsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update request" do
-    patch request_url(@request), params: { request: { approval: @request.approval, attendees: @request.attendees, date: @request.date, desc: @request.desc, email: @request.email, endd: @request.endd, final: @request.final, projector: @request.projector, refreshment: @request.refreshment, remarks: @request.remarks, requestby: @request.requestby, reschedule: @request.reschedule, special: @request.special, startd: @request.startd, status: @request.status, title: @request.title } }
+    patch request_url(@request), params: { request: { approval: @request.approval, attendees: @request.attendees, date: @request.date, email: @request.email, endd: @request.endd, final: @request.final, projector: @request.projector, refreshment: @request.refreshment, remarks: @request.remarks, requestby: @request.requestby, reschedule: @request.reschedule, room_id: @request.room_id, special: @request.special, staff_id: @request.staff_id, startdd: @request.startdd, status: @request.status, title: @request.title } }
     assert_redirected_to request_url(@request)
   end
 

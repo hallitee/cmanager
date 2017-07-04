@@ -44,8 +44,8 @@ end
     @staff =  Staff.where("email= '#{params[:request][:email]}'")[0]
 
       if @staff.nil?
-        redirect_back fallback_location: new_request_url
-       # redirect_to new_request_url, alert: "Email Record not found"
+        #redirect_back fallback_location: new_request_url
+       redirect_to new_request_url, alert: "Email Record not found"
       else
      @request = Request.new(request_params)
     respond_to do |format|

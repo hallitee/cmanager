@@ -29,8 +29,8 @@ end
 
   # GET /requests/new
   def new
-   
   @request = Request.new
+
   end
 
   # GET /requests/1/edit
@@ -62,8 +62,7 @@ end
   end
   def check_email
     @staff =  Staff.where("email= '#{params[:email]}'").first
-
-    #render js: "alert('The number is: #{@staff.name}')"
+    
   end
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json

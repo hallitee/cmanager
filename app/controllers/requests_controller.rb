@@ -42,11 +42,12 @@ end
   # POST /requests.json
   def create
     @staff =  Staff.where("email= '#{params[:request][:email]}'")[0]
-
+    #request.staff.id = @staff.id
       if @staff.nil?
         #redirect_back fallback_location: new_request_url
        redirect_to new_request_url, alert: "Email Record not found"
       else
+         # request.staff.id = @staff.id
      @request = Request.new(request_params)
     respond_to do |format|
       if @request.save
@@ -62,7 +63,9 @@ end
   end
   def check_email
     @staff =  Staff.where("email= '#{params[:email]}'").first
-    
+
+
+
   end
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
@@ -120,7 +123,7 @@ end
     def request_params
       
       params.require(:request).permit(:title, :date, :startd, :endd, :desc, :requestby,
-       :email, :reschedule, :projector, :refreshment, :special, :attendees, :status, :approval, :final, :remarks)
+       :email, :reschedule, :room_id, :staff_id, :projector, :refreshment, :special, :attendees, :status, :approval, :final, :remarks)
     end
 
 

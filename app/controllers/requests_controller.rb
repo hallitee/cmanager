@@ -30,6 +30,7 @@ end
   # GET /requests/new
   def new
   @request = Request.new
+  @comp = 'all'
 
   end
 
@@ -62,8 +63,24 @@ end
         end 
   end
   def check_email
+    @f = Request.new
     @staff =  Staff.where("email= '#{params[:email]}'").first
 
+    if !@staff.nil? 
+      email = @staff.email.split('@')[1].split('.')[0]
+      if email == 'natural-prime'
+        @comp = 'NPRNL'
+      elsif email == 'esrnl'
+        @comp == 'ESRNL'
+      elsif email == 'primerafood-nigeria'
+        @comp = 'PFNL'
+        elsif @staff.crossplatform
+          @comp = 'all'
+        end     
+          
+    else
+
+    end
 
 
   end

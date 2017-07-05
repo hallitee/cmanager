@@ -51,13 +51,7 @@
 
                         <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Select Room<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                            
-                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {},{class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
-                              <%= f.collection_select(:staff_id, Staff.all, :id, :name, {},{class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
-
-                               <p id="email_error" style="display:none"> You are not eligible to request, contact Admin </p>
-                            </div>     
+                            <%= render partial: 'roomlist', locals: {f: f}  %>
                         </div> 
                         <div id="div_id_As" class="form-group required">
                             <label for="id_As"  class="control-label col-md-4  requiredField">Meeting Date<span class="asteriskField">*</span></label>

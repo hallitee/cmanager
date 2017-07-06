@@ -46,9 +46,12 @@ end
     #request.staff.id = @staff.id
       if @staff.nil?
         #redirect_back fallback_location: new_request_url
-       redirect_to new_request_url, alert: "Email Record not found"
+       redirect_to new_request_url, alert: "Email Record not found, contact Admin for registration"
       else
          # request.staff.id = @staff.id
+      if @cross_platform_error  
+      redirect_to new_request_url, alert: "Company/location incorrect, contact Admin"
+      else
      @request = Request.new(request_params)
     respond_to do |format|
       if @request.save
@@ -59,29 +62,67 @@ end
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
-    end
-        end 
+    end  #end of respond format to save
+        end #cross platform check 
+        end  #end check if staff is nil 
   end
+  def check_crossplatform
+    @room = Room.where("id= #{params[:room]}").first
+      @staff =  Staff.where("email= '#{session[:email]}'").first  
+
+      if @staff.location == @room.location
+
+        if @staff.company == @room.company
+          @cross_platform_error = false
+        else
+          if @staff.crossplatform 
+            @cross_platform_error = false
+          else
+            if @room.company == 'HQ'
+              @cross_platform_error = false
+            else
+            @cross_platform_error = true
+            end
+          end
+        end
+      else
+        if @staff.crossplatform 
+            @cross_platform_error = false
+          else
+            @cross_platform_error = true
+          end
+      end
+
+  end 
   def check_email
     @f = Request.new
     @staff =  Staff.where("email= '#{params[:email]}'").first
-
     if !@staff.nil? 
+         @comp = 'all'
+             session[:email] = @staff.email
       email = @staff.email.split('@')[1].split('.')[0]
       if email == 'natural-prime'
         @comp = 'NPRNL'
       elsif email == 'esrnl'
         @comp == 'ESRNL'
       elsif email == 'primerafood-nigeria'
-        @comp = 'PFNL'
-        elsif @staff.crossplatform
-          @comp = 'all'
-        end     
-          
+        @comp = 'PFNL'  
+        end              
     else
 
     end
 
+        respond_to do |format|
+         format.js
+      end 
+  end
+  def check_schedule
+    @date =  Request.where("date= '#{params[:date]}'")
+    if @date.nil?
+
+    else
+
+    end
 
   end
   # PATCH/PUT /requests/1

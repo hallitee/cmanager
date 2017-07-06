@@ -1,11 +1,11 @@
 
 <% if @staff.nil? %>
-$('#email_error').css({'display':'block','color':'red'})
-$('#requester_name').val("")
+$('#email_error').css({'display':'block','color':'red'});
+$('#requester_name').val("");
 <% else %>
-$('#email_error').css({'display':'none','color':'red'})
-$('#requester_name').val("<%= @staff.name %>")
-$('#email_box').val("<%= @staff.email %>")
-$('#room_loc').html("<%= %>")
-
+$('#email_error').css({'display':'none','color':'red'});
+$('#requester_name').val("<%= @staff.name %>");
+$('#email_box').val("<%= @staff.email %>");
+$('#staff_id').val("<%= @staff.id %>");
+console.log("succes afterall");
 <% end %>

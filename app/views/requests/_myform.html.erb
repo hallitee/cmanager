@@ -62,7 +62,7 @@
                             <label for="id_As"  class="control-label col-md-4  requiredField">Meeting Date<span class="asteriskField">*</span></label>
                             <div class="controls col-md-8 "  style="margin-bottom: 10px">
                               <%= f.date_select(:date, style:'margin-bottom: 10px',:order => [:day, :month, :year], :disabled => false, :html => {:class => "form-horizontal center"})%>
-
+           <p id="date_error" style="display:none"> You are not eligible to request, contact Admin </p>
 
                             </div>
                         </div>
@@ -73,14 +73,17 @@
                         <div class="input-md emailinput form-control " style="margin-bottom: 10px; border: 1px solid white" > 
                        <%= f.time_select(:startd, style:'margin-bottom: 10px',  :disabled => false, ignore_date: true)%> HH:MM
                           </div>
+                                <p id="time_error" style="display:none">  </p>
                             </div>
                         </div>
 
                         <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> End time<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 ">
+                         
                              <div class="input-md emailinput form-control" style="margin-bottom: 10px; border: 1px solid white" > 
                        <%= f.time_select(:endd, style:'margin-bottom: 10px', :disabled => false, ignore_date: true)%> HH:MM
+                     
                           </div>
                             </div>     
                         </div>
@@ -98,8 +101,9 @@
                             <label for="id_email" class="control-label col-md-4  requiredField"> Attendees<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                             
-                              <%= f.number_field(:attendees, style:'margin-bottom: 20px', class:'input-md emailinput form-control')%>
+                              <%= f.number_field(:attendees, style:'margin-bottom: 20px',:remote => true, class:'input-md emailinput form-control')%>
                             <%= f.hidden_field :status, :value => 'pending' %>
+                            <p id="attendees_error" style="display:none"> You are not eligible to request, contact Admin </p>
                             </div>     
                         </div> 
                          <div id="div_id_email" class="form-group required">

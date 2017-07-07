@@ -1,5 +1,11 @@
 
 
-
-console.log("<%= @date.each %>");
+$('#date_error').css({'display':'block','color':'red'});
+$('#date_error').text('<%= @date_error %>');
+$('#time_error').css({'display':'block','color':'red'});
+$('#time_error').text('<%= @time_error %>');
+console.log("<%= @date_error %>");
+console.log("<%= @start %>");
+console.log("<%= @end %>");
+console.log("<%= @date_err %>");
 

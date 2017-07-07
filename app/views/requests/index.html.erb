@@ -21,6 +21,8 @@
       <th>Approval</th>
       <th>Final</th>
       <th>Remarks</th>
+      <th>Staff ID</th>
+      <th>Room ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -44,6 +46,8 @@
         <td><%= request.approval %></td>
         <td><%= request.final %></td>
         <td><%= request.remarks %></td>
+        <td><%= request.staff_id %></td>
+        <td><%= request.room_id %></td>        
         <td><%= link_to 'Show', request %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>
         <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>

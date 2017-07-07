@@ -66,7 +66,9 @@ $.ajax({
     type: 'POST',
     url: "/check_schedule",
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-    data: { "date(3i)": $("#request_date_3i").val(),
+    data: { 
+      "room_id":$("#request_room_id").val(),
+      "date(3i)": $("#request_date_3i").val(),
     "date(2i)": $("#request_date_2i").val(),
     "date(1i)": $("#request_date_1i").val(),
     "startd(4i)": $("#request_startd_4i").val(),
@@ -83,8 +85,84 @@ $.ajax({
       console.log("SUCCESS, data="+data);
     }
   });
-});        
+}); 
+
+$("#request_attendees").focus(function(){
+ // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
+$.ajax({
+    type: 'POST',
+    url: "/check_schedule",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { 
+      "room_id":$("#request_room_id").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()
+  },                                                                                  
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+}); 
+
+ $("#request_attendees").blur(function(){
+ // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
+$.ajax({
+    type: 'POST',
+    url: "/check_attendees",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { 
+      "attendees":$("#request_attendees").val(),
+      "email": $("#request_email").val(),
+    "room_id": $("#request_room_id").val(),
+
+  },                                                                                  
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+});         
          });
+
+
+ $("#request_projector").change(function(){
+ // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
+$.ajax({
+    type: 'POST',
+    url: "/check_attendees",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { 
+      "attendees":$("#request_attendees").val(),
+      "email": $("#request_email").val(),
+    "room_id": $("#request_room_id").val(),
+
+  },                                                                                  
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+});         
+      
+
 
 /*function myFunc() {
 	$id = prompt("Enter request number");

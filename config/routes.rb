@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 match '/check_email' =>"requests#check_email", :via => :post, :as => :chk_email
 match '/check_crossplatform' =>"requests#check_crossplatform", :via => :post, :as => :check_crossplatform
  match '/check_schedule' =>"requests#check_schedule", :via => :post, :as => :check_schedule
+ match '/check_attendees' =>"requests#check_attendees", :via => :post, :as => :check_attendees
   resources :rooms
   resources :staffs
       devise_for :users, controllers: {

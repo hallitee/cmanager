@@ -116,13 +116,69 @@ end
          format.js
       end 
   end
-  def check_schedule
-    @date =  Request.where("date= '#{params[:date]}'")
-    if @date.nil?
+  def check_attendees
+  @r = Room.where("id= #{params[:room_id]}").first
+  att = params[:attendees].to_i
+    if att > @r.capacity
+    @attendees_error = "Room capacity(#{@r.capacity}) exceeded, choose more convenient room. !"
 
-    else
-
+    elsif att <= 6 && @r.capacity - att > 15
+    @attendees_error = "Room capacity(#{@r.capacity}) under utilized, choose room with less capacity. !"
     end
+  end
+
+  def check_schedule
+   @date = Date.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i
+   @start = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["startd(4i)"].to_i, params["startd(5i)"].to_i
+   @end = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["endd(4i)"].to_i, params["endd(5i)"].to_i
+   # @date_error = Time.parse(params[:my_date]) 
+   if @date >= Date.today
+    @date_err = false
+    if @start.hour == @end.hour
+      if @end.min <= @start.min
+        @time_error = "Incorrect duration check time range!"
+        @time_err = true
+      elsif @end.min - @start.min < 10
+        @time_error = "Invalid duration, must be greater than 10 minutes!"
+        @time_err = true
+      else
+      end
+    end #end date OK but same hour chosen 
+      if @start.hour<8 || @end.hour>17  #time should be within working hours
+        @time_error = "Invalid time, not within working hours!"
+        @time_err = true
+      else
+        @res = Request.where("date= ? and room_id= ?", @date, params[:room_id])
+        @time_err = false
+        @res.each{ |f|
+          if @start.hour.between?(f.startd.hour, f.endd.hour)
+              @date_error = "Room scheduled, choose another time/room!"
+              @time_err = true
+            if @start.hour==f.endd.hour
+              if @start.min-f.endd.min <= 10
+                @time_error = "Time conflict, Must start 10minute after Previous schedule!"
+                  @time_err = true
+                else
+              @time_error = ""
+              @time_err = false
+              end
+            else
+              @date_error = "Room scheduled, choose another time/room!"
+              @time_err = true
+            end
+
+          elsif @end.hour.between?(f.startd.hour, f.endd.hour)
+            @time_err=true
+             @date_error = "Room scheduled, choose another time/room!"
+    
+          end
+        }
+      end  #Time within working hours and checking time conflicts
+    else
+   @date_error = "Invalid date, must be today or greater"
+   @date_err = true
+    
+    end # end check if date past or invalid
 
   end
   # PATCH/PUT /requests/1

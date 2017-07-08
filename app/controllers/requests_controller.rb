@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
     before_filter :authenticate_user!,
     :only => [:destroy,  :index]
-
+@cross_platform_error = nil
   # GET /requests
   # GET /requests.json
   def index
@@ -47,10 +47,14 @@ end
       if @staff.nil?
         #redirect_back fallback_location: new_request_url
        redirect_to new_request_url, alert: "Email Record not found, contact Admin for registration"
-      else
+
          # request.staff.id = @staff.id
-      if @cross_platform_error  
-      redirect_to new_request_url, alert: "Company/location incorrect, contact Admin"
+      elsif session[:cross_platform_error]
+      redirect_to new_request_url, alert: "Company/location incorrect, contact Admin."
+      elsif session[:date_error]
+      redirect_to new_request_url, alert: "Incorrect Date, please adjust date."  
+      elsif session[:time_error]
+      redirect_to new_request_url, alert: "Check meeting duration, adjust start/stop time!"          
       else
      @request = Request.new(request_params)
     respond_to do |format|
@@ -63,7 +67,7 @@ end
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
     end  #end of respond format to save
-        end #cross platform check 
+        #end #cross platform check 
         end  #end check if staff is nil 
   end
   def check_crossplatform
@@ -82,6 +86,7 @@ end
               @cross_platform_error = false
             else
             @cross_platform_error = true
+            session[:cross_platform_error] = true
             end
           end
         end
@@ -90,6 +95,7 @@ end
             @cross_platform_error = false
           else
             @cross_platform_error = true
+            session[:cross_platform_error] = true
           end
       end
 
@@ -134,41 +140,52 @@ end
    # @date_error = Time.parse(params[:my_date]) 
    if @date >= Date.today
     @date_err = false
+    session[:date_err] = @date_err
+
     if @start.hour == @end.hour
       if @end.min <= @start.min
         @time_error = "Incorrect duration check time range!"
         @time_err = true
+        session[:time_err] = @time_err
       elsif @end.min - @start.min < 10
         @time_error = "Invalid duration, must be greater than 10 minutes!"
         @time_err = true
+        session[:time_err] = @time_err
       else
       end
     end #end date OK but same hour chosen 
       if @start.hour<8 || @end.hour>17  #time should be within working hours
         @time_error = "Invalid time, not within working hours!"
         @time_err = true
+        session[:time_err] = @time_err
       else
         @res = Request.where("date= ? and room_id= ?", @date, params[:room_id])
         @time_err = false
+        session[:time_err] = @time_err
         @res.each{ |f|
           if @start.hour.between?(f.startd.hour, f.endd.hour)
               @date_error = "Room scheduled, choose another time/room!"
               @time_err = true
+              session[:time_err] = @time_err
             if @start.hour==f.endd.hour
               if @start.min-f.endd.min <= 10
                 @time_error = "Time conflict, Must start 10minute after Previous schedule!"
                   @time_err = true
+                  session[:time_err] = @time_err
                 else
               @time_error = ""
               @time_err = false
+              session[:time_err] = @time_err
               end
             else
               @date_error = "Room scheduled, choose another time/room!"
               @time_err = true
+              session[:time_err] = @time_err
             end
 
           elsif @end.hour.between?(f.startd.hour, f.endd.hour)
             @time_err=true
+            session[:time_err] = @time_err
              @date_error = "Room scheduled, choose another time/room!"
     
           end
@@ -177,6 +194,7 @@ end
     else
    @date_error = "Invalid date, must be today or greater"
    @date_err = true
+   session[:date_err] = @date_err
     
     end # end check if date past or invalid
 

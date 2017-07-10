@@ -21,7 +21,7 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-md-push-1 col-md-pull-2">
-                    <button class="btn btn-info btn-block btn-sm" type="button" style="border-radius:30px">Ongoing now<span><span class="badge" style="font-size:22px; border: 2px solid purple"><%= @ongoing %></span></span>
+                    <button class="btn btn-info btn-block btn-sm" type="button" style="border-radius:30px">Upcoming Events<span><span class="badge" style="font-size:22px; border: 2px solid purple"><%= @ongoing %></span></span>
                     </button>
                 </div>
                 <div class="col-md-2 col-md-push-1 col-md-pull-2">
@@ -63,7 +63,7 @@
                     <table class="table table-hover table-striped">
                     <thead>
                       <tr>
-                      <th>REF ID</th>
+                
                       <th>TITLE</th>
                       <th>MEETING DATE</th>
                       <th>START TIME</th>
@@ -75,7 +75,6 @@
                     <tbody>
                  <%   @request.each do |f| %>
                         <tr>
-                            <td><%= f.id %></td>
                             <td><%= f.title %></td>
                             <td><%= f.date %></td>
       <% b = f.startd.to_s.split(" ") %>                        
@@ -97,7 +96,7 @@
                         
 
                     </div>
-                    <div></div>
+                    <div> <h4> <%= will_paginate @request %></h4></div>
                     <div>
                  
                     </div>

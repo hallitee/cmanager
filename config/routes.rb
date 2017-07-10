@@ -5,15 +5,19 @@ match '/check_email' =>"requests#check_email", :via => :post, :as => :chk_email
 match '/check_crossplatform' =>"requests#check_crossplatform", :via => :post, :as => :check_crossplatform
  match '/check_schedule' =>"requests#check_schedule", :via => :post, :as => :check_schedule
  match '/check_attendees' =>"requests#check_attendees", :via => :post, :as => :check_attendees
-  resources :rooms
-  resources :staffs
+
+
+ # authenticated :users do
+  #resources :requests, only: [:new, :status, :index, :show, :create, :edit, :update, :destroy]
+  #end
+#resources :requests, only: [:index, :show]
       devise_for :users, controllers: {
         sessions: 'users/sessions',
-        registrations: 'users/registrations'
-  
+        registrations: 'users/registrations'  
       }
-      get 'requests/edit/', to: 'requests#edit'
-      get 'admin/reschedule'
+
+  get 'requests/edit/', to: 'requests#edit'
+  get 'admin/reschedule'
   get 'admin/approved'
   get 'admin/pending'
   get 'admin/index'
@@ -25,6 +29,9 @@ match '/check_crossplatform' =>"requests#check_crossplatform", :via => :post, :a
   get 'index/dashboard'
   get 'test', to: 'index#test'
 get 'requests/status/', to: 'requests#status', as: 'status'
+ 
+  resources :rooms
+  resources :staffs
   resources :requests
  # resources :users
   root to: 'index#dashboard'

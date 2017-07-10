@@ -31,10 +31,14 @@ mail to: "#{@req.email}", subject: "Conference Room Booking Approved"
   #
   #   en.request_mailer.rejected.subject
   #
-  def rejected
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def rejected(req)
+@req = req
+@greeting = "Hi"
+b = @req.startd.to_s.split(" ")
+@startd = b[1]
+c = @req.endd.to_s.split(" ")
+@endd = c[1]
+mail to: "#{@req.email}", subject: "Conference Room Booking Rejected"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

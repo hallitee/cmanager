@@ -1,7 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
-    before_filter :authenticate_user!,
-    :only => [:destroy,  :index]
+    before_filter :authenticate_user!, :only => [:destroy,  :index]
 @cross_platform_error = nil
   # GET /requests
   # GET /requests.json
@@ -74,6 +73,7 @@ end
     @room = Room.where("id= #{params[:room]}").first
       @staff =  Staff.where("email= '#{session[:email]}'").first  
 
+      if !@staff.nil?
       if @staff.location == @room.location
 
         if @staff.company == @room.company
@@ -82,7 +82,7 @@ end
           if @staff.crossplatform 
             @cross_platform_error = false
           else
-            if @room.company == 'HQ'
+            if @room.company == 'HQ' && @staff.priviledge==1
               @cross_platform_error = false
             else
             @cross_platform_error = true
@@ -97,8 +97,11 @@ end
             @cross_platform_error = true
             session[:cross_platform_error] = true
           end
-      end
+      end   
+    else
+      redirect_to new_request_url, alert: "Email cannot be empty!"
 
+    end   #staff record must not be nil
   end 
   def check_email
     @f = Request.new
@@ -125,6 +128,7 @@ end
   def check_attendees
   @r = Room.where("id= #{params[:room_id]}").first
   att = params[:attendees].to_i
+     if att > 0
     if att > @r.capacity
     @attendees_error = "Room capacity(#{@r.capacity}) exceeded, choose more convenient room. !"
 
@@ -132,6 +136,11 @@ end
     @attendees_error = "Room capacity(#{@r.capacity}) under utilized, choose room with less capacity. !"
     end
   end
+else
+      redirect_to new_request_url, alert: "Please check Attendees, should be greater than zero !!"
+    
+
+end
 
   def check_schedule
    @date = Date.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i

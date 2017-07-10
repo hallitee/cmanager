@@ -26,16 +26,29 @@
                              <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="title" value="<%= @request.title %>" readonly >   
                             </div>
                         </div>
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                                        <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="email" value="<%= @request.email %>" readonly > 
+                              </div>     
+                        </div>  
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Request By<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                      <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="requestby" value="<%= @request.requestby %>" readonly > 
 
+                            </div>     
+                        </div>                          
                         <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Meeting Date<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 ">
                             <div class="input-md emailinput form-control " style="margin-bottom: 10px; border-style: none" >
                             <% if @request.status == 'reschedule' %>
- <%= f.date_select(:date, style:'margin-bottom: 10px',:order => [:day, :month, :year], :disabled => false, :value => @request.date, :html => {:class => "form-horizontal center"}) %>
+ <%= f.date_select(:date,:order => [:day, :month, :year], :disabled => false, :value => @request.date, :html => {:class => "form-horizontal center"}) %>
 
                          <% else %>
-                          <%=   f.date_select(:date, style:'margin-bottom: 10px',:order => [:day, :month, :year], :disabled => true, :value => @request.date, :html => {:class => "form-horizontal center"})
+                          <%=   f.date_select(:date, :order => [:day, :month, :year], :disabled => true, :value => @request.date, :html => {:class => "form-horizontal center"})
                              %>
                             
                             <%end %>
@@ -82,23 +95,6 @@
 
                             </div>     
                         </div>   
-
-                         <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Request By<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                            
-                      <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="requestby" value="<%= @request.requestby %>" readonly > 
-
-                            </div>     
-                        </div>   
-
-                         <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                                        <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="email" value="<%= @request.email %>" readonly > 
-                              </div>     
-                        </div>   
-
 
                          <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Reschedule Date<span class="asteriskField">*</span> </label>
@@ -188,7 +184,7 @@
                             <% if @request.status == 'reschedule' &&  user_signed_in? %>
                                 <%= f.submit :update, class: "btn btn-default" %>
                              
-                            <% elsif @request.status == 'reschedule' %>
+                            <% elsif @request.status == 'pending' && user_signed_in? %>
                                   <% f.text_field(:status, style:'margin-bottom: 10px', class:'input-md emailinput form-control', value: 'pending')%>
                                  <%= f.submit :update, class: "btn btn-default" %>
 

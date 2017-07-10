@@ -19,14 +19,14 @@
 
 //$(document).on('load', function() {
 //$(document).on('pageinit', function(){
-$(document).ready(function() {
+$(document).on('turbolinks:load',function() {
 $.ajaxSetup({
   headers: {
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   }
 });
 
- $("#email_box").blur(function(){
+ $("#email_box").bind("change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -45,7 +45,7 @@ $.ajax({
   });
 });
 
- $("#request_room_id").change(function(){
+ $("#request_room_id").bind("change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -63,7 +63,7 @@ $.ajax({
   });
 });
 
- $("#request_desc").focus(function(){
+ $("#request_desc").bind("focus change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -90,7 +90,7 @@ $.ajax({
   });
 }); 
 
-$("#request_attendees").focus(function(){
+$("#request_attendees").bind("focus change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',

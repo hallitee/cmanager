@@ -52,12 +52,14 @@ end
       elsif session[:date_error]
       redirect_to new_request_url, alert: "Incorrect Date, please adjust date."  
       elsif session[:time_error]
-      redirect_to new_request_url, alert: "Check meeting duration, adjust start/stop time!"          
+      redirect_to new_request_url, alert: "Check meeting duration, adjust start/stop time!" 
+      elsif  session[:attendees_error]     
+        redirect_to new_request_url, alert: "Please check Attendees, should be greater than zero !!" 
       else
      @request = Request.new(request_params)
     respond_to do |format|
       if @request.save
-        format.html { redirect_to index_dashboard_url, notice: 'Request was successfully created.' }
+        format.html { redirect_to index_dashboard_url, notice: 'Request was successfully created.'}
         format.json { render :show, status: :created, location: @request }
         RequestMailer.newreq(@request).deliver
       else
@@ -77,12 +79,15 @@ end
 
         if @staff.company == @room.company
           @cross_platform_error = false
+           session[:cross_platform_error] = false
         else
           if @staff.crossplatform 
             @cross_platform_error = false
+             session[:cross_platform_error] = false
           else
-            if @room.company == 'HQ' && @staff.priviledge==1
+            if @room.company == 'HQ' && @staff.priviledge == 1
               @cross_platform_error = false
+              session[:cross_platform_error] = false
             else
             @cross_platform_error = true
             session[:cross_platform_error] = true
@@ -92,6 +97,7 @@ end
       else
         if @staff.crossplatform 
             @cross_platform_error = false
+             session[:cross_platform_error] = false
           else
             @cross_platform_error = true
             session[:cross_platform_error] = true
@@ -127,18 +133,21 @@ end
   def check_attendees
   @r = Room.where("id= #{params[:room_id]}").first
   att = params[:attendees].to_i
-     if att > 0
-    if att > @r.capacity
-    @attendees_error = "Room capacity(#{@r.capacity}) exceeded, choose more convenient room. !"
+  @t = att
+     if att >= 1
+      session[:attendees_error]=false
+        if att > @r.capacity
+        @attendees_error = "Room capacity(#{@r.capacity}) exceeded, choose more convenient room. !"
 
-    elsif att <= 6 && @r.capacity - att > 15
-    @attendees_error = "Room capacity(#{@r.capacity}) under utilized, choose room with less capacity. !"
+        elsif att <= 6 && @r.capacity - att > 15
+        @attendees_error = "Room capacity(#{@r.capacity}) under utilized, choose room with less capacity. !"
+       end
+
+    else
+     @attendees_error =  "Please check Attendees, should be greater than zero !!"
+    session[:attendees_error]=true
+
     end
-  end
-else
-      redirect_to new_request_url, alert: "Please check Attendees, should be greater than zero !!"
-    
-
 end
 
   def check_schedule
@@ -265,6 +274,7 @@ end
       
       params.require(:request).permit(:title, :date, :startd, :endd, :desc, :requestby,
        :email, :reschedule, :room_id, :staff_id, :projector, :refreshment, :special, :attendees, :status, :approval, :final, :remarks)
+            
     end
 
 

@@ -46,19 +46,7 @@
                     </div>
                 </div>
             </nav>
-        </div>
-    </header>
-   
-    <!-- Notice and Alert -->
-   
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
-    <div style="margin:0.5px; " class="alert <% if notice.nil? %><% else%> <%= 'alert-success' %>"><%end%> <h4 style="margin-left: 40%" id="notice"> <b><%= notice %></b></h4></div> 
-<div style="margin:2px; " class="alert <% if alert.nil? %><% else%> <%= 'alert-danger' %>"><%end%> <h4 style="margin-left: 40%" id="notice"> <b><%= alert %></b></h4></div> 
-
- <p class="pull-right">
+             <p class="pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <% link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
@@ -68,20 +56,16 @@
   <% link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
-                </div>
-            </div>
+<div " class="alert <% if notice.nil? %><% else%> <%= 'alert-success' %>"><%end%> <h4 style="margin-left: 40%" id="notice"> <b><%= notice %></b></h4></div> 
+<div class="alert <% if alert.nil? %><% else%> <%= 'alert-danger' %>"><%end%> <h5 style="margin-left: 40%" id="notice"> <b><%= alert %></b></h4></div> 
 
         </div>
 
-
-
-
+    </header>
+    <body>
+    
+    <!-- Notice and Alert -->   
     <%= yield %>
-
-
-
-
-
         <section id="sect1">
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">

@@ -1,3 +1,6 @@
+<%= @room.name %>
+<br>
+<%= @room.id %>
 <%= form_for(@request) do |f| %>
   <% if @request.errors.any? %>
     <div id="error_explanation">
@@ -39,20 +42,34 @@
                       <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="requestby" value="<%= @request.requestby %>" readonly > 
 
                             </div>     
-                        </div>                          
+                        </div>  
+
+                        <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Select Room<span class="asteriskField">*</span> </label>
+
+                           <div id="room_loc" class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                             
+                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                        
+                            </div>   
+
+                               <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
+                        </div> 
+                        <%= f.hidden_field(:staff_id, {id: 'staff_id'}) %>
+
                         <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Meeting Date<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 ">
-                            <div class="input-md emailinput form-control " style="margin-bottom: 10px; border-style: none" >
+                           
                             <% if @request.status == 'reschedule' %>
- <%= f.date_select(:date,:order => [:day, :month, :year], :disabled => false, :value => @request.date, :html => {:class => "form-horizontal center"}) %>
+ <%= f.date_select(:date,:order => [:day, :month, :year], :disabled => false, :value => @request.date, :html => {:class => "input-md emailinput form-control"}) %>
 
                          <% else %>
                           <%=   f.date_select(:date, :order => [:day, :month, :year], :disabled => true, :value => @request.date, :html => {:class => "form-horizontal center"})
                              %>
                             
                             <%end %>
-                            </div>
+                          
                             </div>     
                         </div>
                         
@@ -95,22 +112,28 @@
 
                             </div>     
                         </div>   
-
                          <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Reschedule Date<span class="asteriskField">*</span> </label>
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Attendees<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                                                 <div class="input-md emailinput form-control " style="margin-bottom: 10px; border: 1px solid white" >
+                                 <input type="number" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="attendees" value="<%= @request.attendees %>" readonly >
+                          
+                            </div>     
+                        </div> 
+                         <!-- <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Reschedule Date<span class="asteriskField">*</span> </label>
+                           
+                                                 <div class="controls col-md-8" style="margin-bottom: 10px; border: 1px solid white" >
                             <% if @request.status == 'reschedule' %>
- <%= f.date_select(:reschedule, style:'margin-bottom: 10px',:order => [:day, :month, :year], :disabled => false, :value => @request.date, :html => {:class => "form-horizontal center"}) %>
+ <%= f.date_select(:reschedule, style:'margin-bottom: 10px',:order => [:day, :month, :year], :disabled => false, :value => @request.date, :html => {:class => "input-md emailinput form-control"}) %>
 
                          <% else %>
                           <%=   f.date_select(:reschedule, style:'margin-bottom: 10px',:order => [:day, :month, :year], :disabled => true, :value => @request.date, :html => {:class => "form-horizontal center"})
                              %>
                             
                             <%end %>
-                            </div>
+                     
                             </div>     
-                        </div>   
+                        </div>   -->
  
                         <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField">Projector<span class="asteriskField">*</span> </label>
@@ -131,7 +154,7 @@
                         </div>
 
                          <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Special<span class="asteriskField">*</span> </label>
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Other requirements<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                             
                                <textarea name="special" rows="3" cols="100" style="margin-bottom: 10px" class="input-md emailinput form-control" readonly=""> <%= @request.special %>
@@ -139,14 +162,6 @@
 
                             </div>     
                         </div>            
-
-                         <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Attendees<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                                 <input type="number" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="attendees" value="<%= @request.attendees %>" readonly >
-                          
-                            </div>     
-                        </div> 
 
                          <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Request Status<span class="asteriskField">*</span> </label>
@@ -191,7 +206,7 @@
                              <% end %>  
                             </div>
                                                         <div class="controls col-md-4 ">
-                                <a type="button" href="<%= index_dashboard_url %>" name="Signup" value="Back" class="btn btn-default" id="submit-id-signup">Back </a>
+                                <a type="button" href="<%= admin_index_url %>" name="Signup" value="Back" class="btn btn-default" id="submit-id-signup">Back </a>
                                
                             </div>
                         </div> 

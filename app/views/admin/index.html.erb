@@ -69,7 +69,8 @@
                       <th>START TIME</th>
                       <th>END TIME</th>
                       <th>STATUS</th>
-                      <th>ACTION</th>
+                      <th>UPDATE</th>
+                      <th>DELETE</th>
                       </tr>  
                     </thead>   
                     <tbody>
@@ -88,7 +89,10 @@
                              <% b = link_to 'View', f %>
                             <% end %>
                             <td> <%= b %></td>
+                            <td><%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>   
+
+
                         <% end %>                                           
                     </tbody>
 

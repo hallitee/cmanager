@@ -10,7 +10,6 @@ class RequestsController < ApplicationController
 
 def status 
 @request = Request.find(params[:id])
-
 if params[:email] != @request.email
 redirect_to index_dashboard_url, alert: 'Invalid Request Email, please enter email used to submit booking' 
 
@@ -35,7 +34,7 @@ end
 
   # GET /requests/1/edit
   def edit
-    
+  @room = Room.joins(:requests).select("*").where(requests: {id: params[:id]}).first
   end
 
   # POST /requests
@@ -239,7 +238,7 @@ end
         format.html { render :edit }
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
-    end
+    end #end respond to update
   end
 
   # DELETE /requests/1
@@ -247,7 +246,8 @@ end
   def destroy
     @request.destroy
     respond_to do |format|
-      format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
+      format.html { redirect_to admin_index_url, notice: 'Request was successfully updated.' }
+     # format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

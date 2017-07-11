@@ -37,7 +37,7 @@ class AdminController < ApplicationController
   def counts
   @pending = Request.where("status = 'pending'").count
 	@approved = Request.where(["date = ? and status = ?", "#{Date.today}", "approved"]).count
-	@ongoing = Request.where("date = ? AND status= ?", Date.today+5.day, 'approved').count
+	@ongoing = Request.where("date < ? AND status= ?", Date.today+5.day, 'approved').count
 	@rejected = Request.where("status = 'rejected'").count
   #@r = Room.joins(:requests).select("*").where(requests: {id: 12}).first
 

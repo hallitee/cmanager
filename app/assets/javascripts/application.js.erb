@@ -63,6 +63,55 @@ $.ajax({
   });
 });
 
+ $("#request_room_id1").bind("mouseover", function(){
+$prev_res = $(this).val(); 
+
+$temp = 1 ;
+console.log($prev_res);
+//$("request_room_id1 option[value=" +10+ "]").attr("selected", true);
+$("#request_room_id1 option[value='"+$prev_res+"']").prop("selected", true);
+$("#request_room_id1 option[value='"+$temp+1+"']").attr("selected", true);
+});
+
+
+ $("#request_room_id1").bind("change", function(){
+  $new_val = $(this).val();
+  console.log($new_val);
+$res = confirm("Do you really want to change room");
+ if ($res){
+ // $("request_room_id1 > select > option[value=" + 8 + "]").attr("selected",true);
+
+$("#request_room_id1 option[value='"+$new_val+"']").attr("selected", true);
+ // $("request_room_id1 select").val($new_val);
+console.log("true") ;
+console.log($new_val);
+}
+else{
+  // $("request_room_id1 > select > option[value=" + 4 + "]").attr("selected",true);
+$("#request_room_id1 option[value='"+$prev_res+"']").attr("selected", true);
+//$("request_room_id1 select").val($prev_res);
+console.log("false");
+console.log($prev_res);
+}
+
+
+ // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
+/*$.ajax({
+    type: 'POST',
+    url: "/check_crossplatform",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val()},                                                                                  
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });*/
+});
+
  $("#request_desc").bind("focus change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({

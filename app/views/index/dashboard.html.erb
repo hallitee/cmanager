@@ -10,8 +10,13 @@
 <%= stylesheet_link_tag    'bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
 <%= stylesheet_link_tag    'styles', media: 'all', 'data-turbolinks-track' => true %>
 
+
     <%= javascript_include_tag 'bootstrap.min', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'moment.min', 'data-turbolinks-track': 'reload' %>        
+    <%= javascript_include_tag 'fullcalendar', 'data-turbolinks-track': 'reload' %>
+ 
+
 </head>
 
 <body>
@@ -27,20 +32,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="carousel slide" data-ride="carousel" data-wrap="false" id="carousel-1">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active"><%= image_tag 'ConferenceRoom1.jpg' %></div>
-                            <div class="item"><%= image_tag 'presenting.jpg' %></div>
-                            <div class="item"><%= image_tag 'ConferenceRoom4.jpg' %></div>
-                        </div>
-                        <div><a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-1" role="button"
-                            data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a></div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-1" data-slide-to="1"></li>
-                            <li data-target="#carousel-1" data-slide-to="2"></li>
-                        </ol>
-                    </div>
+                    
+                    <div id="calendar"> </div>
                 </div>
                 <div class="col-md-4">
                     <div class="row">

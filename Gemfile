@@ -5,9 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-gem 'fullcalendar-rails'
-gem 'momentjs-rails'
+gem 'awesome_print'
+#gem 'fullcalendar-rails'
+#gem 'momentjs-rails'
 gem 'will_paginate'
 gem 'yaml_db'
 gem 'mysql2'

@@ -1,75 +1,39 @@
-<%= form_for(@request) do |f| %>
-  <% if @request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+style:'margin-bottom: 10px', class:'input-md emailinput form-control',data: {trigger: "blur"}, data: {required: "true" }, remote: true, id: 'email_box'
 
-      <ul>
-      <% @request.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<h4 style="margin-left: 45%" id="notice"> <b><%= notice %></b></h4>
-<% cssclass = "input-md emailinput form-control" %>
-<div class="container">    
-    <div id="signupbox" style="  margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <div class="panel panel-info" >
-            <div class="panel-heading " >
-                <div class="panel-title" >View Request Status</div>
+ if @staff.crossplatform
+      
+      else
+      @room = Room.where("location= '#{@staff.location}' ")
+    end #check crossplatform end
+f.select :score, [['horrible', 1], ['poor', 2], ['mediocre', 3], ['good', 4], ['great', 5]]
+    <select>
+  <option value="IKOYI">HQ</option>
+  <option value="">ESRNL AGBARA</option>
+  <option value="opel">NPRNL AGBARA</option>
+  <option value="audi">PFNL AGABRA</option>
+</select>
 
-            </div>  
-            <div class="panel-body" >             
-                        <div id="div_id_username" class="form-group required">
-                            <label for="id_username" class="control-label col-md-4  requiredField"> Title <span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 ">
-                             <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="title" value="<%= @request.title %>" readonly >   
-                            </div>
+if current_user.try(:admin?)
+  # do something
+end
+
+<div class="carousel slide" data-ride="carousel" data-wrap="false" id="carousel-1">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active"><%= image_tag 'ConferenceRoom1.jpg' %></div>
+                            <div class="item"><%= image_tag 'presenting.jpg' %></div>
+                            <div class="item"><%= image_tag 'ConferenceRoom4.jpg' %></div>
                         </div>
-                         <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                                        <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="email" value="<%= @request.email %>" readonly > 
-                              </div>     
-                        </div>  
-                         <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Request By<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                            
-                      <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="requestby" value="<%= @request.requestby %>" readonly > 
+                        <div><a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-1" role="button"
+                            data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a></div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-1" data-slide-to="1"></li>
+                            <li data-target="#carousel-1" data-slide-to="2"></li>
+                        </ol>
+                    </div>
 
-                            </div>     
-                        </div>  
+===========================================================================
 
-                        <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Select Room<span class="asteriskField">*</span> </label>
-
-                           <div id="room_loc" class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                             
-                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
-                        
-                            </div>   
-
-                               <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
-                        </div> 
-                        <%= f.hidden_field(:staff_id, {id: 'staff_id'}) %>
-
-                        <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField"> Meeting Date<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 ">
-                          <div class="input-md emailinput form-control " style="margin-bottom: 10px; border: 1px solid white" >   
-                            <% if @request.status == 'reschedule' %>
- <%= f.date_select(:date,:order => [:day, :month, :year], :disabled => false, :value => @request.date) %>
-
-                         <% else %>
-                          <%=   f.date_select(:date, :order => [:day, :month, :year], :disabled => true, :value => @request.date)
-                             %>
-                            
-                            <%end %>
-                          </div>
-                            </div>     
-                        </div>
-                        
                          <div id="div_id_username" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Start Time<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 col-md-pull-0">
@@ -110,7 +74,7 @@
                             </div>     
                         </div>   
                          <div id="div_id_email" class="form-group required">
-                            <label for="id_email" class="control-label col-md-4  requiredField">Number of Attendees<span class="asteriskField">*</span> </label>
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Attendees<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                                  <input type="number" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="attendees" value="<%= @request.attendees %>" readonly >
                           
@@ -192,7 +156,7 @@
 
                           <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                            
-                            <div class="controls col-md-3 col-md-push-5 ">
+                            <div class="controls col-md-4 ">
                             <% if @request.status == 'reschedule' &&  user_signed_in? %>
                                 <%= f.submit :update, class: "btn btn-default" %>
                              
@@ -204,25 +168,9 @@
                                  <%= f.submit :update, class: "btn btn-default" %>
                              <% end %>  
                             </div>
-                               <div class="controls col-md-2  "> </div>
-
-                                                        <div class="controls col-md-3 col-md-push-6">
+                                                        <div class="controls col-md-4 ">
                                 <a type="button" href="<%= admin_index_url %>" name="Signup" value="Back" class="btn btn-default" id="submit-id-signup">Back </a>
                                
                             </div>
                         </div> 
                                               
-           
-
-
-
-
-
-
-                
-            </div>
-        </div>
-    </div> 
-</div>
-
-<% end %> 

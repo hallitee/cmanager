@@ -4,7 +4,7 @@ class StaffsController < ApplicationController
   # GET /staffs
   # GET /staffs.json
   def index
-    @staffs = Staff.all
+    @staffs = Staff.all.paginate(:page => params[:page], :per_page=>25)
   end
 
   # GET /staffs/1

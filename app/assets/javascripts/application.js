@@ -15,7 +15,7 @@
 //= require turbolinks 
 //= require moment.min
 //= require fullcalendar
-//= locale-all
+//= require locale-all
 //= require bootstrap.min
 //= require_tree .
 
@@ -26,7 +26,17 @@
 //$(document).on('pageinit', function(){
 $(document).ready( function(){
 
-/*$("#calendar").fullCalendar({
+
+
+  });
+$(document).on('turbolinks:load',function() {
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+  $("#calendar").fullCalendar({
     events: [
         {
             title  : 'event1',
@@ -43,17 +53,7 @@ $(document).ready( function(){
             allDay : false // will make the time show
         }
     ]
-});*/
-
-  });
-$(document).on('turbolinks:load',function() {
-$.ajaxSetup({
-  headers: {
-    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-  }
 });
-
-  
 
  $("#email_box").bind("change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });

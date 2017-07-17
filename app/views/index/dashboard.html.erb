@@ -31,7 +31,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    
+                     <%= collection_select(:@r, :room_id, Room.all, :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
+
                     <div id="calendar"> </div>
                 </div>
                 <div class="col-md-4">

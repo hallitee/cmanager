@@ -35,17 +35,9 @@ $.ajaxSetup({
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   }
 });
-    $room_id = $("#_r_room_id").val();
-    console.log($room_id);
- $("#_r_room_id").bind("change", function(){
- // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
-    $room_id = $(this).val();
-    console.log($room_id);
-    my_events($room_id);
-});
-function my_events($id){
-  $("#calendar").fullCalendar({
 
+  $("#calendar").fullCalendar({
+ 
     header: {
         left: 'prev,next today',
         center: 'title',
@@ -54,14 +46,15 @@ function my_events($id){
     String, default: 'start',
     //events: "/get_events"
 
-    eventSources: [
+
+    /*eventSources: [
 
         // your event source
         {
-            url: '/get_events',
+            url: '/event',
             type: 'POST',
             data: {
-                room_id: $id,
+                room_id: '',
                 custom_param2: 'somethingelse'
             },
             error: function() {
@@ -70,13 +63,15 @@ function my_events($id){
             color: 'yellow',   // a non-ajax option
             textColor: 'black' // a non-ajax option
         }
-
+*/
         // any other sources...
 
     ]
 
+
+
 });
-}
+
 
  $("#email_box").bind("change blur", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });

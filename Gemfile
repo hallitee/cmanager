@@ -6,8 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'awesome_print'
-#gem 'fullcalendar-rails'
-#gem 'momentjs-rails'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 gem 'will_paginate'
 gem 'yaml_db'
 gem 'mysql2'

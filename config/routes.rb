@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
- 
+match '/get_events' =>"index#get_events", :via => :post, :as => :get_events
 match '/check_email' =>"requests#check_email", :via => :post, :as => :chk_email
 match '/check_crossplatform' =>"requests#check_crossplatform", :via => :post, :as => :check_crossplatform
  match '/check_schedule' =>"requests#check_schedule", :via => :post, :as => :check_schedule

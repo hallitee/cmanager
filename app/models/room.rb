@@ -2,7 +2,7 @@ class Room < ApplicationRecord
 has_many :requests
 
 def options_name
-"#{name}" +" "+" #{location}"
+"#{codename}"+"--"+"#{name}" +" -- "+" #{location}"+"--Capacity("+"#{capacity}"+")"
 
 end
 end

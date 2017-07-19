@@ -10,6 +10,7 @@ class RequestsController < ApplicationController
 
 def status 
 @request = Request.find(params[:id])
+@all = Request.where("staff_id=?", @request.staff_id)
 if params[:email] != @request.email
 redirect_to index_dashboard_url, alert: 'Invalid Request Email, please enter email used to submit booking' 
 
@@ -50,7 +51,7 @@ end
       elsif session[:cross_platform_error]
       redirect_to new_request_url, alert: "Company/location incorrect, contact Admin."
       elsif session[:date_error]
-      redirect_to new_request_url, alert: "Incorrect Date, please adjust date."  
+      redirect_to new_request_url, alert: "Room Booked, choose another date!"
       elsif session[:time_error]
       redirect_to new_request_url, alert: "Check meeting duration, adjust start/stop time!" 
       elsif  session[:attendees_error]     
@@ -157,52 +158,60 @@ end
    # @date_error = Time.parse(params[:my_date]) 
    if @date >= Date.today
     @date_err = false
-    session[:date_err] = @date_err
-
+    session[:date_error] = false
+    session[:time_error] = false
     if @start.hour == @end.hour
       if @end.min <= @start.min
         @time_error = "Incorrect duration check time range!"
         @time_err = true
-        session[:time_err] = @time_err
+        session[:time_error] = true
       elsif @end.min - @start.min < 10
         @time_error = "Invalid duration, must be greater than 10 minutes!"
         @time_err = true
-        session[:time_err] = @time_err
-      else
+        session[:time_error] = true
       end
+
+    elsif @date == Date.today
+      if @start.hour < Time.now.hour
+      @time_error = "Invalid time, time past please correct!"
+      session[:time_error] = true
+      end
+
     end #end date OK but same hour chosen 
       if @start.hour<8 || @end.hour>17  #time should be within working hours
         @time_error = "Invalid time, not within working hours!"
         @time_err = true
-        session[:time_err] = @time_err
+        session[:time_error] = true
       else
         @res = Request.where("date= ? and room_id= ?", @date, params[:room_id])
         @time_err = false
-        session[:time_err] = @time_err
+        #session[:time_error] = false
         @res.each{ |f|
           if @start.hour.between?(f.startd.hour, f.endd.hour)
               @date_error = "Room scheduled, choose another time/room!"
-              @time_err = true
-              session[:time_err] = @time_err
+              @time_err =true
+              @date_err = true
+              session[:date_error] = true
             if @start.hour==f.endd.hour
               if @start.min-f.endd.min <= 10
                 @time_error = "Time conflict, Must start 10minute after Previous schedule!"
                   @time_err = true
-                  session[:time_err] = @time_err
+                  session[:time_error] = @time_err
                 else
               @time_error = ""
               @time_err = false
-              session[:time_err] = @time_err
+              session[:time_error] = false
               end
             else
               @date_error = "Room scheduled, choose another time/room!"
               @time_err = true
-              session[:time_err] = @time_err
+              @date_err = true
+              session[:date_error] = true
             end
 
           elsif @end.hour.between?(f.startd.hour, f.endd.hour)
             @time_err=true
-            session[:time_err] = @time_err
+            session[:date_err] = @time_err
              @date_error = "Room scheduled, choose another time/room!"
     
           end
@@ -211,7 +220,7 @@ end
     else
    @date_error = "Invalid date, must be today or greater"
    @date_err = true
-   session[:date_err] = @date_err
+   session[:date_error] = true
     
     end # end check if date past or invalid
 

@@ -37,43 +37,25 @@ $.ajaxSetup({
 });
 
   $("#calendar").fullCalendar({
- 
-    header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-    },
-    String, default: 'start',
-    //events: "/get_events"
-
-
-    /*eventSources: [
-
-        // your event source
+    events: [
         {
-            url: '/event',
-            type: 'POST',
-            data: {
-                room_id: '',
-                custom_param2: 'somethingelse'
-            },
-            error: function() {
-                alert('there was an error while fetching events!');
-            },
-            color: 'yellow',   // a non-ajax option
-            textColor: 'black' // a non-ajax option
+            title  : 'event1',
+            start  : '2017-07-10'
+        },
+        {
+            title  : 'event2',
+            start  : '2017-07-10',
+            end    : '2017-07-11'
+        },
+        {
+            title  : 'event3',
+            start  : '2017-07-09T12:30:00',
+            allDay : false // will make the time show
         }
-*/
-        // any other sources...
-
     ]
-
-
-
 });
 
-
- $("#email_box").bind("change blur", function(){
+ $("#email_box").bind("change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -159,7 +141,7 @@ console.log($prev_res);
   });*/
 });
 
- $("#request_desc").bind("focus change blur", function(){
+ $("#request_desc").bind("focus change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -186,7 +168,7 @@ $.ajax({
   });
 }); 
 
-$("#request_attendees").bind("focus change blur", function(){
+$("#request_attendees").bind("focus change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -213,7 +195,7 @@ $.ajax({
   });
 }); 
 
- $("#request_attendees").on("change blur focus", function(){
+ $("#request_attendees").blur(function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',

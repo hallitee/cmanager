@@ -164,11 +164,11 @@
                             <label for="id_email" class="control-label col-md-4  requiredField"> Request Status<span class="asteriskField">*</span> </label>
                            
                             <% col = @request.status
-                             if col == 'pending'
+                             if col == 'booked'
                               color='blue'
                             elsif  col == 'approved'
                                color='green'
-                             elsif col=='rejected'
+                             elsif col=='cancelled'
                               color = 'red'
                             elsif col == 'reschedule'
                               color = 'purple'

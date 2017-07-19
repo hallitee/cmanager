@@ -35,8 +35,8 @@ $.ajaxSetup({
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   }
 });
-    $room_id = $("#_r_room_id").val();
-    console.log($room_id);
+    //$room_id = $("#_r_room_id").val();
+    //console.log($room_id);
  $("#_r_room_id").bind("change", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
     $room_id = $(this).val();
@@ -60,6 +60,8 @@ function my_events($id){
         {
             url: '/get_events',
             type: 'POST',
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    
             data: {
                 room_id: $id,
                 custom_param2: 'somethingelse'
@@ -67,6 +69,10 @@ function my_events($id){
             error: function() {
                 alert('there was an error while fetching events!');
             },
+            success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    },
             color: 'yellow',   // a non-ajax option
             textColor: 'black' // a non-ajax option
         }

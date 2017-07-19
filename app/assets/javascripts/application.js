@@ -26,36 +26,105 @@
 //$(document).on('pageinit', function(){
 $(document).ready( function(){
 
-
-
   });
 $(document).on('turbolinks:load',function() {
+  $room_id = $("#_r_room_id").val();
+ my_events($room_id);
+
+ //my_events(1);
 $.ajaxSetup({
   headers: {
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   }
 });
-
-  $("#calendar").fullCalendar({
-    events: [
+    //$room_id = $("#_r_room_id").val();
+    //console.log($room_id);
+ $("#_r_room_id").bind("change", function(){
+    $("#calendar").fullCalendar( 'destroy' ); 
+    //$("#calendar").fullCalendar( 'removeEventSources');
+ // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
+    $room_id = $(this).val();
+    console.log($room_id);
+$room_id = $("#_r_room_id").val();
+ my_events($room_id);
+/*  $("#calendar").fullCalendar( 'refetchEventSources', 
+        // your event source
         {
-            title  : 'event1',
-            start  : '2017-07-10'
-        },
-        {
-            title  : 'event2',
-            start  : '2017-07-10',
-            end    : '2017-07-11'
-        },
-        {
-            title  : 'event3',
-            start  : '2017-07-09T12:30:00',
-            allDay : false // will make the time show
+            url: '/get_events',
+            type: 'POST',
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    
+            data: {
+                room_id: $room_id,
+                custom_param2: 'somethingelse'
+            },
+            error: function() {
+                alert('there was an error while fetching events!');
+            },
+            success: function(events){ 
+      //data response can contain what we want here...
+      console.log($room_id);
+          console.log("SUCCESS, data="+ events);
+    },
+            color: 'yellow',   // a non-ajax option
+            textColor: 'black' // a non-ajax option
         }
-    ]
-});
 
- $("#email_box").bind("change", function(){
+        // any other sources...
+
+    ); */
+    
+
+    //$("#calendar").fullCalendar( 'refetchEvents' );
+    //.my_events($room_id);
+
+});
+function my_events($id){
+  $("#calendar").fullCalendar({
+
+    header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,basicWeek,basicDay'
+    },
+    String, default: 'start',
+    selectable:true,
+   // editable:true,
+    //events: "/get_events"
+
+        // your event source
+        events: {
+            url: '/get_events',
+            cache: false,
+            lazyFetching:false,
+            type: 'POST',
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    
+            data: {
+                room_id: $id,
+                custom_param2: 'somethingelse'
+            },
+            error: function() {
+                alert('there was an error while fetching events!');
+            },
+            success: function(events){ 
+      //data response can contain what we want here...
+          console.log("SUCCESS, data="+ events);
+    },    dayClick: function (date, allDay, jsEvent, view) {
+        displayDayEvents(date, allDay, jsEvent, view);
+    },
+            color:  'red',  //'#7FFF00',   // a non-ajax option
+            textColor: 'white' // a non-ajax option
+        }
+
+        // any other sources...
+
+    
+
+});
+}
+
+ $("#email_box").bind("change blur", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -141,7 +210,7 @@ console.log($prev_res);
   });*/
 });
 
- $("#request_desc").bind("focus change", function(){
+ $("#request_desc").bind("focus change blur", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -168,7 +237,7 @@ $.ajax({
   });
 }); 
 
-$("#request_attendees").bind("focus change", function(){
+$("#request_attendees").bind("focus change blur", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -195,7 +264,7 @@ $.ajax({
   });
 }); 
 
- $("#request_attendees").blur(function(){
+ $("#request_attendees").on("change blur focus", function(){
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 $.ajax({
     type: 'POST',
@@ -228,21 +297,21 @@ $.ajax({
 
     //}; //function page load
 /*function myFunc() {
-	$id = prompt("Enter request number");
-	if(!$id.match(/^\d+/)) {
-		alert("Only numbers allowed !");
-	}
-	else{
-   	
+  $id = prompt("Enter request number");
+  if(!$id.match(/^\d+/)) {
+    alert("Only numbers allowed !");
+  }
+  else{
+    
 
 
 
 
  var form = $('<form></form>');
 
-    	form.attr("method", "get");
-    	form.attr("action", "/requests/status/");
-		var field = $('<input></input>');
+      form.attr("method", "get");
+      form.attr("action", "/requests/status/");
+    var field = $('<input></input>');
 
         field.attr("type", "hidden");
         field.attr("name", 'id');
@@ -250,9 +319,9 @@ $.ajax({
 
         form.append(field);
         $(document.body).append(form);
-    	form.submit();
-	
-	}
+      form.submit();
+  
+  }
 
 //var $email = prompt("Enter request Email");
 //validateEmail($email);

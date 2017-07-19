@@ -7,6 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'styles', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'bootstrap.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'moment.min', 'data-turbolinks-track': 'reload' %>        
+    <%= javascript_include_tag 'fullcalendar', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,8 +30,12 @@
                     <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav visible-xs-block visible-sm-block visible-md-block visible-lg-block visible-xs-inline visible-sm-inline navbar-right">
                            <li class="actove" role="presentation">
-                           <% if user_signed_in?  %>
+                           <% if user_signed_in? && current_user.admin? %>
+                           <%= link_to "Manager", admin_manager_path  %>
+                           <% elsif user_signed_in? && current_user.superadmin? %>
                            <%= link_to "Admin", admin_index_path  %>
+                           <% elsif user_signed_in? && !current_user.admin? && !current_user.superadmin? %>
+                           <%= link_to "User", admin_user_path  %>
                            <% end %>
                            </li>
                             <li class="active" role="presentation">
@@ -49,7 +59,7 @@
              <p class="pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
-  <% link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+  <%link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
   <% link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
   <% link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
@@ -66,6 +76,7 @@
     
     <!-- Notice and Alert -->   
     <%= yield %>
+    
         <section id="sect1">
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -79,9 +90,11 @@
       </div>
       <div class="modal-body">
       <form method="get" action="<%= status_path %>" name="login_form">
-             <label>Booking Number</label> <p><input type="text" class="span6" name="id" id="email" placeholder="Request Number"></p>
+             <label>Booking Number</label> <p><input type="text" class="span6" name="id" id="number" placeholder="Request Number"></p>
              <label>Booking Email</label> <p><input type="email" class="span6" name="email" placeholder="Your Email"></p>
-              <p><button type="submit" class="btn btn-default">Booking Status</button>
+              <p>
+             
+              <button type="submit" class="btn btn-default">Booking Status</button>
               </p>
             </form
       </div>

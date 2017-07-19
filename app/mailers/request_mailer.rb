@@ -6,8 +6,10 @@ class RequestMailer < ApplicationMailer
   #   en.request_mailer.newreq.subject
   #
   def newreq(req)
+
  @req = req
     @greeting = "Hi"
+       @room = Room.where("id=?", @req.room_id).first
     mail to: "#{@req.email}", subject: "New Booking Received"
   end
 

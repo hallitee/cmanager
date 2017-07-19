@@ -102,7 +102,7 @@
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                             
                               <%= f.number_field(:attendees, style:'margin-bottom: 20px',:remote => true, class:'input-md emailinput form-control')%>
-                            <%= f.hidden_field :status, :value => 'pending' %>
+                            <%= f.hidden_field :status, :value => 'booked' %>
                             <p id="attendees_error" style="display:none"> You are not eligible to request, contact Admin </p>
                             </div>     
                         </div> 

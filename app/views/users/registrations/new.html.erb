@@ -20,12 +20,17 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  
     <div class="field">
     <%= f.label :admin   %><br />
     <%= f.check_box :admin, autocomplete: "off" %>
     
   </div>
-
+    <div class="field">
+    <%= f.label :superadmin   %><br />
+    <%= f.check_box :superadmin, autocomplete: "off" %>
+    
+  </div>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

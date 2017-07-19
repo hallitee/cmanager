@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :configs
 match '/get_events' =>"index#get_events", :via => :post, :as => :get_events
 match '/check_email' =>"requests#check_email", :via => :post, :as => :chk_email
 match '/check_crossplatform' =>"requests#check_crossplatform", :via => :post, :as => :check_crossplatform
@@ -13,16 +14,20 @@ match '/check_crossplatform' =>"requests#check_crossplatform", :via => :post, :a
 #resources :requests, only: [:index, :show]
       devise_for :users, controllers: {
         sessions: 'users/sessions',
-        registrations: 'users/registrations'
+        registrations: 'users/registrations',
+        passwords: 'users/passwords'
 
       }
-
+authenticated :user do
+  root to: 'admin#index', as: :authenticated_root
+end
   get 'requests/edit/', to: 'requests#edit'
   get 'admin/reschedule'
   get 'admin/approved'
   get 'admin/pending'
   get 'admin/index'
-
+  get 'admin/manager'
+  get 'admin/user'  
   get 'admin/list'
 
   get 'admin/setting'

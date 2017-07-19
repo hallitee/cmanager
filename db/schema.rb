@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710122713) do
+ActiveRecord::Schema.define(version: 20170719092018) do
+
+  create_table "configs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "mgr_company"
+    t.string   "mgr_location"
+    t.string   "mgr_email"
+    t.integer  "projector"
+    t.string   "mgr_refreshment"
+    t.string   "mgr_hr"
+    t.string   "mgr_it"
+    t.integer  "loc_resource1"
+    t.integer  "loc_resource2"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -72,6 +86,7 @@ ActiveRecord::Schema.define(version: 20170710122713) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin",                  default: false
+    t.boolean  "superadmin",             default: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

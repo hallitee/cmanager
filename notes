@@ -192,3 +192,20 @@ end
             allDay : false // will make the time show
         }
     ]                                              
+    =========================
+    manager_company
+    manager_location
+    manager_email
+    projector_number
+    manager_refreshment_email
+    manager_hr_email
+    manager_it_email
+    ==============================
+        <% if user_signed_in? && current_user.admin? %>
+
+    <%= render "manager" %>
+    <% elsif user_signed_in? && current_user.superadmin? %>
+    <%= render "admin" %>
+    <% elsif user_signed_in? && !current_user.admin? && !current_user.superadmin? %>
+    <%= render "user" %> 
+    <% end %>

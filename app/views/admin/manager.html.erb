@@ -35,7 +35,14 @@
             </div>
         </div>
     </section>
-  <%= render 'shared' %>
+    <% if user_signed_in? && current_user.admin? %>
+
+    <%= render "manager" %>
+    <% elsif user_signed_in? && current_user.superadmin? %>
+    <%= render "admin" %>
+    <% elsif user_signed_in? && !current_user.admin? && !current_user.superadmin? %>
+        <%= render "user" %> 
+    <% end %>
     
 
 </body>

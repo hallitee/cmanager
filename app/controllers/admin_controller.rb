@@ -25,8 +25,10 @@ class AdminController < ApplicationController
   end
   def user
    @email = current_user.email
-   if params[:params1]=='booked'
+   if params[:ps]=='booked'
        @request = Request.where("status='booked' AND email=?", @email).paginate(:page => params[:page], :per_page=>10)
+     elsif params[:ps]=='coming'
+      @request = Request.where("date > ? AND email=?",Date.today, @email).paginate(:page => params[:page], :per_page=>10)
    else
    @request = Request.where("email=?", @email).paginate(:page => params[:page], :per_page=>10)
    end
@@ -76,7 +78,7 @@ class AdminController < ApplicationController
   @pending = Request.where("status=? and email=?", 'booked', current_user.email).count
   @approved = Request.where(["date = ? and status = ?", "#{Date.today}", "approved"]).count
   @ongoing = Request.where("date < ? AND status= ?", Date.today+5.day, 'booked').count
-  @cancel = Request.where("email=? AND status = 'cancel'", current_user.email ).count
+  @cancel = Request.where("email=? AND status = 'cancelled'", current_user.email ).count
   #@r = Room.joins(:requests).select("*").where(requests: {id: 12}).first
 
   end

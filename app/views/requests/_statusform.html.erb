@@ -193,7 +193,7 @@
                           <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                            
                             <div class="controls col-md-3 col-md-push-5 ">
-                            <% if @request.status == 'reschedule' &&  user_signed_in? %>
+                            <% if @request.status == 'booked' &&  user_signed_in? %>
                                 <%= f.submit :update, class: "btn btn-default" %>
                              
                             <% elsif @request.status == 'pending' && user_signed_in? %>

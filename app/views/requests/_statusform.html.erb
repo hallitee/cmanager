@@ -29,7 +29,7 @@
                          <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                                        <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="email" value="<%= @request.email %>" readonly > 
+                                        <input type="text" style='margin-bottom: 10px' id="email_input" class= "input-md emailinput form-control" name="email" value="<%= @request.email %>" readonly > 
                               </div>     
                         </div>  
                          <div id="div_id_email" class="form-group required">
@@ -37,7 +37,7 @@
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                             
                       <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="requestby" value="<%= @request.requestby %>" readonly > 
-
+                      <input type="hidden" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="control" value="reschedule" readonly > 
                             </div>     
                         </div>  
 
@@ -45,12 +45,20 @@
                             <label for="id_email" class="control-label col-md-4  requiredField"> Select Room<span class="asteriskField">*</span> </label>
 
                            <div id="room_loc" class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                             
-                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
-                        
+                             <% if @staff.crossplatform %>
+                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                                <% else %>
+                                <% if @staff.priviledge && @staff.company != @room.company %>
+                                <%= f.collection_select(:room_id, Room.where("company='HQ'"), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                                <% else %>
+                                <%= f.collection_select(:room_id, Room.where("company=?", @staff.company), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+
+                                <% end %>
+                              <% end %>
+                          <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
                             </div>   
 
-                               <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
+                               
                         </div> 
                         <%= f.hidden_field(:staff_id, {id: 'staff_id'}) %>
 
@@ -66,7 +74,9 @@
                              %>
                             
                             <%end %>
+                              
                           </div>
+                          <p id="date_error" style="display:none"> You are not eligible to request, contact Admin </p>
                             </div>     
                         </div>
                         
@@ -81,7 +91,9 @@
                             <%= f.time_select(:startd, style:'margin-bottom: 10px', :value => @request.startd, :disabled => true, ignore_date: true)%> HH:MM
                       
                          <% end %>
+                          
                           </div> 
+                          <p id="time_error" style="display:none">  </p>
                             </div>     
                         </div>    
 
@@ -96,6 +108,7 @@
                         <% else %>
                           <%= f.time_select(:endd, style:'margin-bottom: 10px',:value => @request.endd, :disabled => true, ignore_date: true)%> HH:MM
                           <% end %>
+                           <p id="time_error" style="display:none">  </p>
                           </div>
                             </div>     
                         </div>    
@@ -182,7 +195,7 @@
 
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                 
-                           <label for="id_email" style="justify-content: center; font-size: 20px; color:<%= color %>" class="input-md emailinput form-control"><%= @request.status.upcase %> </label>
+                           <label for="id_email" id="stat_label" style="justify-content: center; font-size: 20px; color:<%= color %>" class="input-md emailinput form-control"><%= @request.status.upcase %> </label>
                             </div>   
                               
                         </div>    
@@ -196,8 +209,8 @@
                             <% if @request.status == 'booked' &&  user_signed_in? %>
                                 <%= f.submit :update, class: "btn btn-default" %>
                              
-                            <% elsif @request.status == 'pending' && user_signed_in? %>
-                                  <% f.text_field(:status, style:'margin-bottom: 10px', class:'input-md emailinput form-control', value: 'pending')%>
+                            <% elsif @request.status == 'reschedule' && user_signed_in? %>
+                            
                                  <%= f.submit :update, class: "btn btn-default" %>
                             <% elsif @request.status == 'rejected' && user_signed_in? %>
                                   <% f.text_field(:status, style:'margin-bottom: 10px', class:'input-md emailinput form-control', value: 'pending')%>

@@ -35,6 +35,7 @@ end
 
   # GET /requests/1/edit
   def edit
+  @staff= Staff.joins(:requests).select("*").where(requests: {id: params[:id]}).first
   @room = Room.joins(:requests).select("*").where(requests: {id: params[:id]}).first
   end
 
@@ -74,7 +75,7 @@ end
   def check_crossplatform
     @room = Room.where("id= #{params[:room]}").first
       @staff =  Staff.where("email= '#{session[:email]}'").first  
-
+  if params[:act]!='reschedule'
       if !@staff.nil?
       if @staff.location == @room.location
 
@@ -108,6 +109,9 @@ end
       redirect_to new_request_url, alert: "Email cannot be empty!"
 
     end   #staff record must not be nil
+  else
+    @staff =  Staff.where("email= '#{params[:email]}'").first  
+  end
   end 
   def check_email
     @f = Request.new
@@ -150,9 +154,82 @@ end
 
     end
 end
-
-  def check_schedule
+    def check_schedule
    @date = Date.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i
+   @start = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["startd(4i)"].to_i, params["startd(5i)"].to_i
+   @end = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["endd(4i)"].to_i, params["endd(5i)"].to_i
+   # @date_error = Time.parse(params[:my_date]) 
+   if @date >= Date.today
+              @date_err = false
+              session[:date_error] = false
+               session[:time_error] = false
+        if @start.hour<8 || @start.hour>17 || @end.hour<8 || @end.hour>17  #time should be within working hours
+        @time_error = "Invalid time, not within working hours!"
+        @time_err = true
+        session[:time_error] = true
+      else
+
+        if @start.hour == @end.hour
+                  if @end.min <= @start.min
+                        @time_error = "Incorrect duration check time range!"
+                         @time_err = true
+                         session[:time_error] = true
+                   elsif @end.min - @start.min < 10
+                          @time_error = "Invalid duration, must be greater than 10 minutes!"
+                          @time_err = true
+                         session[:time_error] = true
+                   end
+
+           elsif @date == Date.today
+                    if @start.hour < Time.now.hour
+                     @time_error = "Invalid time, time past please correct!"
+                    session[:time_error] = true
+                   end
+            end #end date OK but same hour chosen 
+
+        @res = Request.where("date= ? and room_id= ?", @date, params[:room_id])
+        @time_err = false
+        #session[:time_error] = false
+        @res.each{ |f|
+          if @start.hour.between?(f.startd.hour, f.endd.hour)
+              @date_error = "Room scheduled, choose another time/room!"
+              @time_err =true
+              @date_err = true
+              session[:date_error] = true
+            if @start.hour==f.endd.hour
+              if @start.min-f.endd.min <= 10
+                @time_error = "Time conflict, Must start 10minute after Previous schedule!"
+                  @time_err = true
+                  session[:time_error] = @time_err
+                else
+              @time_error = ""
+              @time_err = false
+              session[:time_error] = false
+              end
+            else
+              @date_error = "Room scheduled, choose another time/room!"
+              @time_err = true
+              @date_err = true
+              session[:date_error] = true
+            end
+
+          elsif @end.hour.between?(f.startd.hour, f.endd.hour)
+            @time_err=true
+            session[:date_err] = @time_err
+             @date_error = "Room scheduled, choose another time/room!"
+    
+          end
+        }
+      end  #Time within working hours and checking time conflicts
+    else
+                           @date_error = "Invalid date, must be today or greater"
+                           @date_err = true
+                          session[:date_error] = true
+    end # end check if date past or invalid
+
+  end
+  def check_schedule1
+  @date = Date.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i
    @start = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["startd(4i)"].to_i, params["startd(5i)"].to_i
    @end = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["endd(4i)"].to_i, params["endd(5i)"].to_i
    # @date_error = Time.parse(params[:my_date]) 
@@ -178,7 +255,7 @@ end
       end
 
     end #end date OK but same hour chosen 
-      if @start.hour<8 || @end.hour>17  #time should be within working hours
+      if @start.hour<8 || @start.hour>17 || @end.hour<8 || @end.hour>17  #time should be within working hours
         @time_error = "Invalid time, not within working hours!"
         @time_err = true
         session[:time_error] = true

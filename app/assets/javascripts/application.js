@@ -29,6 +29,62 @@ $(document).ready( function(){
   });
 $(document).on('turbolinks:load',function() {
   $room_id = $("#_r_room_id").val();
+  $stat = $("#stat_label").text().toLowerCase();
+
+  $("#request_date_3i").bind("change", function(){
+    //check_date();
+    $.ajax({
+    type: 'POST',
+    url: "/check_schedule1",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule',
+      "room_id":$("#request_room_id1").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()},                                                                                             
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+
+  });
+
+function check_date(){
+
+$.ajax({
+    type: 'POST',
+    url: "/check_crossplatform",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule'},                                                                                  
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+
+}
+  $("#request_status option").each(function(){
+    if($(this).val() == 'booked'){
+      $(this).remove();
+    }
+  });
  my_events($room_id);
 
  //my_events(1);
@@ -39,7 +95,31 @@ $.ajaxSetup({
 });
     //$room_id = $("#_r_room_id").val();
     //console.log($room_id);
- $("#_r_room_id").bind("change", function(){
+$("#request_status").bind("change", function(){
+  $txt=$(this).val();
+  if ($txt == 'reschedule'){
+  $("#request_room_id1").removeAttr('disabled');    
+  $("#request_date_3i").removeAttr('disabled');//attr('disabled', 'disabled');//.siblings().removeAttr('disabled');
+   $("#request_date_2i").removeAttr('disabled');//.attr('disabled', 'disabled');
+   $("#request_date_1i").removeAttr('disabled');//.attr('disabled', 'disabled');
+$("#request_startd_4i").removeAttr('disabled');
+$("#request_startd_5i").removeAttr('disabled');
+$("#request_endd_4i").removeAttr('disabled');
+$("#request_endd_5i").removeAttr('disabled');
+   //$("#request_room_id1").attr('disabled', 'disabled').siblings().removeAttr('disabled');
+
+  }else{
+      $("#request_room_id1").attr('disabled', 'disabled'); 
+ $("#request_date_3i").attr('disabled', 'disabled');//removeAttr('disabled');//attr('disa
+ $("#request_date_2i").attr('disabled', 'disabled');
+  $("#request_date_1i").attr('disabled', 'disabled');
+  $("#request_startd_4i").attr('disabled', 'disabled');//removeAttr('disabled');
+$("#request_startd_5i").attr('disabled', 'disabled');//removeAttr('disabled');
+$("#request_endd_4i").attr('disabled', 'disabled');//removeAttr('disabled');
+$("#request_endd_5i").attr('disabled', 'disabled');//removeAttr('disabled');
+  }
+});
+   $("#_r_room_id").bind("change", function(){
     $("#calendar").fullCalendar( 'destroy' ); 
     //$("#calendar").fullCalendar( 'removeEventSources');
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
@@ -161,25 +241,44 @@ $.ajax({
   });
 });
 
- $("#request_room_id1").bind("mouseover", function(){
-$prev_res = $(this).val(); 
+ //$("#request_room_id1").bind("mouseover", function(){
+//$prev_res = $(this).val(); 
 
-$temp = 1 ;
-console.log($prev_res);
+//$temp = 1 ;
+//console.log($prev_res);
 //$("request_room_id1 option[value=" +10+ "]").attr("selected", true);
-$("#request_room_id1 option[value='"+$prev_res+"']").prop("selected", true);
-$("#request_room_id1 option[value='"+$temp+1+"']").attr("selected", true);
-});
-
+//$("#request_room_id1 option[value='"+$prev_res+"']").prop("selected", true);
+//$("#request_room_id1 option[value='"+$temp+1+"']").attr("selected", true);
+//});
 
  $("#request_room_id1").bind("change", function(){
-  $new_val = $(this).val();
+  if ($("#request_status").val() == 'reschedule'){
+    $.ajax({
+    type: 'POST',
+    url: "/check_crossplatform",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule'},                                                                                  
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+    console.log("true");
+
+  }
+ /* $new_val = $(this).val();
   console.log($new_val);
-$res = confirm("Do you really want to change room");
- if ($res){
+$res = confirm("Do you really want to change room");*/
+ //if ($res){
  // $("request_room_id1 > select > option[value=" + 8 + "]").attr("selected",true);
 
-$("#request_room_id1 option[value='"+$new_val+"']").attr("selected", true);
+/*$("#request_room_id1 option[value='"+$new_val+"']").attr("selected", true);
  // $("request_room_id1 select").val($new_val);
 console.log("true") ;
 console.log($new_val);
@@ -191,7 +290,7 @@ $("#request_room_id1 option[value='"+$prev_res+"']").attr("selected", true);
 console.log("false");
 console.log($prev_res);
 }
-
+*/
 
  // $.post('/check_email?email='+$("#email_box").val(),function(data){    });
 /*$.ajax({
@@ -287,8 +386,187 @@ $.ajax({
   });
 });       
 
+$("#request_date_2i").bind("change", function(){
+    //check_date();
+    $.ajax({
+    type: 'POST',
+    url: "/check_schedule1",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule',
+      "room_id":$("#request_room_id1").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()},                                                                                             
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+
+  });
 
 
+$("#request_date_1i").bind("change", function(){
+    //check_date();
+    $.ajax({
+    type: 'POST',
+    url: "/check_schedule1",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule',
+      "room_id":$("#request_room_id1").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()},                                                                                             
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+
+  });
+
+
+$("#request_startd_4i").bind("change", function(){
+    //check_date();
+    $.ajax({
+    type: 'POST',
+    url: "/check_schedule1",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule',
+      "room_id":$("#request_room_id1").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()},                                                                                             
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+
+  });
+
+
+$("#request_startd_5i").bind("change", function(){
+    //check_date();
+    $.ajax({
+    type: 'POST',
+    url: "/check_schedule1",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule',
+      "room_id":$("#request_room_id1").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()},                                                                                             
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+
+  });
+
+
+
+$("#request_endd_4i").bind("change", function(){
+    //check_date();
+    $.ajax({
+    type: 'POST',
+    url: "/check_schedule1",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule',
+      "room_id":$("#request_room_id1").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()},                                                                                             
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+
+  });
+
+
+
+
+$("#request_endd_5i").bind("change", function(){
+    //check_date();
+    $.ajax({
+    type: 'POST',
+    url: "/check_schedule1",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "room": $(this).val(),
+            "email": $("#email_input").val(),
+            "act":'reschedule',
+      "room_id":$("#request_room_id1").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()},                                                                                             
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+
+  });
 
          }) //end document ready function
 

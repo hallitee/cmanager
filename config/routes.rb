@@ -6,7 +6,8 @@ match '/check_email' =>"requests#check_email", :via => :post, :as => :chk_email
 match '/check_crossplatform' =>"requests#check_crossplatform", :via => :post, :as => :check_crossplatform
  match '/check_schedule' =>"requests#check_schedule", :via => :post, :as => :check_schedule
  match '/check_attendees' =>"requests#check_attendees", :via => :post, :as => :check_attendees
-
+match '/check_schedule1' =>"requests#check_schedule1", :via => :post, :as => :check_schedule1
+ 
 
  # authenticated :users do
   #resources :requests, only: [:new, :status, :index, :show, :create, :edit, :update, :destroy]

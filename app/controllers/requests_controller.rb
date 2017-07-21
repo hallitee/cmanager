@@ -11,6 +11,8 @@ class RequestsController < ApplicationController
 def status 
 @request = Request.find(params[:id])
 @all = Request.where("staff_id=?", @request.staff_id)
+@staff = Staff.where("email=?", @request.email).first
+@room = Room.where("id=?", @request.room_id).first
 if params[:email] != @request.email
 redirect_to index_dashboard_url, alert: 'Invalid Request Email, please enter email used to submit booking' 
 
@@ -28,6 +30,7 @@ end
 
   # GET /requests/new
   def new
+    @staff = Staff.first
   @request = Request.new
   @comp = 'all'
 
@@ -63,7 +66,7 @@ end
       if @request.save
         format.html { redirect_to index_dashboard_url, notice: 'Request was successfully created.'}
         format.json { render :show, status: :created, location: @request }
-        RequestMailer.newreq(@request).deliver
+        RequestMailer.newreq(@request).deliver_later!(wait: 30.seconds)
       else
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }
@@ -305,20 +308,42 @@ end
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
   def update
+    @staff = current_user.email
+    if params[:status] = 'reschedule'
+      params[:status]= 'booked'
+      session[:reschedule]='reschedule'
+    elsif params[:status] = 'cancel'
+      params[:status]= 'cancelled'   
+      session[:cancelled]='cancelled'     
+    end 
+    if @staff.nil?
+        #redirect_back fallback_location: new_request_url
+       redirect_to new_request_url, alert: "Email Record not found, contact Admin for registration"
+
+         # request.staff.id = @staff.id
+      elsif session[:cross_platform_error]
+       redirect_to (:back), alert: "Company/location incorrect, contact Admin."
+      elsif session[:date_error]
+      redirect_to (:back), alert: "Room Booked, choose another date!"
+      elsif session[:time_error]
+      redirect_to (:back),  alert: "Check meeting duration, adjust start/stop time!" 
+      elsif  session[:attendees_error]     
+         redirect_to (:back), alert: "Please check Attendees, should be greater than zero !!" 
+      else
     respond_to do |format|
       if @request.update(request_params)
             if @request.status == 'approved'
-            RequestMailer.approved(@request).deliver
-          elsif @request.status == 'reschedule'
+            RequestMailer.approved(@request).deliver_later!(wait: 30.seconds)
+          elsif @request.status == 'booking'
             if user_signed_in?
-            RequestMailer.reschedule(@request).deliver
+            RequestMailer.reschedule(@request).deliver_later!(wait: 30.seconds)
           else
-            RequestMailer.reminder(@request).deliver
+            RequestMailer.reminder(@request).deliver_later!(wait: 30.seconds)
           end
           elsif @request.status == 'rejected'
-            RequestMailer.rejected(@request).deliver
+            RequestMailer.rejected(@request).deliver_later!(wait: 30.seconds)
           elsif @request.status == 'pending'
-            RequestMailer.reminder(@request).deliver
+            RequestMailer.reminder(@request).deliver_later!(wait: 30.seconds)
           end 
               
         if user_signed_in?
@@ -334,6 +359,8 @@ end
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
     end #end respond to update
+
+  end # if validations check 
   end
 
   # DELETE /requests/1

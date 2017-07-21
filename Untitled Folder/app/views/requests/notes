@@ -1,0 +1,21 @@
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+    <div " class="alert <% if notice.nil? %><% else%> <%= 'alert-success' %>"><%end%> <h4 style="margin-left: 40%" id="notice"> <b><%= notice %></b></h4></div> 
+<div class="alert <% if alert.nil? %><% else%> <%= 'alert-danger' %>"><%end%> <h5 style="margin-left: 40%" id="notice"> <b><%= alert %></b></h4></div> 
+
+ <p class="pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <% link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+  <% link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <% link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+  <% link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
+                </div>
+            </div>
+
+        </div>

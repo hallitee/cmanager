@@ -1,0 +1,156 @@
+<%= form_for(request) do |f| %>
+  <% if request.errors.any? %>
+    <div id="error_explanation" style="color: red;margin-left: 30%">
+      <h3><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h3>
+
+      <ul>
+      <% request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">    
+<% state = "false" %>
+
+    <div id="signupbox" style="  margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" >
+            <div class="panel-heading " >
+                <div class="panel-title" >Create New Request </div>
+            </div>  
+            <div class="panel-body" >
+
+                        <div id="div_id_select" class="form-group required">
+                            <label for="id_select"  class="control-label col-md-4  requiredField">Title<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                          <%= f.text_field(:title, style: 'margin-bottom: 10px', class:'input-md emailinput form-control') %>
+                            </div>
+                        </div> 
+   
+
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.text_field(:email, style:'margin-bottom: 10px', class:'input-md emailinput form-control',data: {trigger: "blur"}, data: {required: "true" }, remote: true, id: 'email_box')%>
+                       <p id="email_error" style="display:none"> You are not eligible to request, contact Admin </p>
+                            </div>     
+                        </div> 
+                    
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Request By<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.text_field(:requestby, style:'margin-bottom: 10px', id: 'requester_name', class:'input-md emailinput form-control')%>
+
+                            </div>     
+                        </div>      
+
+
+
+                        <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Select Room<span class="asteriskField">*</span> </label>
+
+                            <%= render partial: 'roomlist', locals: {f: f}  %>
+
+                               <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
+                        </div> 
+                        <%= f.hidden_field(:staff_id, {id: 'staff_id'}) %>
+
+                        <div id="div_id_As" class="form-group required">
+                            <label for="id_As"  class="control-label col-md-4  requiredField">Meeting Date<span class="asteriskField">*</span></label>
+                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                              <%= f.date_select(:date, style:'margin-bottom: 10px',:order => [:day, :month, :year], :disabled => false, :html => {:class => "form-horizontal center"})%>
+           <p id="date_error" style="display:none"> You are not eligible to request, contact Admin </p>
+
+                            </div>
+                        </div>
+
+                        <div id="div_id_username" class="form-group required">
+                            <label for="id_username" class="control-label col-md-4  requiredField"> Start time<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 col-md-pull-0">
+                        <div class="input-md emailinput form-control " style="margin-bottom: 10px; border: 1px solid white" > 
+                       <%= f.time_select(:startd, style:'margin-bottom: 10px',  :disabled => false, ignore_date: true)%> HH:MM
+                          </div>
+                                <p id="time_error" style="display:none">  </p>
+                            </div>
+                        </div>
+
+                        <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> End time<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                         
+                             <div class="input-md emailinput form-control" style="margin-bottom: 10px; border: 1px solid white" > 
+                       <%= f.time_select(:endd, style:'margin-bottom: 10px', :disabled => false, ignore_date: true)%> HH:MM
+                     
+                          </div>
+                            </div>     
+                        </div>
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Description<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.text_area(:desc, style:'margin-bottom: 10px', class:'input-md emailinput form-control')%>
+
+                            </div>     
+                        </div>   
+
+  
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField">Number of Attendees<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.number_field(:attendees, style:'margin-bottom: 20px',:remote => true, class:'input-md emailinput form-control')%>
+                            <%= f.hidden_field :status, :value => 'booked' %>
+                            <p id="attendees_error" style="display:none"> You are not eligible to request, contact Admin </p>
+                            </div>     
+                        </div> 
+
+
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Projector<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.check_box(:projector, style:'margin-bottom: 10px', class:'input-md emailinput form-control')%>
+
+                            </div>     
+                        </div>  
+
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Refreshment<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.check_box(:refreshment, style:'margin-bottom: 10px', class:'input-md emailinput form-control')%>
+
+                            </div>     
+                        </div>   
+
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Other requirements<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                            
+                              <%= f.text_area(:special, style:'margin-bottom: 10px', class:'input-md emailinput form-control')%>
+
+                            </div>     
+                        </div>   
+
+
+
+                         <div id="div_id_email" class="form-group required">
+                            
+                            <div class="control-label col-md-4  requiredField" > <%= link_to 'Back', index_dashboard_path, class: 'btn btn-default' %>  </div>
+                               
+                            <div class="controls col-md-8 ">
+                            <input type="submit" name="Signup" value="Book Now" class="btn btn-default" id="submit-id-signup" /> 
+                           
+                            </div>     
+                        </div>     
+      
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+<% end %>

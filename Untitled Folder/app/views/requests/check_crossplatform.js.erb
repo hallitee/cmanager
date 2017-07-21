@@ -1,0 +1,14 @@
+
+
+<% if @cross_platform_error == true %>
+$("#domain_error").css({'display':'block','color':'red'});
+<% else %>
+$("#domain_error").css({'display':'none','color':'red'});
+<% end %>
+
+
+console.log("<%= @staff.email %>");
+
+console.log("<%= @room.name %>");
+
+console.log("<%= @cross_platform_error %>");

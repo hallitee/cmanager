@@ -6,7 +6,7 @@
  <%= link_to("ALL REQUEST", admin_index_path, class: "btn btn-default btn-block btn-md" ) %>                       
                     </div>
                     <div style="margin:10px;">
-<%= link_to("PENDING", admin_pending_path, class: "btn btn-default btn-block btn-md" ) %>
+<%= link_to("BOOKED", admin_pending_path, class: "btn btn-default btn-block btn-md" ) %>
                     </div>
                     <div style="margin:10px;">
 <%= link_to("APPROVED", admin_approved_path, class: "btn btn-default btn-block btn-md" ) %>
@@ -46,10 +46,10 @@
                             <td><%= b[1] %></td>
               <% c = f.endd.to_s.split(" ") %>                              
                             <td><%= c[1] %></td>
-                            <td><%= f.status %></td>
-                            <% if f.status == 'pending' || f.status == 'reschedule' || f.status == 'rejected' %>
+                            <td> <%= f.status %> </td>
+                            <% if f.status == 'booked' || f.status == 'pending' || f.status == 'reschedule' || f.status == 'rejected' %>
                             <% b = link_to 'Edit', edit_request_path(f) %>
-                            <% elsif f.status == 'approved' %>
+                            <% elsif f.status == 'approved' || f.status == 'cancelled' %>
                              <% b = link_to 'View', f %>
                             <% end %>
                             <td> <%= b %></td>

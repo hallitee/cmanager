@@ -3,20 +3,16 @@
             <div class="row">
                 <div class="col-md-2 col-md-offset-0" style="margin-top:5%; border: 0px solid lightgrey; background-color:lightgrey">
                     <div style="margin:10px;">
- <%= link_to("ALL REQUEST", admin_index_path, class: "btn btn-default btn-block btn-md" ) %>                       
+ <%= link_to("ALL REQUEST", admin_manager_path, class: "btn btn-default btn-block btn-md" ) %>                       
                     </div>
                     <div style="margin:10px;">
-<%= link_to("PENDING", admin_pending_path, class: "btn btn-default btn-block btn-md" ) %>
+<%= link_to("BOOKED", admin_manager_path(:ps=> "booked"), class: "btn btn-default btn-block btn-md" ) %>
                     </div>
                     <div style="margin:10px;">
-<%= link_to("APPROVED", admin_approved_path, class: "btn btn-default btn-block btn-md" ) %>
+<%= link_to("UPCOMING", admin_manager_path(:ps=> "coming"), class: "btn btn-default btn-block btn-md" ) %>
                     </div>
                     <div style="margin:10px;">
-<%= link_to("RESCHEDULE", admin_reschedule_path, class: "btn btn-default btn-block btn-md" ) %>
-                    </div>
-                    <div style="margin:10px;">
-                        <button class="btn btn-default btn-block btn-md" type="button">
-                        CHANGE PASSWORD</button>
+ <%= link_to 'CHANGE PASSWORD', edit_user_registration_path, :class => 'btn btn-default btn-block btn-md' %>
                     </div>
                     <div class="btn-group" role="group"></div>
                 </div>
@@ -46,10 +42,10 @@
                             <td><%= b[1] %></td>
               <% c = f.endd.to_s.split(" ") %>                              
                             <td><%= c[1] %></td>
-                            <td><%= f.status %></td>
-                            <% if f.status == 'pending' || f.status == 'reschedule' || f.status == 'rejected' %>
+                            <td> <%= f.status %> </td>
+                            <% if f.status == 'booked' || f.status == 'pending' || f.status == 'reschedule' || f.status == 'rejected' %>
                             <% b = link_to 'Edit', edit_request_path(f) %>
-                            <% elsif f.status == 'approved' %>
+                            <% elsif f.status == 'approved' || f.status == 'cancelled' %>
                              <% b = link_to 'View', f %>
                             <% end %>
                             <td> <%= b %></td>

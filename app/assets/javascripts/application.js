@@ -81,8 +81,12 @@ $.ajax({
 
 }
   $("#request_status option").each(function(){
-    if($(this).val() == 'booked'){
+     $stat = $("#stat_label").text().toLowerCase();
+     $value = $(this).text();
+    console.log($value);
+    if( $value == 'booked'){
       $(this).remove();
+
     }
   });
  my_events($room_id);

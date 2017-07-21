@@ -207,14 +207,13 @@
                            
                             <div class="controls col-md-3 col-md-push-5 ">
                             <% if @request.status == 'booked' &&  user_signed_in? %>
+                           
                                 <%= f.submit :update, class: "btn btn-default" %>
                              
                             <% elsif @request.status == 'reschedule' && user_signed_in? %>
+                             
+                                 <%= f.submit :update, class: "btn btn-default" %>
                             
-                                 <%= f.submit :update, class: "btn btn-default" %>
-                            <% elsif @request.status == 'rejected' && user_signed_in? %>
-                                  <% f.text_field(:status, style:'margin-bottom: 10px', class:'input-md emailinput form-control', value: 'pending')%>
-                                 <%= f.submit :update, class: "btn btn-default" %>
                              <% end %>  
                             </div>
                                <div class="controls col-md-2  "> </div>

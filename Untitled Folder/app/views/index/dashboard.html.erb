@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking</title>
+</head>
+
+<body>
+<!--
+  <% if notice %>
+  <p class="alert alert-success" style="margin-right:10px"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger" style="margin-left:0px"><%= alert %></p>
+<% end %>
+-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                     <%= collection_select(:@r, :room_id, Room.all, :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
+
+                    <div id="calendar"> </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center"><i class="glyphicon glyphicon-calendar"></i></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"><a class="btn btn-default btn-lg btn-block" role="button" href="<%= new_request_url %>">Book Room</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center"><i class="glyphicon glyphicon-eye-open"></i></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                      <!--      <button class="btn btn-default btn-lg btn-block" onclick="myFunc(); return false;" type="button">View Booking</button>  -->
+                        
+                             <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal">View Booking</button>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center"><i class="glyphicon glyphicon-stats"></i></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-default btn-block btn-lg" type="button">Status : Available </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

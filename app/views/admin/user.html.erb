@@ -37,7 +37,7 @@
 <section>
         <div class="container visible-xs-block visible-sm-block visible-md-block visible-lg-block visible-xs-inline">
             <div class="row">
-                <div class="col-md-2 col-md-offset-0" style="margin-top:5%; border: 0px solid lightgrey; background-color:lightgrey">
+                <div class="col-md-2 " style="margin-top:5%; border: 0px solid lightgrey; background-color:lightgrey">
                     <div style="margin:10px;">
  <%= link_to("ALL REQUEST", admin_user_path, class: "btn btn-default btn-block btn-md" ) %>                       
                     </div>
@@ -47,12 +47,10 @@
                     <div style="margin:10px;">
 <%= link_to("UPCOMING EVENTS", admin_user_path(:ps=>"coming"), class: "btn btn-default btn-block btn-md" ) %>
                     </div>
+                   
                     <div style="margin:10px;">
-<%= link_to("RESCHEDULE", admin_reschedule_path, class: "btn btn-default btn-block btn-md" ) %>
-                    </div>
-                    <div style="margin:10px;">
-                        <button class="btn btn-default btn-block btn-md" type="button">
-                        CHANGE PASSWORD</button>
+                    <%= link_to 'CHANGE PASSWORD', edit_user_registration_path, :class => 'btn btn-default btn-block btn-md' %>
+                       
                     </div>
                     <div class="btn-group" role="group"></div>
                 </div>

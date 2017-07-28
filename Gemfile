@@ -5,6 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+gem 'rails_12factor'
+gem 'daemons'
+gem 'delayed_job'
+gem 'delayed_job_active_record'
 gem 'awesome_print'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'

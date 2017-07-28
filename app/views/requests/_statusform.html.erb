@@ -13,7 +13,7 @@
 <h4 style="margin-left: 45%" id="notice"> <b><%= notice %></b></h4>
 <% cssclass = "input-md emailinput form-control" %>
 <div class="container">    
-    <div id="signupbox" style="  margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div id="signupbox" style="  margin-top:50px" class="mainbox col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info" >
             <div class="panel-heading " >
                 <div class="panel-title" >View Request Status</div>
@@ -45,16 +45,13 @@
                             <label for="id_email" class="control-label col-md-4  requiredField"> Select Room<span class="asteriskField">*</span> </label>
 
                            <div id="room_loc" class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                             <% if @staff.crossplatform %>
-                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
-                                <% else %>
-                                <% if @staff.priviledge && @staff.company != @room.company %>
-                                <%= f.collection_select(:room_id, Room.where("company='HQ'"), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
-                                <% else %>
-                                <%= f.collection_select(:room_id, Room.where("company=?", @staff.company), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
-
-                                <% end %>
-                              <% end %>
+                                <% if @staff.crossplatform %>
+                                     <%= f.collection_select(:room_id, Room.all, :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% elsif  @staff.location == 'IKOYI' %>
+                                           <%= f.collection_select(:room_id, Room.where("location='IKOYI'"), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% else %>
+                                      <%= f.collection_select(:room_id, Room.where("company=?", @staff.company), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                          <% end %>
                           <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
                             </div>   
 
@@ -85,13 +82,9 @@
                             <div class="controls col-md-8 col-md-pull-0">
                       
                        <div class="input-md emailinput form-control " style="margin-bottom: 10px; border: 1px solid white" >
-                       <% if @request.status == 'reschedule' %>
-                       <%= f.time_select(:startd, style:'margin-bottom: 10px', :value => @request.startd, :disabled => false, ignore_date: true)%> HH:MM
-                         <% else %>
-                            <%= f.time_select(:startd, style:'margin-bottom: 10px', :value => @request.startd, :disabled => true, ignore_date: true)%> HH:MM
-                      
-                         <% end %>
-                          
+
+                       <%= f.time_select(:startd, style:'margin-bottom: 10px', :value => @request.startd, :disabled => false, ignore_date: false)%> HH:MM
+ 
                           </div> 
                           <p id="time_error" style="display:none">  </p>
                             </div>     
@@ -103,11 +96,9 @@
                             
                           
                         <div class="input-md emailinput form-control" style="margin-bottom: 10px; border: 1px solid white" > 
-                        <% if @request.status == 'reschedule' %>
-                       <%= f.time_select(:endd, style:'margin-bottom: 10px',:value => @request.endd, :disabled => false, ignore_date: true)%> HH:MM
-                        <% else %>
-                          <%= f.time_select(:endd, style:'margin-bottom: 10px',:value => @request.endd, :disabled => true, ignore_date: true)%> HH:MM
-                          <% end %>
+                    
+                       <%= f.time_select(:endd, style:'margin-bottom: 10px',:value => @request.endd, :disabled => false, ignore_date: false)%> HH:MM
+
                            <p id="time_error" style="display:none">  </p>
                           </div>
                             </div>     
@@ -150,7 +141,7 @@
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                       <input type="checkbox" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="projector" value="<%= @request.projector %>" <% if @request.projector == true %>
                         <%= "checked" %>
-                        <% end %> disabled>           
+                        <% end %> >           
                             </div>     
                         </div>
 
@@ -159,7 +150,7 @@
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                       <input type="checkbox" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="refreshment" value="<%= @request.refreshment %>" <% if @request.refreshment == true %>
                         <%= "checked" %>
-                        <% end %> disabled>           
+                        <% end %> >           
                             </div>     
                         </div>
 

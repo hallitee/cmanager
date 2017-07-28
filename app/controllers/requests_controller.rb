@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
-    before_filter :authenticate_user!, :only => [:destroy,  :index]
+  before_action :authenticate_user!
+    #before_filter :authenticate_user!, :only => [:destroy,  :index]
 @cross_platform_error = nil
   # GET /requests
   # GET /requests.json
@@ -30,7 +31,7 @@ end
 
   # GET /requests/new
   def new
-    @staff = Staff.first
+  logged_in
   @request = Request.new
   @comp = 'all'
 
@@ -38,8 +39,8 @@ end
 
   # GET /requests/1/edit
   def edit
-  @staff= Staff.joins(:requests).select("*").where(requests: {id: params[:id]}).first
-  @room = Room.joins(:requests).select("*").where(requests: {id: params[:id]}).first
+  logged_in
+  #@staff= Staff.joins(:requests).select("*").where(requests: {id: params[:id]}).first
   end
 
   # POST /requests
@@ -61,12 +62,24 @@ end
       elsif  session[:attendees_error]     
         redirect_to new_request_url, alert: "Please check Attendees, should be greater than zero !!" 
       else
-     @request = Request.new(request_params)
+       sy=params[:request]["date(1i)"].to_i
+        sm=params[:request]["date(2i)"].to_i
+        sd=params[:request]["date(3i)"].to_i
+        sh=params[:request]["startd(4i)"].to_i
+        smin=params[:request]["startd(5i)"].to_i        
+        ey=params[:request]["date(1i)"].to_i
+        em=params[:request]["date(2i)"].to_i
+        ed=params[:request]["date(3i)"].to_i
+        eh=params[:request]["endd(4i)"].to_i
+        emin=params[:request]["endd(5i)"].to_i        
+  @request = Request.new(request_params)
+@request.startd = Time.new sy,sm,sd,sh,smin
+@request.endd = Time.new ey,em,ed,eh,emin
     respond_to do |format|
       if @request.save
         format.html { redirect_to index_dashboard_url, notice: 'Request was successfully created.'}
         format.json { render :show, status: :created, location: @request }
-        RequestMailer.newreq(@request).deliver_later!(wait: 30.seconds)
+        RequestMailer.delay.newreq(@request)
       else
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }
@@ -162,7 +175,9 @@ end
    @start = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["startd(4i)"].to_i, params["startd(5i)"].to_i
    @end = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["endd(4i)"].to_i, params["endd(5i)"].to_i
    # @date_error = Time.parse(params[:my_date]) 
-   if @date >= Date.today
+   if @date >= Date.today || !Date.today.sunday? 
+
+
               @date_err = false
               session[:date_error] = false
                session[:time_error] = false
@@ -172,7 +187,7 @@ end
         session[:time_error] = true
       else
 
-        if @start.hour == @end.hour
+            if @start.hour == @end.hour
                   if @end.min <= @start.min
                         @time_error = "Incorrect duration check time range!"
                          @time_err = true
@@ -182,14 +197,18 @@ end
                           @time_err = true
                          session[:time_error] = true
                    end
-
            elsif @date == Date.today
                     if @start.hour < Time.now.hour
                      @time_error = "Invalid time, time past please correct!"
                     session[:time_error] = true
                    end
+          elsif @start.hour > @end.hour
+                     @time_error = "Invalid time, please correct end time!"
+                    session[:time_error] = true          
             end #end date OK but same hour chosen 
 
+       
+           
         @res = Request.where("date= ? and room_id= ?", @date, params[:room_id])
         @time_err = false
         #session[:time_error] = false
@@ -268,6 +287,7 @@ end
         #session[:time_error] = false
         @res.each{ |f|
           if @start.hour.between?(f.startd.hour, f.endd.hour)
+             if current_user.email != @res.email
               @date_error = "Room scheduled, choose another time/room!"
               @time_err =true
               @date_err = true
@@ -288,12 +308,13 @@ end
               @date_err = true
               session[:date_error] = true
             end
-
+          end 
           elsif @end.hour.between?(f.startd.hour, f.endd.hour)
+            if current_user.email != res.email
             @time_err=true
             session[:date_err] = @time_err
              @date_error = "Room scheduled, choose another time/room!"
-    
+            end
           end
         }
       end  #Time within working hours and checking time conflicts
@@ -331,29 +352,30 @@ end
          redirect_to (:back), alert: "Please check Attendees, should be greater than zero !!" 
       else
     respond_to do |format|
+     # @request.startd =  DateTime.new 2017,07,30,15,15
+     # @request.endd =  DateTime.new 2017,07,30,15,15
+        params[:request]["startd(1i)"]=params[:request]["date(1i)"]
+        params[:request]["startd(2i)"]=params[:request]["date(2i)"]
+        params[:request]["startd(3i)"]=params[:request]["date(3i)"]   
+        params[:request]["endd(1i)"]=params[:request]["date(1i)"]
+        params[:request]["endd(2i)"]=params[:request]["date(2i)"]
+        params[:request]["endd(3i)"]=params[:request]["date(3i)"]
+
       if @request.update(request_params)
-            if @request.status == 'approved'
-            RequestMailer.approved(@request).deliver_later!(wait: 30.seconds)
-          elsif @request.status == 'booking'
-            if user_signed_in?
+      if @request.status == 'reschedule'
             RequestMailer.reschedule(@request).deliver_later!(wait: 30.seconds)
-          else
-            RequestMailer.reminder(@request).deliver_later!(wait: 30.seconds)
+          elsif @request.status == 'cancelled'
+            
+          RequestMailer.rejected(@request).deliver_later!(wait: 30.seconds)
           end
-          elsif @request.status == 'rejected'
-            RequestMailer.rejected(@request).deliver_later!(wait: 30.seconds)
-          elsif @request.status == 'pending'
-            RequestMailer.reminder(@request).deliver_later!(wait: 30.seconds)
-          end 
-              
-        if user_signed_in?
+          if user_signed_in?
 
               
         format.html { redirect_to admin_index_url, notice: 'Request was successfully updated.' }
         else
         format.html { redirect_to index_dashboard_url, notice: 'Request was successfully updated.' }
         format.json { render :show, status: :ok, location: @request }
-      end 
+         end 
       else
         format.html { render :edit }
         format.json { render json: @request.errors, status: :unprocessable_entity }
@@ -384,12 +406,17 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      
+
       params.require(:request).permit(:title, :date, :startd, :endd, :desc, :requestby,
        :email, :reschedule, :room_id, :staff_id, :projector, :refreshment, :special, :attendees, :status, :approval, :final, :remarks)
-            
+
     end
 
+def logged_in
+    @email=current_user.email
+    @staff = Staff.where("email=?", @email).first
+    @room = Room.joins(:requests).select("*").where(requests: {id: params[:id]}).first
+end
 
 
 end

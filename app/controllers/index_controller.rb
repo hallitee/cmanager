@@ -30,7 +30,12 @@ end
 
 
   def dashboard
-  	@r = Room.all
+    if user_signed_in?
+    @email=current_user.email
+    @staff = Staff.where("email=?", @email).first
+    @r = Room.all
+  end 
+  CheckCompletedRequestJob.perform_later
   end
   def test
   end

@@ -215,3 +215,18 @@ end
                     </button>
                 </div>
                 =======================
+           if @request.status == 'approved'
+            RequestMailer.approved(@request).deliver_later!(wait: 30.seconds)
+          elsif @request.status == 'booking'
+            if user_signed_in?
+            RequestMailer.reschedule(@request).deliver_later!(wait: 30.seconds)
+          else
+            RequestMailer.reminder(@request).deliver_later!(wait: 30.seconds)
+          end
+          elsif @request.status == 'rejected'
+            RequestMailer.rejected(@request).deliver_later!(wait: 30.seconds)
+          elsif @request.status == 'pending'
+            RequestMailer.reminder(@request).deliver_later!(wait: 30.seconds)
+          end 
+              
+ 

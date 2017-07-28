@@ -40,7 +40,7 @@ b = @req.startd.to_s.split(" ")
 @startd = b[1]
 c = @req.endd.to_s.split(" ")
 @endd = c[1]
-mail to: "#{@req.email}", subject: "Conference Room Booking Rejected"
+mail to: "#{@req.email}", subject: "Conference Room Booking Cancelled"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -49,8 +49,10 @@ mail to: "#{@req.email}", subject: "Conference Room Booking Rejected"
   #   en.request_mailer.reschedule.subject
   #
   def reschedule(req)
+
 @req = req
 @greeting = "Hi"
+    @room = Room.where("id=?", @req.room_id).first
 b = @req.startd.to_s.split(" ")
 @startd = b[1]
 c = @req.endd.to_s.split(" ")

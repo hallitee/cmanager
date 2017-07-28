@@ -4,23 +4,39 @@
   <br>
   <br>
 <p>
-We regret to inform you that your booking for NPRNL conference room can not be approved
-for the chosen date, we advice rescheduling to available date below 
+Your booking for <%= @room.company + " \s" + @room.name %>  has been rescheduled successfully .
   <br>
   <br>
-<b>
-  <p> Date: 		 <%= @req.date%> </p>
-
-  <p> End Time:		<%= @endd %></p>
-</b>
+<br>
+Please find details to your request below:
  <br>
- <p>To reschedule your booking please click on link below</p><br>
- <p><%= link_to "Reschedule Booking", [:edit, @req] %></p>
+ <br>
+ <p> Meeting Room 				: <%= @room.codename + " > "+ @room.company+" "+@room.name %> </p>
+<br>
+ <p> Meeting Location		    : <%= @room.location %></p>
+<br> 
+ <p> Date 						: <%= @req.date.strftime("%d-%m-%Y") %> </p>
+<br>
 
- <p> <%= link_to 'Edit', edit_request_url(@req) %></p>
-</p>
+ <p> Start Time		    		: <%= @startd %></p>
+<br> 
+ <p> End Time		    		: <%= @endd %></p>
+<br>
+ <p> Reference/Booking Number   : <%= @req.id %> </p>
+<br>
+ <p> Email Address       		: <%= @req.email %></p>
 <br>
 <br>
-<p>We regret any incoveniences caused. 
+<br>
+<h4> 
+To <%= link_to 'view/reschedule/cancel', request_url(@req) %> booking at any time please click the link below <br>
+<br>
+<br>
 
-<p> Warm regards,</p>
+<%= link_to 'Show Booking status', request_url(@req) %>
+</h4>
+<br>
+<br>
+Warm regards, 
+
+

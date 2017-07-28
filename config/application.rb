@@ -15,6 +15,8 @@ config.active_record.time_zone_aware_types = [:datetime, :time]
 config.time_zone = "West Central Africa"
 config.active_record.default_timezone = :local
 
+config.active_job.queue_adapter = :delayed_job
+
 
   end
 

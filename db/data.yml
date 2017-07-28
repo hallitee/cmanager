@@ -9,242 +9,2682 @@ ar_internal_metadata:
   records: 
   - - environment
     - development
-    - '2017-06-06 10:21:04.827097'
-    - '2017-06-06 10:21:04.827097'
+    - 2017-06-06 10:21:04.000000000 +01:00
+    - 2017-06-06 10:21:04.000000000 +01:00
 
 ---
-requests:
+delayed_jobs:
   columns:
   - id
-  - title
-  - date
-  - startd
-  - endd
-  - desc
-  - requestby
-  - email
-  - reschedule
-  - projector
-  - refreshment
-  - special
-  - attendees
-  - status
-  - approval
-  - final
-  - remarks
+  - priority
+  - attempts
+  - handler
+  - last_error
+  - run_at
+  - locked_at
+  - failed_at
+  - locked_by
+  - queue
   - created_at
   - updated_at
   records: 
   - - 1
-    - CUCM TRAINING
-    - '2017-06-12'
-    - '2017-06-08 02:00:00'
-    - '2017-06-08 03:00:00'
-    - Training EKO and NATURAL staff on CUCM updates
-    - 'Taofik '
-    - taofik@gmail.com
-    - '2017-06-15'
-    - true
-    - true
-    - Drink and Meat Pie, Markers and Duster
-    - 6
-    - approved
-    - ''
-    - ''
-    - ''
-    - '2017-06-08 16:35:15.249402'
-    - '2017-06-15 20:29:00.799095'
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: 58247c68-178e-4182-a791-e094778c990f\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:07:11.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:07:11.000000000 +01:00
+    - 2017-07-24 10:07:11.000000000 +01:00
   - - 2
-    - Network Training
-    - '2017-06-14'
-    - '1970-01-01 16:00:00'
-    - '1970-01-01 17:30:00'
-    - To train both Kello and Kayode on network support
-    - Yonatan
-    - yonatan.refa@esrnl.com
-    - '2017-06-16'
-    - false
-    - false
-    - We might require drinks and snacks
-    - 2
-    - approved
-    - ''
-    - ''
-    - ''
-    - '2017-06-09 08:18:43.615208'
-    - '2017-06-16 23:16:59.625319'
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: c0771c54-6697-44b7-b529-19cde41553fd\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:10:25.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:10:25.000000000 +01:00
+    - 2017-07-24 10:10:25.000000000 +01:00
   - - 3
-    - warehouse meeting
-    - '2017-06-15'
-    - '1970-01-01 10:30:00'
-    - '1970-01-01 11:00:00'
-    - Meeting with all WH outsource workers
-    - Surung Marpaung
-    - surung.marpaung@natural-prime.com
-    - '2017-06-15'
-    - false
-    - true
-    - ''
-    - 10
-    - reschedule
-    - ''
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: b859c6c3-921f-41e5-bafd-aeadd40b6576\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:15.000000000 +01:00
     - 
     - 
-    - '2017-06-12 22:47:56.120119'
-    - '2017-06-19 16:07:32.766826'
+    - 
+    - default
+    - 2017-07-24 10:14:15.000000000 +01:00
+    - 2017-07-24 10:14:15.000000000 +01:00
   - - 4
-    - Fiber optics training for IT Staff
-    - '2017-06-16'
-    - '2017-06-15 12:00:00'
-    - '2017-06-15 13:30:00'
-    - Will carry out first hand practical fiber optics network training
-    - Taofik
-    - taofik@gmail.com
-    - '2017-06-20'
-    - true
-    - true
-    - ''
-    - 2
-    - pending
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: 06567a5a-c439-4085-9947-6167f1974a06\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:20.000000000 +01:00
     - 
     - 
     - 
-    - '2017-06-15 09:50:08.568204'
-    - '2017-06-19 16:07:46.648313'
+    - default
+    - 2017-07-24 10:14:20.000000000 +01:00
+    - 2017-07-24 10:14:20.000000000 +01:00
   - - 5
-    - Carton Packing training
-    - '2017-06-17'
-    - '1970-01-01 10:30:00'
-    - '1970-01-01 11:00:00'
-    - Train carton boys by supervisor
-    - Oyedemi
-    - o@m.com
-    - '2017-06-15'
-    - true
-    - true
-    - ''
-    - 4
-    - pending
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: e07aa465-d802-4903-a5c2-57a7fc80a2b3\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:21.000000000 +01:00
     - 
     - 
     - 
-    - '2017-06-15 10:02:02.801808'
-    - '2017-06-15 10:02:02.801808'
+    - default
+    - 2017-07-24 10:14:21.000000000 +01:00
+    - 2017-07-24 10:14:21.000000000 +01:00
   - - 6
-    - UTC Time to EPOCH TRAINING
-    - '2017-06-16'
-    - '1970-01-01 18:00:00'
-    - '1970-01-01 18:30:00'
-    - Just 45minutes training
-    - Godfrey
-    - g@f.com
-    - '2017-06-15'
-    - true
-    - true
-    - 'Let us know what you want. '
-    - 6
-    - pending
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: 981bdd10-9072-479d-9724-85b36ffcb71a\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:22.000000000 +01:00
     - 
     - 
     - 
-    - '2017-06-15 12:34:05.170617'
-    - '2017-06-15 12:34:05.170617'
+    - default
+    - 2017-07-24 10:14:22.000000000 +01:00
+    - 2017-07-24 10:14:22.000000000 +01:00
   - - 7
-    - Testing
-    - '2017-06-17'
-    - '1970-01-01 02:03:00'
-    - '1970-01-01 06:03:00'
-    - ewfrwgrgre
-    - me
-    - g@g.com
-    - '2017-06-16'
-    - true
-    - true
-    - efdef
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: 7c925a91-af2d-4ce7-8308-e3a67c9164a8\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:25.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:14:25.000000000 +01:00
+    - 2017-07-24 10:14:25.000000000 +01:00
+
+---
+rooms:
+  columns:
+  - id
+  - name
+  - codename
+  - company
+  - location
+  - capacity
+  - condition
+  - status
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Main Conference Room
+    - Lavender
+    - HQ
+    - IKOYI
+    - 25
+    - GOOD
+    - ''
+    - 2017-07-04 13:48:22.000000000 +01:00
+    - 2017-07-04 13:48:22.000000000 +01:00
+  - - 2
+    - Smallest Guest Room
+    - Jasmine
+    - HQ
+    - IKOYI
+    - 3
+    - GOOD
+    - ''
+    - 2017-07-04 13:49:02.000000000 +01:00
+    - 2017-07-04 13:49:02.000000000 +01:00
+  - - 3
+    - Medium Guest Room
+    - Orchid
+    - HQ
+    - IKOYI
+    - 6
+    - GOOD
+    - ''
+    - 2017-07-04 13:49:43.000000000 +01:00
+    - 2017-07-04 13:49:43.000000000 +01:00
+  - - 4
+    - ESRNL Factory Conference Room
+    - Sunflower
+    - ESRNL
+    - AGBARA
+    - 45
+    - GOOD
+    - ''
+    - 2017-07-04 13:51:34.000000000 +01:00
+    - 2017-07-04 13:51:34.000000000 +01:00
+  - - 5
+    - NPRNL Factory Conference Room
+    - Rose
+    - NPRNL
+    - AGBARA
+    - 40
+    - GOOD
+    - ''
+    - 2017-07-04 13:57:35.000000000 +01:00
+    - 2017-07-04 13:57:35.000000000 +01:00
+  - - 6
+    - NPRNL Training Room
+    - Tulip
+    - NPRNL
+    - AGBARA
+    - 25
+    - GOOD
+    - ''
+    - 2017-07-04 13:59:28.000000000 +01:00
+    - 2017-07-04 13:59:28.000000000 +01:00
+  - - 7
+    - Guest Room 1 Gr. Floor
+    - Aster
+    - PFNL
+    - AGBARA
     - 5
-    - pending
-    - 
-    - 
-    - 
-    - '2017-06-16 01:04:16.862888'
-    - '2017-06-16 01:04:16.862888'
+    - GOOD
+    - ''
+    - 2017-07-04 14:00:49.000000000 +01:00
+    - 2017-07-04 14:00:49.000000000 +01:00
   - - 8
-    - CUCM Second training
-    - '2017-06-19'
-    - '1970-01-01 13:54:00'
-    - '1970-01-01 14:54:00'
-    - Train new incoming guy
-    - kayode Olayemi
-    - kayode.olayemi@yahoo.com
-    - '2017-06-16'
-    - true
-    - true
-    - Food for two participants
-    - 2
-    - approved
-    - 
-    - 
-    - 
-    - '2017-06-16 15:55:22.399197'
-    - '2017-06-16 15:55:46.886381'
+    - Guest Room 2  Gr. Floor
+    - Anthurium
+    - PFNL
+    - AGBARA
+    - 5
+    - GOOD
+    - ''
+    - 2017-07-04 14:01:46.000000000 +01:00
+    - 2017-07-04 14:01:46.000000000 +01:00
   - - 9
-    - 'SAP Training '
-    - '2017-06-17'
-    - '1970-01-01 12:30:00'
-    - '1970-01-01 14:30:00'
-    - 'Training Natural Warehouse on SAP '
-    - Yonatan Refa
-    - yonatan.refa@esrnl.com
-    - '2017-06-16'
-    - true
-    - true
-    - Food for Instructor
-    - 5
-    - approved
-    - 
-    - 
-    - 
-    - '2017-06-16 15:58:59.364900'
-    - '2017-06-16 16:00:49.970277'
+    - Main Conference Room (1st Floor)
+    - Dahlia
+    - PFNL
+    - AGBARA
+    - 10
+    - GOOD
+    - ''
+    - 2017-07-04 14:02:42.000000000 +01:00
+    - 2017-07-04 14:02:42.000000000 +01:00
   - - 10
-    - 'Email test '
-    - '2017-06-17'
-    - '1970-01-01 04:16:00'
-    - '1970-01-01 04:16:00'
-    - 'Let me know if you got this '
-    - Taofik Alli-Balogun
-    - hallitee_2005@yahoo.com
-    - '2017-06-17'
-    - true
-    - true
-    - Foord for two
-    - 5
-    - pending
+    - Meeing Room (1st Floor Next Power Room)
+    - Euphorbia
+    - PFNL
+    - AGBARA
+    - 6
+    - GOOD
+    - ''
+    - 2017-07-04 14:03:34.000000000 +01:00
+    - 2017-07-04 14:03:34.000000000 +01:00
+
+---
+staffs:
+  columns:
+  - id
+  - name
+  - email
+  - company
+  - location
+  - priviledge
+  - crossplatform
+  - created_at
+  - updated_at
+  records: 
+  - - 271
+    - abosede ajibare
+    - abosede.ajibare@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 272
+    - adajie regina
+    - adajie.regina@esrnl.com
+    - ESRNL
+    - APAPA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 273
+    - adedoyin aiyeola
+    - adedoyin.aiyeola@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 274
+    - adetutu popoola
+    - adetutu.popoola@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 275
+    - afolabi okesanjo
+    - afolabi.okesanjo@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 276
+    - agbara cctv
+    - agbara.cctv@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 277
+    - agbara clinic
+    - agbara.clinic@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 278
+    - akeem oyalowo
+    - akeem.oyalowo@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 279
+    - akinyoade gabriel
+    - akinyoade.gabriel@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 280
+    - albert afagbon
+    - albert.afagbon@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 281
+    - alex setiabudi
+    - alex.setiabudi@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 282
+    - amobi okoh
+    - amobi.okoh@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 283
+    - amos chukuji
+    - amos.chukuji@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 284
+    - anjola babatunde
+    - anjola.babatunde@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 285
+    - antonio deogracias
+    - antonio.deogracias@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 286
+    - asep tomy
+    - asep.tomy@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 287
+    - austin asindi
+    - austin.asindi@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 288
+    - ayodeji adewumi
+    - ayodeji.adewumi@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 289
+    - babalola toye
+    - babalola.toye@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 290
+    - chibuzor obiekwe
+    - chibuzor.obiekwe@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:30.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
+  - - 291
+    - chidimma anyanwu
+    - chidimma.anyanwu@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 292
+    - chimezie obidimma
+    - chimezie.obidimma@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 293
+    - chukwunonso anyadike
+    - chukwunonso.anyadike@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 294
+    - 'cooperative '
+    - cooperative@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 295
+    - cyril ogude
+    - cyril.ogude@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 296
+    - dare ojo
+    - dare.ojo@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 297
+    - david egurube
+    - david.egurube@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 298
+    - dayo agunbiade
+    - dayo.agunbiade@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 299
+    - 'dispatcher '
+    - dispatcher@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 300
+    - donny dinata
+    - donny.dinata@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 301
+    - emeka onuoha
+    - emeka.onuoha@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 302
+    - esrnl info
+    - esrnl.info@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 303
+    - falaiye lara
+    - falaiye.lara@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 304
+    - fatoki ibikunle
+    - fatoki.ibikunle@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 305
+    - feisal aditya
+    - feisal.aditya@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 306
+    - 'fg-prd '
+    - fg-prd@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 307
+    - 'fg-whs '
+    - fg-whs@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 308
+    - frieda oshomah
+    - frieda.oshomah@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 309
+    - funmi akinbohunje
+    - funmi.akinbohunje@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 310
+    - garry turin
+    - garry.turin@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 311
+    - gbolahan adebola
+    - gbolahan.adebola@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 312
+    - godfrey anungar
+    - godfrey.anungar@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 313
+    - gordon mines
+    - gordon.mines@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 314
+    - 'helpdesk '
+    - helpdesk@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 315
+    - hendra sunardi
+    - hendra.sunardi@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 316
+    - henry david
+    - henry.david@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 317
+    - hilda dimgba
+    - hilda.dimgba@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 318
+    - 'hr-agtcms '
+    - hr-agtcms@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 319
+    - ifeanyi orji
+    - ifeanyi.orji@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 320
+    - ijehgreen abiodun
+    - ijehgreen.abiodun@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 321
+    - 'importation '
+    - importation@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 322
+    - 'it '
+    - it@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 323
+    - it support
+    - it.support@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 324
+    - johnson tunde
+    - johnson.tunde@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 325
+    - jonah okon
+    - jonah.okon@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 326
+    - jones ogodo
+    - jones.ogodo@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 327
+    - joseph sebastian
+    - joseph.sebastian@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 328
+    - joynito bonilla
+    - joynito.bonilla@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 329
+    - julius okpo
+    - julius.okpo@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 330
+    - kunle ogunsanya
+    - kunle.ogunsanya@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 331
+    - lekan oladimeji
+    - lekan.oladimeji@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 332
+    - leonard hutagalung
+    - leonard.hutagalung@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 333
+    - leonardus dhimas
+    - leonardus.dhimas@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 334
+    - mark okpo
+    - mark.okpo@esrnl.com
+    - ESRNL
     - 
     - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 335
+    - marvel joseph
+    - marvel.joseph@esrnl.com
+    - ESRNL
+    - IKOYI
     - 
-    - '2017-06-17 03:16:51.039909'
-    - '2017-06-17 03:16:51.039909'
-  - - 11
-    - Autocad Training
-    - '2017-06-27'
-    - '1970-01-01 13:30:00'
-    - '1970-01-01 14:30:00'
-    - To training IT project managers on using autocad for their diagrams instead
-      of Visio
-    - Taofik
-    - hallitee_2005@yahoo.com
-    - '2017-06-25'
-    - true
-    - true
-    - Food and drinks
-    - 5
-    - reschedule
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 336
+    - mercy agu
+    - mercy.agu@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 337
+    - michael adeyemi
+    - michael.adeyemi@esrnl.com
+    - ESRNL
     - 
     - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 338
+    - michael igenegbai
+    - michael.igenegbai@esrnl.com
+    - ESRNL
     - 
-    - '2017-06-19 13:50:55.822174'
-    - '2017-06-19 17:15:15.070399'
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 339
+    - michael okosun
+    - michael.okosun@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 340
+    - mojisola luwaji
+    - mojisola.luwaji@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 341
+    - moses oloruntola
+    - moses.oloruntola@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 342
+    - ndubuisi kalu
+    - ndubuisi.kalu@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 343
+    - nurudeen akinsanya
+    - nurudeen.akinsanya@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 344
+    - obieze joy
+    - obieze.joy@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 345
+    - okereafor canice
+    - okereafor.canice@esrnl.com
+    - ESRNL
+    - APAPA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 346
+    - okikiola grace
+    - okikiola.grace@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 347
+    - olaitan akintayo
+    - olaitan.akintayo@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 348
+    - olakunle macaulay
+    - olakunle.macaulay@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 349
+    - olamide falaiye
+    - olamide.falaiye@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 350
+    - olusoji badiah
+    - olusoji.badiah@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 351
+    - onyegbule okechukwu
+    - onyegbule.okechukwu@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 352
+    - oyebamiji oyekan
+    - oyebamiji.oyekan@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 353
+    - oyeshola george
+    - oyeshola.george@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 354
+    - oyindamola bishi
+    - oyindamola.bishi@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 355
+    - 'packaging-prd '
+    - packaging-prd@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 356
+    - 'packaging-whs '
+    - packaging-whs@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 357
+    - 'promo '
+    - promo@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 358
+    - quality control
+    - quality.control@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 359
+    - raphael ogunremi
+    - raphael.ogunremi@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 360
+    - 'rawmat-whs '
+    - rawmat-whs@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:31.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
+  - - 361
+    - 'sabiz-ppic '
+    - sabiz-ppic@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 362
+    - saheed asauban
+    - saheed.asauban@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 363
+    - samson obikunle
+    - samson.obikunle@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 364
+    - samuel akinrimisi
+    - samuel.akinrimisi@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 365
+    - samuel daminabo
+    - samuel.daminabo@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 366
+    - scott ikewun
+    - scott.ikewun@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 367
+    - segun oreniyi
+    - segun.oreniyi@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 368
+    - sheu odu-onikosi
+    - sheu.odu-onikosi@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 369
+    - steve nwankwo
+    - steve.nwankwo@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 370
+    - 'steven '
+    - steven@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 371
+    - 'sys '
+    - sys@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 372
+    - tajudeen adigun
+    - tajudeen.adigun@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 373
+    - tarek darwiche
+    - tarek.darwiche@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 374
+    - tarek2 darwiche
+    - tarek2.darwiche@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 375
+    - torezi obaro
+    - torezi.obaro@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 376
+    - tosin babalola
+    - tosin.babalola@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 377
+    - 'travel '
+    - travel@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 378
+    - uchenna duru
+    - uchenna.duru@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 379
+    - 'vdpa '
+    - vdpa@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 380
+    - vincentius subianto
+    - vincentius.subianto@esrnl.com
+    - ESRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 381
+    - wachjudi kalman
+    - wachjudi.kalman@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 382
+    - 'weighbridge '
+    - weighbridge@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 383
+    - willy ertanto
+    - willy.ertanto@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 384
+    - yinka olaniyi
+    - yinka.olaniyi@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 385
+    - yohanes budi
+    - yohanes.budi@esrnl.com
+    - ESRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 386
+    - yonatan refa
+    - yonatan.refa@esrnl.com
+    - ESRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:55:32.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
+  - - 387
+    - abifarin blessing
+    - abifarin.blessing@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 388
+    - abimbola alabi
+    - abimbola.alabi@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 389
+    - aby mathew
+    - aby.mathew@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 390
+    - adedayo oluwaseun
+    - adedayo.oluwaseun@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 391
+    - adesanya gbenga
+    - adesanya.gbenga@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 392
+    - adetutu okunola
+    - adetutu.okunola@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 393
+    - admin nprnl
+    - admin.nprnl@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 394
+    - agus pendriyanto
+    - agus.pendriyanto@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 395
+    - agus priyono
+    - agus.priyono@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 396
+    - alexander kuku
+    - alexander.kuku@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 397
+    - alexander valentino
+    - alexander.valentino@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 398
+    - alexander2 valentino
+    - alexander2.valentino@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 399
+    - andy gunawan
+    - andy.gunawan@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 400
+    - asedegbega oyiye
+    - asedegbega.oyiye@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 401
+    - 'attendance '
+    - attendance.@natural-prime.com
+    - NPRNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 402
+    - ayodele sanni
+    - ayodele.sanni@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 403
+    - bamidele rotimi
+    - bamidele.rotimi@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 404
+    - didy supriyadi
+    - didy.supriyadi@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 405
+    - donny susinggih
+    - donny.susinggih@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 406
+    - dosunmu olufemi
+    - dosunmu.olufemi@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 407
+    - ekundayo abiodun
+    - ekundayo.abiodun@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:04.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
+  - - 408
+    - emmanuel amaechi
+    - emmanuel.amaechi@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 409
+    - falana nurudeen
+    - falana.nurudeen@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 410
+    - fg nprnl
+    - fg.nprnl@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 411
+    - frenny perez
+    - frenny.perez@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 412
+    - gbolahan awoyale
+    - gbolahan.awoyale@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 413
+    - herry wijayanto
+    - herry.wijayanto@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 414
+    - hse nprnl
+    - hse.nprnl@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 415
+    - ignatius okeke
+    - ignatius.okeke@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 416
+    - 'importation '
+    - importation.@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 417
+    - 'info '
+    - info.@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 418
+    - jemmy akinbola
+    - jemmy.akinbola@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 419
+    - joshua thomas
+    - joshua.thomas@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 420
+    - kareem zubair
+    - kareem.zubair@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 421
+    - kayode olayemi
+    - kayode.olayemi@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 422
+    - kello saidu
+    - kello.saidu@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 423
+    - khoirul ikhwan
+    - khoirul.ikhwan@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 424
+    - kingsley onuoha
+    - kingsley.onuoha@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 425
+    - kunle ojelade
+    - kunle.ojelade@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 426
+    - 'mailbagging '
+    - mailbagging.@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 427
+    - marvel joseph
+    - marvel.joseph@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 428
+    - mbigbo emmanuel
+    - mbigbo.emmanuel@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 429
+    - 'mechanical '
+    - mechanical.@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 430
+    - nprnl dispatcher
+    - nprnl.dispatcher@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 431
+    - nwachukwu priscillia
+    - nwachukwu.priscillia@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 432
+    - odufuwa abdulazeez
+    - odufuwa.abdulazeez@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 433
+    - okafor iloabuchi
+    - okafor.iloabuchi@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 434
+    - olanrewaju olaniyan
+    - olanrewaju.olaniyan@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 435
+    - olatawura esther
+    - olatawura.esther@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 436
+    - olawale orija
+    - olawale.orija@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 437
+    - olojede olabode
+    - olojede.olabode@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 438
+    - onuoha okechukwu
+    - onuoha.okechukwu@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 439
+    - onyecheme nene
+    - onyecheme.nene@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 440
+    - otoide omofoma
+    - otoide.omofoma@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 441
+    - oyekan oyebamiji
+    - oyekan.oyebamiji@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 442
+    - packaging whs
+    - packaging.whs@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 443
+    - patrick anthony
+    - patrick.anthony@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 444
+    - peter abutuk
+    - peter.abutuk@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 445
+    - pkg shiftsupervisor
+    - pkg.shiftsupervisor@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 446
+    - ppic nprnl
+    - ppic.nprnl@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 447
+    - raw-mat whs
+    - raw-mat.whs@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 448
+    - regina kadiri
+    - regina.kadiri@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 449
+    - renaldi chaidarsyah
+    - renaldi.chaidarsyah@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 450
+    - renaldi chaidarsyah2
+    - renaldi.chaidarsyah2@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 451
+    - rhoda tumanan
+    - rhoda.tumanan@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 452
+    - ricky mativo
+    - ricky.mativo@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 453
+    - 'sabiz '
+    - sabiz@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 454
+    - saheed asauban
+    - saheed.asauban@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 455
+    - 'securitymonitoring '
+    - securitymonitoring.@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 456
+    - singgih widodo
+    - singgih.widodo@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 457
+    - store nprnl
+    - store.nprnl@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 458
+    - sunday awoyale
+    - sunday.awoyale@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 459
+    - surung marpaung
+    - surung.marpaung@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 460
+    - 'sys '
+    - sys@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 461
+    - taofik alli-balogun
+    - taofik.alli-balogun@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 462
+    - timothy adekunle
+    - timothy.adekunle@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 463
+    - timothy adekunle1
+    - timothy.adekunle1@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:05.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
+  - - 464
+    - tonily tonily
+    - tonily.tonily@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:06.000000000 +01:00
+    - 2017-07-24 15:56:06.000000000 +01:00
+  - - 465
+    - umoh daniel
+    - umoh.daniel@natural-prime.com
+    - NPRNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:06.000000000 +01:00
+    - 2017-07-24 15:56:06.000000000 +01:00
+  - - 466
+    - 'utility '
+    - utility.@natural-prime.com
+    - NPRNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:06.000000000 +01:00
+    - 2017-07-24 15:56:06.000000000 +01:00
+  - - 467
+    - abdulsalam abdulrasaq
+    - abdulsalam.abdulrasaq@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 468
+    - agus faizun
+    - agus.faizun@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 469
+    - alao biodun
+    - alao.biodun@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 470
+    - benito rosales
+    - benito.rosales@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 471
+    - benson caroline
+    - benson.caroline@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 472
+    - beresman panjaitan
+    - beresman.panjaitan@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 473
+    - 'cctv '
+    - cctv@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 474
+    - 'charles '
+    - charles@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 475
+    - chiaka eluchie
+    - chiaka.eluchie@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 476
+    - chidiebere okarah
+    - chidiebere.okarah@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 477
+    - chinedu chukwudum
+    - chinedu.chukwudum@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 478
+    - chinyere bologun
+    - chinyere.bologun@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 479
+    - danny rachman
+    - danny.rachman@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 480
+    - david agbo
+    - david.agbo@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 481
+    - dian cundoko
+    - dian.cundoko@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 482
+    - dwi arty
+    - dwi.arty@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 483
+    - emmanuel adefisayo
+    - emmanuel.adefisayo@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 484
+    - emmanuel udhude
+    - emmanuel.udhude@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 485
+    - eno omini
+    - eno.omini@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 486
+    - evelyn iwuchukwu
+    - evelyn.iwuchukwu@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 487
+    - gbenga ajibade
+    - gbenga.ajibade@primerafood-nigeria.com
+    - PFNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 488
+    - hendra sunardi
+    - hendra.sunardi@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 489
+    - herrytius frankie
+    - herrytius.frankie@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 490
+    - hse officer
+    - hse.officer@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 491
+    - ibeh obinna
+    - ibeh.obinna@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 492
+    - ijeoma nwuju
+    - ijeoma.nwuju@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 493
+    - 'importation '
+    - importation.@primerafood-nigeria.com
+    - PFNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 494
+    - 'it '
+    - it@primerafood-nigeria.com
+    - PFNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 495
+    - kemi abijo
+    - kemi.abijo@primerafood-nigeria.com
+    - PFNL
+    - 
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 496
+    - ketut widiarta
+    - ketut.widiarta@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 497
+    - kingsley ogine
+    - kingsley.ogine@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 498
+    - kudirat atobatele
+    - kudirat.atobatele@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 499
+    - kunle ojelade
+    - kunle.ojelade@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 500
+    - leonilo silva
+    - leonilo.silva@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 501
+    - leonilo2 silva
+    - leonilo2.silva@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 502
+    - maria florencia
+    - maria.florencia@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 503
+    - marjun cular
+    - marjun.cular@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 504
+    - mbigbo roseline
+    - mbigbo.roseline@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 505
+    - medhi rohadianto
+    - medhi.rohadianto@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 506
+    - michael okafor
+    - michael.okafor@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 507
+    - moyo arinola
+    - moyo.arinola@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 508
+    - oduro kwame
+    - oduro.kwame@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 509
+    - oghenekaro onoruvie
+    - oghenekaro.onoruvie@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 510
+    - oke idisi
+    - oke.idisi@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 511
+    - okwum daniel
+    - okwum.daniel@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 512
+    - olajuwon balogun
+    - olajuwon.balogun@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 513
+    - olufemi ojo
+    - olufemi.ojo@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 514
+    - omeje valentine
+    - omeje.valentine@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 515
+    - onyensoh esther
+    - onyensoh.esther@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:24.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
+  - - 516
+    - oriola olayemi
+    - oriola.olayemi@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 517
+    - oyewale oladele
+    - oyewale.oladele@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 518
+    - 'packaging '
+    - packaging@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 519
+    - pfnl store
+    - pfnl.store@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 520
+    - prayogo rudy
+    - prayogo.rudy@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 521
+    - production documentcontrol
+    - production.documentcontrol@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 522
+    - production sapadmin
+    - production.sapadmin@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 523
+    - qualitycontrol officer
+    - qualitycontrol.officer@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 524
+    - qualitycontrol supervisor
+    - qualitycontrol.supervisor@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 525
+    - raphael fayemi
+    - raphael.fayemi@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 526
+    - samson ekujumi
+    - samson.ekujumi@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 527
+    - 'stella '
+    - stella@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 528
+    - 'sys '
+    - sys@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 529
+    - toyib ghozali
+    - toyib.ghozali@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 530
+    - toyin elefontuyi
+    - toyin.elefontuyi@primerafood-nigeria.com
+    - PFNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 531
+    - 'utility '
+    - utility@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 532
+    - warehouse fg
+    - warehouse.fg@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 533
+    - warehouse rm
+    - warehouse.rm@primerafood-nigeria.com
+    - PFNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:25.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
+  - - 534
+    - akinpelu akintayo
+    - akinpelu.akintayo@gentle-supreme.com
+    - GSNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:51.000000000 +01:00
+    - 2017-07-24 15:56:51.000000000 +01:00
+  - - 535
+    - amos faith
+    - amos.faith@gentle-supreme.com
+    - GSNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:51.000000000 +01:00
+    - 2017-07-24 15:56:51.000000000 +01:00
+  - - 536
+    - eddie conde
+    - eddie.conde@gentle-supreme.com
+    - GSNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:51.000000000 +01:00
+    - 2017-07-24 15:56:51.000000000 +01:00
+  - - 537
+    - 'importation '
+    - importation@gentle-supreme.com
+    - GSNL
+    - IKOYI
+    - 
+    - false
+    - 2017-07-24 15:56:51.000000000 +01:00
+    - 2017-07-24 15:56:51.000000000 +01:00
+  - - 538
+    - ini nelson
+    - ini.nelson@gentle-supreme.com
+    - GSNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:51.000000000 +01:00
+    - 2017-07-24 15:56:51.000000000 +01:00
+  - - 539
+    - refky putra
+    - refky.putra@gentle-supreme.com
+    - GSNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:51.000000000 +01:00
+    - 2017-07-24 15:56:51.000000000 +01:00
+  - - 540
+    - sunday unogwu
+    - sunday.unogwu@gentle-supreme.com
+    - GSNL
+    - AGBARA
+    - 
+    - false
+    - 2017-07-24 15:56:51.000000000 +01:00
+    - 2017-07-24 15:56:51.000000000 +01:00
 
 ---
 users:
@@ -260,48 +2700,3555 @@ users:
   - last_sign_in_at
   - current_sign_in_ip
   - last_sign_in_ip
+  - admin
+  - superadmin
   records: 
-  - - 1
+  - - 8
     - hallitee_2005@yahoo.com
-    - "$2a$11$KNSHCSfhMq7PWPfgFwO2p.k76.ql3m445hgRWKNfEwXyFEQ8t91Fm"
+    - "$2a$11$RwT2.s69ejRNLOgcvJnSh.YOMJh9Dt/D/HIuGbofQC2qTAbHiY2Y."
     - 
     - 
     - 
-    - 63
-    - '2017-07-02 04:46:25.620654'
-    - '2017-07-02 04:44:37.237206'
-    - 192.168.152.1
-    - 192.168.152.1
-  - - 2
-    - t@m.com
-    - "$2a$11$jccCWcjb3JWJLVsMrnBPr.qjdePzykRH8xtBuiDsxn4RNwWbaKJhq"
-    - 
-    - 
-    - 
-    - 2
-    - '2017-06-14 22:42:47.026262'
-    - '2017-06-14 22:42:29.607720'
+    - 11
+    - 2017-07-20 16:59:33.000000000 +01:00
+    - 2017-07-19 21:08:51.000000000 +01:00
     - 127.0.0.1
     - 127.0.0.1
-  - - 3
-    - m@t.com
-    - "$2a$11$j9BCqVUy4blFcPSZgE0eAO6MTG9TwAX3gyqXGdfxlGmU0I/gbBt9C"
+    - false
+    - true
+  - - 9
+    - taobaliga@yahoo.com
+    - "$2a$11$vyzUl3RRbiFjmRq2zHTL.u3ki..9iOqbmyLNyTxkoXhfJnDNAgqsG"
     - 
     - 
     - 
-    - 12
-    - '2017-06-17 00:23:45.485898'
-    - '2017-06-16 23:49:31.472016'
-    - 192.168.238.1
-    - 127.0.0.1
-  - - 4
-    - o@m.com
-    - "$2a$11$GjJw59affJ9cOvwta34DGupG68LYyJNuDp4wEyI.n/ohaTPPbJQZ6"
-    - 
-    - 
-    - 
-    - 2
-    - '2017-06-14 22:59:02.062993'
-    - '2017-06-14 22:58:47.682838'
+    - 10
+    - 2017-07-20 18:48:39.000000000 +01:00
+    - 2017-07-20 17:28:02.000000000 +01:00
     - 127.0.0.1
     - 127.0.0.1
+    - true
+    - false
+  - - 10
+    - taofik.alli-balogun@natural-prime.com
+    - "$2a$11$3V5A549o5fa1iGxsgSJc0.dpxUhJ.dYHfB.E6Up9DC2Bb4U2a7PmK"
+    - 
+    - 
+    - 
+    - 16
+    - 2017-07-21 15:52:39.000000000 +01:00
+    - 2017-07-21 14:13:12.000000000 +01:00
+    - 127.0.0.1
+    - 127.0.0.1
+    - false
+    - false
+  - - 11
+    - allibalogun.taofik@gmail.com
+    - "$2a$11$VwGK3.tmS4IRGdorR7IQH.ouxhTfMFwx8AWd3sKG0NOcBTdVe/TCS"
+    - 
+    - 
+    - 
+    - 5
+    - 2017-07-20 17:22:18.000000000 +01:00
+    - 2017-07-20 16:59:16.000000000 +01:00
+    - 127.0.0.1
+    - 127.0.0.1
+    - false
+    - false
+  - - 12
+    - abosede.ajibare@esrnl.com
+    - "$2a$11$dBev7GAOOEPfsjknVb.ru.jFS/sDUFr10WM7/c3Gj1RASshGbzw5q"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 13
+    - adajie.regina@esrnl.com
+    - "$2a$11$ouoOwcaCL2eeiGgEu4jEre1jeRAu2dnJtr2aU/2RzhidCo7t5HWJq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 14
+    - adedoyin.aiyeola@esrnl.com
+    - "$2a$11$p3D/UlZegKcNrWnvRBCDN.oTte9ZMcYsB/2ZydnrMP4VsrSCzgWNu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 15
+    - adetutu.popoola@esrnl.com
+    - "$2a$11$MfwK8ORiougkza2XcJc25.DkhmRyZkbT6qn4Mb8BYlmkD.TqqWDmK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 16
+    - afolabi.okesanjo@esrnl.com
+    - "$2a$11$YWhgJ//fB6l7aU2wz3Jw7euCCn1SMqavKT9iaw5aarHy1yhRuxglG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 17
+    - agbara.cctv@esrnl.com
+    - "$2a$11$s5VVafX/Tbf4Wrue51A3xOPYYzr4jldP.l/B8aiAq4SAVG.SytMkm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 18
+    - agbara.clinic@esrnl.com
+    - "$2a$11$mFaAh1naS.mRS6enDCTuUeNyLDrWQVLfd26bW.aHHB2RnoSjJZoTq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 19
+    - akeem.oyalowo@esrnl.com
+    - "$2a$11$j6ItleYXX9WKEFTmHxzjkuW0QHCePXzv0gm0yXyKQcSGFL7.k6obK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 20
+    - akinyoade.gabriel@esrnl.com
+    - "$2a$11$c77Hkglkc72SOVlztMh4dOv2t3CsT5tgYD/6sxm9JRKiS395U.Ra."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 21
+    - albert.afagbon@esrnl.com
+    - "$2a$11$mv6qdbmPzyUVzR7u2NX8W.w7h9nGVk407WdxkObP/TAIm/pwyN8aC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 22
+    - alex.setiabudi@esrnl.com
+    - "$2a$11$2fk7IvfPb1xroYd3NwXjluh4ohUGW7O6MfT4eyPVuHRXWQPVeeFYq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 23
+    - amobi.okoh@esrnl.com
+    - "$2a$11$Tn5dI17ZpSnPMj8hHnmjfupGPBY5xS4hJPQNecI.3ptsfcwhmNXAi"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 24
+    - amos.chukuji@esrnl.com
+    - "$2a$11$hECKdp/SG1ZUaZc5MJNPo.SZ3aCr239R8Nb39H8PQoteqpEIV7Wo."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 25
+    - anjola.babatunde@esrnl.com
+    - "$2a$11$BT3Ue3KAkfQLlo5MezsWD.mFCymXc6x0YCCb1.S80ycSEDCrxgyIy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 26
+    - antonio.deogracias@esrnl.com
+    - "$2a$11$tqfPKtWExH2s43gxKFNwm.OH4aLWKjZ0zPXEew/BebmtnFXcHxZXi"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 27
+    - asep.tomy@esrnl.com
+    - "$2a$11$oM5vb4XGleRET3gImQe92eoePo4sV6tqSMJwI.mrOCNfhmhG/sxIC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 28
+    - austin.asindi@esrnl.com
+    - "$2a$11$j64STd1Pt8ezIUIJwZRR8OewGEzQ.jUtja98U7dMnVdJ64EK3xjFK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 29
+    - ayodeji.adewumi@esrnl.com
+    - "$2a$11$Ih4dUiAMUU2qYNt8XuUnUOsk7.bxidhpLgEJHJ7GOA/xSoKQHXp3q"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 30
+    - babalola.toye@esrnl.com
+    - "$2a$11$0GotjHeqtv3L5b7d45nunuYnwIj9jQhPzlY7cqEz8AlmWpFqmY0H6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 31
+    - chibuzor.obiekwe@esrnl.com
+    - "$2a$11$qgBrSNZmrThp8sXogwS2Ien2p77P6cmitEdhwVdpzFhQv/p.DUgVa"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 32
+    - chidimma.anyanwu@esrnl.com
+    - "$2a$11$v8ZrKwuD7Cp1zRYdCze/n.K4MBqX/1eIA17CXP3pNgkICZMlyVDMO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 33
+    - chimezie.obidimma@esrnl.com
+    - "$2a$11$nFw7b9v243mh1IG4ZuPjleg74ih9ymuTvU/1DKgWijNGFe07CYfFC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 34
+    - chukwunonso.anyadike@esrnl.com
+    - "$2a$11$ekZHbqNbVPoqQWjMswTjp.1LZLoFlXrH8QNRBomuGN6pjQAwhJw8W"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 35
+    - cooperative@esrnl.com
+    - "$2a$11$VsF2bAZVtFsgkMCVjVVA1OBdwGczdjiEcxxnO1CAzbxiM9YQE1/Jm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 36
+    - cyril.ogude@esrnl.com
+    - "$2a$11$fMjH17H4SXSQ5wqzZPfwvO0Q5aNFUyRTFfZVDV/BRue3qFLy8Xhki"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 37
+    - dare.ojo@esrnl.com
+    - "$2a$11$BxTSZT3/Fye0Chjwd.JGbuiIJA1ZIb6DPARjsXchd0UUnzY3G3gqe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 38
+    - david.egurube@esrnl.com
+    - "$2a$11$TKKvmJZK2qDeT41G39bvYeq5CR7LzBZGYHWC4AyiEoClTl/pGwb9."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 39
+    - dayo.agunbiade@esrnl.com
+    - "$2a$11$NRdv2rg7eUxCTLXffmICjuYqed16RRgcwZ57Ix3STfczl/hfE1F/y"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 40
+    - dispatcher@esrnl.com
+    - "$2a$11$/DJ1OyilGRsEDXHgvFfsR.vN2IUASR8PTSKim7jWAMrDcpcNNQyBy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 41
+    - donny.dinata@esrnl.com
+    - "$2a$11$IQj.XE6d/FDW2QSTsZTHquaW9RY5cjbUEfGDIkhAMG3qMWXmetvqW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 42
+    - emeka.onuoha@esrnl.com
+    - "$2a$11$cL578Y4RoOlzswssbz2E6.bpjUiZk2HX.1deRHEctfp3t2bm9nWvS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 43
+    - esrnl.info@esrnl.com
+    - "$2a$11$ad.yRyO5UIBFd4wQ8PqHoeB8/YC.oJdaC8Z7aHWQRgO/lJlInQo7m"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 44
+    - falaiye.lara@esrnl.com
+    - "$2a$11$VYHi2MOx0guilURjaaFL0.DnYYniTnyhzTiARKQw8ase.BG0vQKYK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 45
+    - fatoki.ibikunle@esrnl.com
+    - "$2a$11$3HL.2YMNc2jmsu2rgqZnL.GFjEVHabHRt0aGoijBwtuLUtd7EZcZG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 46
+    - feisal.aditya@esrnl.com
+    - "$2a$11$.gwWKd3RezMjNYwDZ/S.e.V.NiPJd0FQFo6AoQSBsQjSNswObKys6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 47
+    - fg-prd@esrnl.com
+    - "$2a$11$nwmtdIEp2NFxaGXqiq3dMOZXyGPgC0x9wCoVHeiCHByQzAzCdim1i"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 48
+    - fg-whs@esrnl.com
+    - "$2a$11$3shTKRbAisLOFvtTFJaaKubyo2KCDqwY4DxD4FwhLl4uJnLUQrEZy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 49
+    - frieda.oshomah@esrnl.com
+    - "$2a$11$mH2SBgJ1V3LiH.EuuQb.9OjA12uVC3GCV.FCwlitZD/9mj8ScujZG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 50
+    - funmi.akinbohunje@esrnl.com
+    - "$2a$11$d0ov8VhEXRjV2YRuPVW56uSKYxwXlvzTl9jtwqv5eZSOwD3lOi2FO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 51
+    - garry.turin@esrnl.com
+    - "$2a$11$tw22ir4fvCJDfqnmGoh3ruUJTgOw.64lbDWyPWitgM4sDofcZc6ji"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 52
+    - gbolahan.adebola@esrnl.com
+    - "$2a$11$Ra24u2kdKhSQN6SvU7kCA.BF4KwZDmnQvfyUe0Bms8HFj.ZzNtOLy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 53
+    - godfrey.anungar@esrnl.com
+    - "$2a$11$SqcPvZGgNtuA0/w9K/8gCemyQa3vzuG0oVQqQYwanDmwTakX1NVee"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 54
+    - gordon.mines@esrnl.com
+    - "$2a$11$MlSyB6keb/T6DAbVDTYE.O0lFGRcflTxKFX7c0m60vBiRFXizyJUG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 55
+    - helpdesk@esrnl.com
+    - "$2a$11$m/QHlFC5UAl.0GlnOtWmUu/cuQsz1DQFp.3EyHKLshrKJCleunRVa"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 56
+    - hendra.sunardi@esrnl.com
+    - "$2a$11$wZxMmzbAWLbeLzOMRIppPOv35uoej2o3u9w6BKhX5i2BxTLtVRISu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 57
+    - henry.david@esrnl.com
+    - "$2a$11$DMybMEqWRl3FPeuddKI8du.07KcNUQg8ypTzy.GxUM.YenCv.H64S"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 58
+    - hilda.dimgba@esrnl.com
+    - "$2a$11$en.64UCItdEkePz6lFY8IOgZzTFc/V66Mxd7FQid0ZVr9fPU1cSWW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 59
+    - hr-agtcms@esrnl.com
+    - "$2a$11$bPf6TikfwOvGfbTV56a6v.Jt83rZRH1HgHtM5m2qiAWUpn3EeOVtq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 60
+    - ifeanyi.orji@esrnl.com
+    - "$2a$11$JT.2P0Y.l4USgdyFlHFG/.dr0u0Z8gOzV3v.HMvhEJcXJ4.ABcS1e"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 61
+    - ijehgreen.abiodun@esrnl.com
+    - "$2a$11$o/zK1FhfyB23uw4haR0ptO/EGhKBM5eCHiOU7RigHTuvIQl0khVd6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 62
+    - importation@esrnl.com
+    - "$2a$11$OXw6XtbNRkQ9nwaznZWoe.eApH1ttJqAG6GjAb5DQd0gjkmCNculK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 63
+    - it@esrnl.com
+    - "$2a$11$85CvB6dUMHgRMKOVvePREeI9nh2gcsOBhfvZk9dF4mwDAP.sRl.Me"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 64
+    - it.support@esrnl.com
+    - "$2a$11$/fbVS/IqNi06CWAMhqx2NeHr9ENTRebQyYkUOi7oelm8LbP5EmYi2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 65
+    - johnson.tunde@esrnl.com
+    - "$2a$11$3GKigNimIFucyy2VyP31x.cfLPkMORGng6ELImNZHUUow1dKs015m"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 66
+    - jonah.okon@esrnl.com
+    - "$2a$11$Kvn9SgogzG/mlYOdl4/4c.479Nuw0bcLOXkrjQLPrZM5i0.yJn1zO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 67
+    - jones.ogodo@esrnl.com
+    - "$2a$11$NcrLYeg4lGhvJ08M8.W.fOBG0kODCIdOl3HgXjmGlSg3vUJD1av52"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 68
+    - joseph.sebastian@esrnl.com
+    - "$2a$11$em.gFt.VUHKC6pmAgf/4J.Y7w1DPpcaYUIWq7q1GKGDDXNO4xQ25S"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 69
+    - joynito.bonilla@esrnl.com
+    - "$2a$11$e00kcCkPeqORH1sDfn1zIuzslN865nKqCwZitVzlDXePWg.IqVK2G"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 70
+    - julius.okpo@esrnl.com
+    - "$2a$11$P7lUK8HbZBleVKZb0k5ZYenulmsgojJTsHbXeXfQngokO0hyuoQay"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 71
+    - kunle.ogunsanya@esrnl.com
+    - "$2a$11$wSiPZn5BblkHK8wcNhUBiu3NlaqAHXwHi45UtiHhjRFKRSkcX0IJS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 72
+    - lekan.oladimeji@esrnl.com
+    - "$2a$11$3lYqZ4gGPiE31RhmNJ.kee7pn2vfqDvaT3ouj.R.D6qASUH6CuBoG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 73
+    - leonard.hutagalung@esrnl.com
+    - "$2a$11$hVpMIc7gvONjZE2AVMK0VuRPtrZDZdTtnIhwtBUTzz1xtWSHLMQ.y"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 74
+    - leonardus.dhimas@esrnl.com
+    - "$2a$11$SfRloZpFCXS7EzHNWguc1O/Mnm6M0.rtkaKogBR0K7NhmMqmIgmRO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 75
+    - mark.okpo@esrnl.com
+    - "$2a$11$x68eK3sL2eH9gPXvWoiGZ.WUAPLrdP2gKTTvbEPPLDPjaNR4UwM3m"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 76
+    - marvel.joseph@esrnl.com
+    - "$2a$11$6ZpGaT6c03NYYVjkis5Joe9AhxjVcUd4H6SSo4Of0nmVpAf6LSCnS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 77
+    - mercy.agu@esrnl.com
+    - "$2a$11$H75.qB.PVLawX4skZlbEg.MFYP02i9eEo/Iueazw4yFT86uHDB06u"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 78
+    - michael.adeyemi@esrnl.com
+    - "$2a$11$CbtfAb6lWjoaD2lwgxgly.FS770YZC/HZfe7fD2YzGUFcfRyaRnMO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 79
+    - michael.igenegbai@esrnl.com
+    - "$2a$11$yT20E0GZ.NjRxERm2uD7CuKJa2pdqY4Nld/PwytbEIZ6uI9DSU.pO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 80
+    - michael.okosun@esrnl.com
+    - "$2a$11$Rygl1NdUpRNvKufHV0vPJeEju3F0ffZ0RQUaop6GADsVY11a7cACC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 81
+    - mojisola.luwaji@esrnl.com
+    - "$2a$11$u6Km5QpkK8zeFqGoYJ8a9.DHiY4FPYCYVhuAKMGcP.zvutj4sBng2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 82
+    - moses.oloruntola@esrnl.com
+    - "$2a$11$YqULH5X6i256LbJcy0/m/OZB3Pi1fZ09KYAYyoF//n1vfaEsudGzi"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 83
+    - ndubuisi.kalu@esrnl.com
+    - "$2a$11$.aKWbqppuYcSPpR8WbbvvOhzT1cPHh.WaV.yEZEatcU6ZbPn1Nxtq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 84
+    - nurudeen.akinsanya@esrnl.com
+    - "$2a$11$g2VqqsBSZyvUwSFA/qedz.i9PwQPqSRgzmpJpzDy4ILGUYSkKpgJK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 85
+    - obieze.joy@esrnl.com
+    - "$2a$11$ASurM4cJ59YGN2uSPVwkz.EZ6fxa5P9WTqI9GbOBqp1QFWmJc3HPO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 86
+    - okereafor.canice@esrnl.com
+    - "$2a$11$Jor6pPSbJCkud.AEK29O2O13EvAEKBvsLehhnxBSt7C7FDtyQU1Qu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 87
+    - okikiola.grace@esrnl.com
+    - "$2a$11$Lg5V9XFvSFb2w3Zm6BnQl.VKJzHOI.WHzUYk91lZTrPSF2Nq/6nhG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 88
+    - olaitan.akintayo@esrnl.com
+    - "$2a$11$ywyfh.FqUCk5mkrgY4td1eifXf0QTsF35IeCxNexBekszHowdNU6O"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 89
+    - olakunle.macaulay@esrnl.com
+    - "$2a$11$3hu.SeQA/7yGcE3it.fZzOPmFrnVR4g0nrocRrZLoTtqRaC8tv1Ye"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 90
+    - olamide.falaiye@esrnl.com
+    - "$2a$11$oNU7T5SR0zRWd9l6Tz3TX.OQ4K73Xq/SHZRCq2DqPabfpCnkPsRQm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 91
+    - olusoji.badiah@esrnl.com
+    - "$2a$11$jg31cIo/n3OaiwyhuAhIe.neXJ0TEWcBfZS1OqYrqJYBiE7ZRnFrG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 92
+    - onyegbule.okechukwu@esrnl.com
+    - "$2a$11$1xE3bKwo9zhKWeaVuSVDJ.oCz5az2lIIe91osXPqUIT29GYyMS20K"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 93
+    - oyebamiji.oyekan@esrnl.com
+    - "$2a$11$tgVDZzjDAU1xvlYOYw.dd.c0Fz1SeTvm8139imwWuXKMaFLZkxaca"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 94
+    - oyeshola.george@esrnl.com
+    - "$2a$11$iVJCazZHDD.7Kll0DBHPl.l6IG/fqzPxklVMqKkFBnBcn2ARt/VwS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 95
+    - oyindamola.bishi@esrnl.com
+    - "$2a$11$30eSX/yjEZoX.6EyAcsVvunW9.5uyxaWkXTGAUm4LILdqKbZtAMpW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 96
+    - packaging-prd@esrnl.com
+    - "$2a$11$1qa9R.KjtsLY9XWf1JDA3.0BKz5Z5MKyR5rutcqxHqkJErk5tG806"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 97
+    - packaging-whs@esrnl.com
+    - "$2a$11$qlF9mi8Krc1i7/WAK0kFqeOE3lwtVSBYwizx5wlgXyFcUGWRH.rHa"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 98
+    - promo@esrnl.com
+    - "$2a$11$RLRu/npJLitMNtBSKfWQ5uGayg7H6r/rDCZtLmKjIkItFQ7yrR16e"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 99
+    - quality.control@esrnl.com
+    - "$2a$11$1mkgMytrUTE8rHZTORA8rO.Fizbj5L1t.RswBVyDeNCrP9n.JjrXu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 100
+    - raphael.ogunremi@esrnl.com
+    - "$2a$11$m0Nr0uOz8347ovEgYu.v5.aUBhupFXSdhXqi2PI60pyHA5x7iVvbC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 101
+    - rawmat-whs@esrnl.com
+    - "$2a$11$n4j0Z.2.i2YPZvW/7cA/puUYPNsgr82z7FzLlE.r/IYcPf6nGO8WC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 102
+    - sabiz-ppic@esrnl.com
+    - "$2a$11$Geq6ModFQVawJA52c.xk1.rFXNe8I77hCxAPn/rWTWVC24i3aTGtC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 103
+    - saheed.asauban@esrnl.com
+    - "$2a$11$rgjVTUzXVacO3ipLgOt2nu5aoZlhhRAkLEjixDdNyxBKaBCqKsEHq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 104
+    - samson.obikunle@esrnl.com
+    - "$2a$11$3vIirP4AwEuX3/PcUDS72e98S7O21PpkSuntrZ.mTFR27OxynrCFe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 105
+    - samuel.akinrimisi@esrnl.com
+    - "$2a$11$6CVnBTYmQDjfwFQk8okpcehcCx5KjkMuP6HnC9INPNu9nWJGjwjdK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 106
+    - samuel.daminabo@esrnl.com
+    - "$2a$11$U0uE735QAoRmth/r3LkEROy0gmzAzEQ4LVH.1d8d.8CPUJXJQdx.y"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 107
+    - scott.ikewun@esrnl.com
+    - "$2a$11$1xjoxDWQCsLkDduLCUNRjO2Xb41a1TG5jVq1ZrNhnvWkMvBv3jA8."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 108
+    - segun.oreniyi@esrnl.com
+    - "$2a$11$DFXFh3Mud9c1O2lLH6vMRuFTx5/53/4ffXpUXPDoyo5kc1nGTf09u"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 109
+    - sheu.odu-onikosi@esrnl.com
+    - "$2a$11$dsfFUBx0K0pUPpXppbkD3.F8j21bZKb6Vn1th/omamrbOjf9JQRKa"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 110
+    - steve.nwankwo@esrnl.com
+    - "$2a$11$npFUaujc7RAziVhi.zD5gOBBVBGotD15Tf69sOPiY4DYT5xeafyx6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 111
+    - steven@esrnl.com
+    - "$2a$11$7wmKc7JUNqzhaUUD9/b1gOv52gxwZGlxwWgFfO6rFhuBc2B7Y0QzG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 112
+    - sys@esrnl.com
+    - "$2a$11$h9CqIs8zhPU7uzgXWEXvAuATMCExdcqDNAM2N/1qwg31qrhOYMPJS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 113
+    - tajudeen.adigun@esrnl.com
+    - "$2a$11$74sDYyHTqMYTsvSO3FHGY..EPmUSFGCCZDqGDylXozbT7Qrc3RLM6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 114
+    - tarek.darwiche@esrnl.com
+    - "$2a$11$nkksDU4RSHxE3/VqA1DO6OtotfeHaic0ipjbpiyY0AJhSe0JbkMLC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 115
+    - tarek2.darwiche@esrnl.com
+    - "$2a$11$AoBf.iDlCDYrN5OxjRaFxuU3gEUFoDT71g3s/gTaQZymC7paS2H1."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 116
+    - torezi.obaro@esrnl.com
+    - "$2a$11$qLJdfm5gi20HcA8wsAQKFO5GrdO0D3SF4PJ6BvN.t3buxU3My9eYS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 117
+    - tosin.babalola@esrnl.com
+    - "$2a$11$7GnHLRu3OSQXME5cpGPD6erEOrCm.XGntPnvJ7F5FTytev6tHTKi6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 118
+    - travel@esrnl.com
+    - "$2a$11$tCODVbCtbeVoTsScj7Ff4uhvMldd1rcYLFzWTRgiDhmb.sx49zzBi"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 119
+    - uchenna.duru@esrnl.com
+    - "$2a$11$120T1G0p4jyPyUzLy0bd9euTTsda4OHknIefrMOQE.Z8Kx7joOX56"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 120
+    - vdpa@esrnl.com
+    - "$2a$11$1loxS7R.FomWMmSTGemd8uL.ZlfaScrOH2QMUB2yx27/Uud0i.34K"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 121
+    - vincentius.subianto@esrnl.com
+    - "$2a$11$cZNXSwSnCGbizPXtPMXFz.A7F5gN7szf/C8ekiMB1N0a357nCKSzm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 122
+    - wachjudi.kalman@esrnl.com
+    - "$2a$11$FDCLrnrwGmPVD3pQ4AAOC.aY4CbMG10AyCZnLEPQDEniU7xDzrcWu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 123
+    - weighbridge@esrnl.com
+    - "$2a$11$pNuLmprNrTsZR5A8rzn7rOZZPcZXZ8n8Ys9i7pLBuNETWkJH2r1/q"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 124
+    - willy.ertanto@esrnl.com
+    - "$2a$11$qVvmtRZIyekENAxIsSVqUO9Pza/hUKM3Cz69PzBEu7n6ipETJ5HAe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 125
+    - yinka.olaniyi@esrnl.com
+    - "$2a$11$gcZ6f7zHTUU5EmR4h4R.h.olP0KBbgVrN8pIgQ8N1RzLjSRefbOOy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 126
+    - yohanes.budi@esrnl.com
+    - "$2a$11$FPOqIbgRxebkZzQw.pXTp.lYYAqn3jSadGsMxWLVPqYxhDYlb.g3."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 127
+    - yonatan.refa@esrnl.com
+    - "$2a$11$3ZkxRKpzBYxIs2oZKy3JCud.xBJO9MlPMgRzclUNtJq.9kBUjnj0a"
+    - 
+    - 
+    - 
+    - 1
+    - 2017-07-20 20:27:15.000000000 +01:00
+    - 2017-07-20 20:27:15.000000000 +01:00
+    - 127.0.0.1
+    - 127.0.0.1
+    - false
+    - false
+  - - 128
+    - abifarin.blessing@natural-prime.com
+    - "$2a$11$GXnWoeJvv.EjiIBqQtZZYOmVOw9gtsmRrHq1kJvgr.YtNOG9zp1HS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 129
+    - abimbola.alabi@natural-prime.com
+    - "$2a$11$Aby5Mne2tevwK/mX15aE7.Mm3O/jLBQjirlxIUPKYCvbxnGZMHTP6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 130
+    - aby.mathew@natural-prime.com
+    - "$2a$11$gty.2gJsU4LLmqWVZSXFR.SMK4bJmuWCAjUbQjq9IPTQkVKDT17JK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 131
+    - adedayo.oluwaseun@natural-prime.com
+    - "$2a$11$ZJhbcD5iYeENb8AQegD97uKholPqS/Q1pJSybG9I8u.i5GYePevaq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 132
+    - adesanya.gbenga@natural-prime.com
+    - "$2a$11$GJHjP9w.Lxv5e2TrEVbpu.YBgO74M9x5WSwqXQ9jzBAHQxY1yw8C6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 133
+    - adetutu.okunola@natural-prime.com
+    - "$2a$11$ogxa5nRljoKC3Fepu6qMkOqwgUFyn1qssnPQMuXArMnIgZ/Gun9Im"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 134
+    - admin.nprnl@natural-prime.com
+    - "$2a$11$Xd0lxJOTDss.8BkSLYEd9.IcAKOWxgySgg6u80vHnaWmtefffI7m6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 135
+    - agus.pendriyanto@natural-prime.com
+    - "$2a$11$qbqtu.ecLCl5yF.UvGL7KuEwA/aHULLAleyjMLj18AvIigisa0a1q"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 136
+    - agus.priyono@natural-prime.com
+    - "$2a$11$A4UdpD1GrIgnOI23o.atEu/89jo.d8351z2hwmLlb/t27GZzGqUTa"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 137
+    - alexander.kuku@natural-prime.com
+    - "$2a$11$qBj2Do4sL6lEYrGA0WTAhuzqW2VIHcBjoAarb9lqpzriE8EwzsrwW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 138
+    - alexander.valentino@natural-prime.com
+    - "$2a$11$iI4igOuNwwyt1JTkg/zPjuKOwtbJP6i/PUp4O1eDFDXUo1W3ELAu."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 139
+    - alexander2.valentino@natural-prime.com
+    - "$2a$11$KUzN85ZMs6..6xefaxpA1e6IoGqy6miCJ2UV196icdCSJ9gtVm7Jm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 140
+    - andy.gunawan@natural-prime.com
+    - "$2a$11$wHyS3bZshwAMCAmeWK44berGv.FTKmzBs18h6O0ISJsDqz0jdiomy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 141
+    - asedegbega.oyiye@natural-prime.com
+    - "$2a$11$gAvcGi01OQicwTKeFr675Ou3H5BJbFVqB6mmm5bN2gJFQ5x.Q5hFS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 142
+    - attendance.@natural-prime.com
+    - "$2a$11$KeDTQTddYqW9cHR63weIOulh.pI4pyfqcC.XGevsRcFViVfMPukMS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 143
+    - ayodele.sanni@natural-prime.com
+    - "$2a$11$KgRPHNfZdTsE7JuKHO0vAuvrh8Ne6iHerJ7VQUn8b6bXqqFpJK8aq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 144
+    - bamidele.rotimi@natural-prime.com
+    - "$2a$11$hcXVYRGivJrAqff4iIYk9.LYhKRIBibRbxVdgqSETpOGR7IKWymgu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 145
+    - didy.supriyadi@natural-prime.com
+    - "$2a$11$WE1WwBS77S6Fqe1f718JSel9iIn8aQvN96bVew9xMt7ehQm0fw.ga"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 146
+    - donny.susinggih@natural-prime.com
+    - "$2a$11$wPYqjZ.GxsHYgL7MSUkBxevzEhyP3hOgF6o41nIDzSq.9qdcd7L1y"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 147
+    - dosunmu.olufemi@natural-prime.com
+    - "$2a$11$jRDWTR1hUuWV6Jgrh/E8d.YQHhZDSqRhq7xCnTNUMKapoOlC.ONky"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 148
+    - ekundayo.abiodun@natural-prime.com
+    - "$2a$11$d34JzjFtt8Y2gaYEwpVovewbw0q8UkqrcRrOMet3nqoo10hpnYzou"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 149
+    - emmanuel.amaechi@natural-prime.com
+    - "$2a$11$ufVzu3LMs46Pt2DckwW6au4I733qWH/FoX.cYwvrHErIOPZTLAkbe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 150
+    - falana.nurudeen@natural-prime.com
+    - "$2a$11$kCV2a7OMqpMixn6dblEFeOMKN4GkE5nPXCHfn1nD1E7aV2CWfaFl6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 151
+    - fg.nprnl@natural-prime.com
+    - "$2a$11$KcV0GS5Yaa0KBBCUak6dLeXt6ePMHaTFQxf31qY5oEMC8Pwvbz3AS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 152
+    - frenny.perez@natural-prime.com
+    - "$2a$11$UiEWoYeS9q.ozgUV3f84xuGQUjZvIxU/hok9ihfe4ZyELLL2yS3w2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 153
+    - gbolahan.awoyale@natural-prime.com
+    - "$2a$11$571xoc54XB7iiwFqtfHP.uSP4oprM7yh8iFr3/U5AcldTZn2bExWO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 154
+    - herry.wijayanto@natural-prime.com
+    - "$2a$11$djCylzXeHA3/MhSBx0TzHe87kBV.jDoOKrK6olNPZLg92uCoA336O"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 155
+    - hse.nprnl@natural-prime.com
+    - "$2a$11$cfGli3rYS8x/cOEQrpXWUugSzrSL4hhzc/WKkx.hifS15Ub0z/sEO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 156
+    - ignatius.okeke@natural-prime.com
+    - "$2a$11$R52Od1fI4S1Bu6HNHJd1K.0nIbJw22RXsKeF4UA55oALL3AdsXAHW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 157
+    - importation.@natural-prime.com
+    - "$2a$11$ynKLzLd1xBHma5LaxuEKxe6QpxfRN/NuEGaODyHLueCqQ9Vh6ml9C"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 158
+    - info.@natural-prime.com
+    - "$2a$11$Zn.e7Xp7X9syJl52JyeGrOtJI4us3Lpc9bCwtaFIzMjvR3sBk4XAO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 159
+    - jemmy.akinbola@natural-prime.com
+    - "$2a$11$aoUj9YZ1K5cUcHl046TDtOVOPue3iSTuPz7tVtM8HIk1oWHRgJyQG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 160
+    - joshua.thomas@natural-prime.com
+    - "$2a$11$bgah/LaPr2Av15CHu2yqO.OuoRGE5IFSCAZrxG0eBacyIrYytMwzK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 161
+    - kareem.zubair@natural-prime.com
+    - "$2a$11$d0xIZHO.Mhl8tt4ShKKeROSmMJrM8F45A7FSVZUqbnfLU4GJJ/xmu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 162
+    - kayode.olayemi@natural-prime.com
+    - "$2a$11$Z8oUynWsoF0XOj1UsIxB9.l02GPpa68dTb.q6L9MWYkW0jZXKJK7u"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 163
+    - kello.saidu@natural-prime.com
+    - "$2a$11$Gzn80GGeyOmC1UZbhZ.iVeYGr6oG7gXfDQWnV0yY.JgmeDeNm0Ajy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 164
+    - khoirul.ikhwan@natural-prime.com
+    - "$2a$11$/WsRLzfOB9TTwyYOAwlDF.1tpHrucjMpS8Oj/uYYqkxi0HRrZ5u4C"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 165
+    - kingsley.onuoha@natural-prime.com
+    - "$2a$11$XggHS8UkxghImw9ps4Zho.STIv0tBxcDDk5TSkZ3TuIwgowVqqcKS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 166
+    - kunle.ojelade@natural-prime.com
+    - "$2a$11$u0dRKV2rmkbtjUSHEUP2IOfXhO01dH7qS83rk0RtbcQJZ.QjXWu6."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 167
+    - mailbagging.@natural-prime.com
+    - "$2a$11$f5kLGXFkV8k9Y3fK3Qp7sukUjifIKSWR7g86cBokCagdLwcH9sgj2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 168
+    - marvel.joseph@natural-prime.com
+    - "$2a$11$eXP9605eeeMCQz3ZsjnkTODfRFeUdgmvUjFQuxwjOtQIf2RIbyDZi"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 169
+    - mbigbo.emmanuel@natural-prime.com
+    - "$2a$11$XaV9FzhCo.cK.4ucUC0oxOls1/tDGGlKpNqYvlUk1Cn/Wuat3Dv4S"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 170
+    - mechanical.@natural-prime.com
+    - "$2a$11$G54UNAdg/NFoIXLTvMhSpuH12Nxj8BJIP26sg8X2S2LS9vt1PonSy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 171
+    - nprnl.dispatcher@natural-prime.com
+    - "$2a$11$t1Lj4Gdr7P9xXjrdab4TYORdFtpGkwM1rbsv1mBVY2uZ/DzR4npii"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 172
+    - nwachukwu.priscillia@natural-prime.com
+    - "$2a$11$RMXlPVNNkEsQJ48cl93ybuFgiYV7WdOggT21GlQURA3WTzZuMMQ16"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 173
+    - odufuwa.abdulazeez@natural-prime.com
+    - "$2a$11$qR96e4uAkvDx9fmjTn.yzu8GWiHqYo6WvsCWw0Qlb6xHieC4DORfO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 174
+    - okafor.iloabuchi@natural-prime.com
+    - "$2a$11$MI2hi7QNd.65uz6.PO/YWu.qq.oD.fT5KovP5avqbDwnhFnrQMEOq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 175
+    - olanrewaju.olaniyan@natural-prime.com
+    - "$2a$11$3qXCXJC9Nod.N1BNWeJDpOlv/pR0scVXqIaPf0TfctyN81sBM7ULq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 176
+    - olatawura.esther@natural-prime.com
+    - "$2a$11$5Zgrp9Xla190ZsBpdiAuJu8WeWJRtKDMjfrgpVuGzwxrh8n6JvbUu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 177
+    - olawale.orija@natural-prime.com
+    - "$2a$11$nTzyDKsVw3M93SB3Rk.i5.J3qQqRnrGnfl0KSvp9vzayFdvhLPMTe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 178
+    - olojede.olabode@natural-prime.com
+    - "$2a$11$Jpk0QdD3cviQuV1ADubSFupR.mxiBwNBMWFbbLct9T3N5LxQaRR76"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 179
+    - onuoha.okechukwu@natural-prime.com
+    - "$2a$11$nLj9StsKWUVeXoxvZ8u2Quw/cIrIIJtWF2LZqwSznyLS3ePUFcCPe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 180
+    - onyecheme.nene@natural-prime.com
+    - "$2a$11$rXE/OfEwv/ISAP30Ip3WIODu//9DbPmu3qFSbzeH1OdPFfhyPRLOW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 181
+    - otoide.omofoma@natural-prime.com
+    - "$2a$11$nvcTgKnwhVoHXySLQR4MQOtog2t1g2QdNXohGZyR3sa7it4LZGTle"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 182
+    - oyekan.oyebamiji@natural-prime.com
+    - "$2a$11$J5MQpQ0vDzyZEplBxS6fHeYVE8pJOXZOgcI08eW7zXK6MePVYmxQ6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 183
+    - packaging.whs@natural-prime.com
+    - "$2a$11$XGLuH/F6Zr30sBww8Io.N.RdoW5MuWMkxWQjlKwVNcyEQYREFTa3q"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 184
+    - patrick.anthony@natural-prime.com
+    - "$2a$11$VVzCM8cR3fAkjvFAmbkMpeKCcMAwUoBsvVPpt0zo5198dSTHqkOQ2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 185
+    - peter.abutuk@natural-prime.com
+    - "$2a$11$OSWdk4WmitG4BIDC3RZczOZPvPaKBvgQIc88gr/ImU7hOc83fEVte"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 186
+    - pkg.shiftsupervisor@natural-prime.com
+    - "$2a$11$muUGqg6zQBWVKbvkeYqr9uAebG6MarB1S3xrJ5z8yfIz1uWPYOsWW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 187
+    - ppic.nprnl@natural-prime.com
+    - "$2a$11$gVbluV70E8wd/906ZhhxY.i6.NKkTav/2l1qtrC93hu1Tx3tXPlgy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 188
+    - raw-mat.whs@natural-prime.com
+    - "$2a$11$/lwj6tWMZ7Fd3eucpeGwMOxsRhEL/32oIzakbl/vEkgH5PCgy860u"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 189
+    - regina.kadiri@natural-prime.com
+    - "$2a$11$vF30PxpZuzlVG98rxhUQUOL/j.PT7p.02xLhp9vnV1jpu1f.5Zt8m"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 190
+    - renaldi.chaidarsyah@natural-prime.com
+    - "$2a$11$/9XF9P/lhauTq0uYtn2xpO5Oz6ygt4s7gOfbigK0JS0M0ObcRvRSS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 191
+    - renaldi.chaidarsyah2@natural-prime.com
+    - "$2a$11$jWYx9sAflZGT.akc.ts2iOSHOR9XJriHfJmbGu2WK4XX.zNj0tUR6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 192
+    - rhoda.tumanan@natural-prime.com
+    - "$2a$11$O/ODy2OykZWVEDXiLxif8O0bfafWeE5rYcPdODnb63h63uf5A3a9u"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 193
+    - ricky.mativo@natural-prime.com
+    - "$2a$11$nVuv.03PB3iQ1c1..pzlbu2PfFi9ufp/chxLw7IFmd3XoLgyOgvrm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 194
+    - sabiz@natural-prime.com
+    - "$2a$11$TDRhV3T9p7YCkB.B6u.Ub.mqW4L0bcd2XJ1Zg/H4G3Yd22P.BUxrC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 195
+    - saheed.asauban@natural-prime.com
+    - "$2a$11$kxqxQIcET7fXztLchQ1BQuIbDHONZQY2NvJGaevl2EvbKYWB8w/MC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 196
+    - securitymonitoring.@natural-prime.com
+    - "$2a$11$m9v1Oz3NlMDW//7JXyNTOeUd.6eZUfLpyvChrxL/Ui/68cypOUJH6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 197
+    - singgih.widodo@natural-prime.com
+    - "$2a$11$80DR23BgJidUT../I0tyYe4GB.167xXLO7lVKRGApG.wgzN8uZofS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 198
+    - store.nprnl@natural-prime.com
+    - "$2a$11$m.xRocyb4BC1p0wLD/5eWuF8PtjODDSRdvV5L2fvYL1Od736KFyHy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 199
+    - sunday.awoyale@natural-prime.com
+    - "$2a$11$Zp44yX7bmzmID/U9kTpjGu2vwO9oaCb8yB/ZmMfsKKwHi4ZvGGR8C"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 200
+    - surung.marpaung@natural-prime.com
+    - "$2a$11$edI2CBswEw.CP3YuXlijDutLnesOkZzsy3NChR.ioBDY1CCZ128W."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 201
+    - sys@natural-prime.com
+    - "$2a$11$DcrQ5jQpac48pI.Ok.ReZ.hRS28qHxe73MkTyx4cbgDvbnmlvHjTC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 202
+    - timothy.adekunle@natural-prime.com
+    - "$2a$11$uWJjzhHg1t.qZxUawRnj8e.MD.lJvVQuRm./Ulq2eNotpmhHm2Xze"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 203
+    - timothy.adekunle1@natural-prime.com
+    - "$2a$11$DPh5zj3FRlVeThMXe2M4IuYnPAh50lCx7i0fxYEbeSw/Yt9acPfRe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 204
+    - tonily.tonily@natural-prime.com
+    - "$2a$11$u2aIKUzEs0IJbBu9jfDKZuxyk8wSwzMUT3kk3zMuziY0Py69TzuRe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 205
+    - umoh.daniel@natural-prime.com
+    - "$2a$11$.dEl/v3ycWzvtgpAVYtww.TCjkvS2kPmKHpcK91dhHxyZmzHDyo.a"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 206
+    - utility.@natural-prime.com
+    - "$2a$11$UO.jHnUZWG8peh4Gfx9LjeqkFHLPOscHJf.R.OOFl756Zr.FX97Ai"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 207
+    - abdulsalam.abdulrasaq@primerafood-nigeria.com
+    - "$2a$11$J2YN229cvZZjgis0Wldo9.AVDiv8MD93cLcXrlc2b.SLXO4puuJ1W"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 208
+    - agus.faizun@primerafood-nigeria.com
+    - "$2a$11$ozLLgUDAB61NQ1LmHb2b/OLmt5OhlAG3/KNJa5Dq.5XxYlk17nxKS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 209
+    - alao.biodun@primerafood-nigeria.com
+    - "$2a$11$rCE5Tfp156KHlaRJX8ZA3uYlta9YQfXnJD6rXgYRiT5Z56G3TI7UK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 210
+    - benito.rosales@primerafood-nigeria.com
+    - "$2a$11$PnzBd.fBhYktJ5DME9okLu3aO4GfNpz5GvJxWF3fa7ckRrR78vxkm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 211
+    - benson.caroline@primerafood-nigeria.com
+    - "$2a$11$xpCIR5XlU1Il0QJGYo8M/eCwDq1705WbSXnsMSkb6W1Rxn6yDV8EG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 212
+    - beresman.panjaitan@primerafood-nigeria.com
+    - "$2a$11$Pw5CygNon88uP04tf8JWZuRe3FHUlhLFZsbwSHZahjOC0IzaZ78H2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 213
+    - cctv@primerafood-nigeria.com
+    - "$2a$11$FNe1Pg3ufpeOYEIL4pA.jOIpkJhQz7FeBlpgNleWKmVQcf7fmLeiy"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 214
+    - charles@primerafood-nigeria.com
+    - "$2a$11$4OJ9HHruzvSa3Cs7Kbr6HegCTMS4Vo5QKoBwyJMTMon4vabKpgATm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 215
+    - chiaka.eluchie@primerafood-nigeria.com
+    - "$2a$11$MSwvIpCSfu9Q.3KvrIpeLeTU9LOCo9J2fdVOEZCb/Y0wc4z3p4orS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 216
+    - chidiebere.okarah@primerafood-nigeria.com
+    - "$2a$11$WPGSa.GsHSPkpZGEDKZBqu0EiMvC5QSYLGDKZ/NiR5RDONnXxutlW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 217
+    - chinedu.chukwudum@primerafood-nigeria.com
+    - "$2a$11$u0xcs.etCsSuSdz.SXXqzu4pyX6Pz6BVIwoMwIIEiK3tZC1B4CMZ."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 218
+    - chinyere.bologun@primerafood-nigeria.com
+    - "$2a$11$M3RwVruLNA5pQLOZ/59FruD8C6jbMTElmm3ZXxLeu38plU6PzK.K6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 219
+    - danny.rachman@primerafood-nigeria.com
+    - "$2a$11$UjMsp.eVYMxDF.0d5RXR3O4fkwmAPq3I0R0zxxVXebUc5EDu5vfGS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 220
+    - david.agbo@primerafood-nigeria.com
+    - "$2a$11$V/wgiYlt3G0TMy5m2Wvq7u7rlqCyNbwpcyQWvjDFmDioPEBYfQu2G"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 221
+    - dian.cundoko@primerafood-nigeria.com
+    - "$2a$11$d2d.Oh6VuesZ.GzGnQaE2OOqC4BkOcWQuqYDONFOIgTrsr4PcJ5Cq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 222
+    - dwi.arty@primerafood-nigeria.com
+    - "$2a$11$9jRWxZrfmtiexjIwkXiPo.MtDmGBkyXCHLVlJ6wFHyUS90Za790Lq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 223
+    - emmanuel.adefisayo@primerafood-nigeria.com
+    - "$2a$11$G9wnAoyqgMgwO1TzqFzfQupoyt7p/yPzCmW2mCLh1gjICZBBn5nrm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 224
+    - emmanuel.udhude@primerafood-nigeria.com
+    - "$2a$11$nwkLSq7cKajx/L5Brx.Z5u/yaswW0qiG/Qu8WEGzIHwoBrhGfQETG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 225
+    - eno.omini@primerafood-nigeria.com
+    - "$2a$11$QjcI8JLCDel1xxHMpWwEbe4E7G8tCaOWJRHcyGk1zZmOthnFlnJiO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 226
+    - evelyn.iwuchukwu@primerafood-nigeria.com
+    - "$2a$11$GfpU6UppzU8IxX.kgqX7N.fzA9OscNR5da0wMDce.G7/hdc2vgTTK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 227
+    - gbenga.ajibade@primerafood-nigeria.com
+    - "$2a$11$uz36p8adovp4yMgxLU065ukn3IqS6odWPeHwqBH3nzCQ2eeOYwTZq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 228
+    - hendra.sunardi@primerafood-nigeria.com
+    - "$2a$11$.Dx/9W8REBGSQjLGuG2oUO66ZksMIUN07v/GTOncxucAkrWz5Ydaq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 229
+    - herrytius.frankie@primerafood-nigeria.com
+    - "$2a$11$qDOVBaJJ7uQtOybkCxKsVOhkcFOYR3ZQ0tqPWk6mUqRbvSmTgmKFO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 230
+    - hse.officer@primerafood-nigeria.com
+    - "$2a$11$2KskgQmm1UZMP/yT.YNzqOpCYWvkZMUhurjUOYKowXMlZrUoVgDAW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 231
+    - ibeh.obinna@primerafood-nigeria.com
+    - "$2a$11$EyXf2uOLd/yLoEx4G7RjAul4R1uY4PbliqXBhoIr2utLLKs1emR1y"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 232
+    - ijeoma.nwuju@primerafood-nigeria.com
+    - "$2a$11$.LLdmGL11w.AvtapV84RZOLFzFF73Ua/iApyczKyvsUmpv46kofxK"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 233
+    - importation.@primerafood-nigeria.com
+    - "$2a$11$fz3k.uIRleGLerINzbVe7.L4Fb/tzjxc.Aq/wc.T.yBHcw13UUM9G"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 234
+    - it@primerafood-nigeria.com
+    - "$2a$11$iFJBA/mnWZicE.bZV/DQT.Jh7LahGJ3EQrjNNJJUzmjma9QeRdRcW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 235
+    - kemi.abijo@primerafood-nigeria.com
+    - "$2a$11$EYe6VV1EGIL9bwJGijuAyuMRE8L/ca8kQU447WoSrfoHNiqLsovGG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 236
+    - ketut.widiarta@primerafood-nigeria.com
+    - "$2a$11$gJvzkLZaNwQR.NBBca6LkOd6rwJd.fuGd1ZRGgXM05xhSP5NVKVKG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 237
+    - kingsley.ogine@primerafood-nigeria.com
+    - "$2a$11$TGBFx1RMLiMdfAUnJlKwD..Xig1B9UJTw3AvCXKQR81iuv30NcxZO"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 238
+    - kudirat.atobatele@primerafood-nigeria.com
+    - "$2a$11$3DexUs6J3Pp5b21htpp9S.ZeySW3bxdgEdTiEe2CZokT1hfz2jZSe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 239
+    - kunle.ojelade@primerafood-nigeria.com
+    - "$2a$11$6.v5YacNPUPgKJ3dMhuJVulMlV6IvBFNrvGTE0.Mki9qS8vzvQo7y"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 240
+    - leonilo.silva@primerafood-nigeria.com
+    - "$2a$11$NjkwVJrQV5sdvFqQFt9rbuEvo//tT3IPNwOKsrTC4nRG.hloPiGWS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 241
+    - leonilo2.silva@primerafood-nigeria.com
+    - "$2a$11$Q3lMNFZYU/rOojDV6iiqNeaTDAiUkUOeh49Vjm3dRU38Nzz6FFaxa"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 242
+    - maria.florencia@primerafood-nigeria.com
+    - "$2a$11$WjWF3ZjVh32xWlE9FdL05.s5Yb9aX5fawZIzuFLT0YLNWeKYVYkv."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 243
+    - marjun.cular@primerafood-nigeria.com
+    - "$2a$11$P9UGCIElq92bIiJS3MQ6.OVCSjvnuFVMSATQyERJokYJoJK7cX8x6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 244
+    - mbigbo.roseline@primerafood-nigeria.com
+    - "$2a$11$KibIX4C58u6Q0Hc1TOg61eFF9uM28OKyWkTNdyFc1CSHT.f8SgeJ2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 245
+    - medhi.rohadianto@primerafood-nigeria.com
+    - "$2a$11$N0lWdPThWjTFnQfqzgVqH.xs7JI.GIxqkAXwsiCuSL0CuD8HnavOG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 246
+    - michael.okafor@primerafood-nigeria.com
+    - "$2a$11$1TK6jFtodtjXQdeEVfyVuOGUU3CYTgpOkPSi5/POcySiuMjvEeRPm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 247
+    - moyo.arinola@primerafood-nigeria.com
+    - "$2a$11$r2GKdF2yhli9ZZKk5SS5b.r8XsHzEz067bsMlJ8BPLhjlnMZJF5mm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 248
+    - oduro.kwame@primerafood-nigeria.com
+    - "$2a$11$MX9uZ4idsyHyTwO.jQBBkO5rnDLBPUsoV.PgkYg24ZZjPeK.uu4Pe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 249
+    - oghenekaro.onoruvie@primerafood-nigeria.com
+    - "$2a$11$u/5TlflEkwiWWtTtOiTV9e4oN/je0dL4gQNlzaQUjGsHilZCVh2s."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 250
+    - oke.idisi@primerafood-nigeria.com
+    - "$2a$11$eJh/wSaGxYZ.CBctDjxWl.VOLVgC4CkS7cv2pVlOCODkHxrx8vKjW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 251
+    - okwum.daniel@primerafood-nigeria.com
+    - "$2a$11$bvjBkMpQhsph1IchNPs1Ru5YcDoCBFLOxf1hqsG/K.AhUxFOEJN/K"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 252
+    - olajuwon.balogun@primerafood-nigeria.com
+    - "$2a$11$y3TZ368DoIeCoxNGGmeiEe7.epveb5tfOTbDoVRLxfng5kiYMndMq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 253
+    - olufemi.ojo@primerafood-nigeria.com
+    - "$2a$11$YeOMwPB1iWnFG4BhyIjMGeOwuQS.GgLI1CTQcsnG1jRDSJ2ujQvSq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 254
+    - omeje.valentine@primerafood-nigeria.com
+    - "$2a$11$zVe/KPqJjtOYLHMBtBxHj.Yb2JfwGBTvyP0VThxb3buMsNsczO84q"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 255
+    - onyensoh.esther@primerafood-nigeria.com
+    - "$2a$11$dV.CJQ/xD9eIhXFxFRd4iun/FTELwHox5Jy.wWudrmL2WfTc3QnG2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 256
+    - oriola.olayemi@primerafood-nigeria.com
+    - "$2a$11$7wR06PQfoE7ODW9raKlf4eXqKPZukRJQ0t8ZZV9hKPoSqaLB/qKbe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 257
+    - oyewale.oladele@primerafood-nigeria.com
+    - "$2a$11$rD4gPGDlLluTaRWHP99hROOmN9JXHZAs2I5uZqRzTzokVxu9FpV82"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 258
+    - packaging@primerafood-nigeria.com
+    - "$2a$11$9eMgpNrpaAWrFuvuQkqdceKWgmJ0vBFfK4JvlsjarfCT27lBRDcTu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 259
+    - pfnl.store@primerafood-nigeria.com
+    - "$2a$11$jjiPaqUw/iFh6XLOpO1o0.xqqLMYAHrqfUiOFRT.Wfs0DQXZfRYYa"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 260
+    - prayogo.rudy@primerafood-nigeria.com
+    - "$2a$11$aTMxkUY27Opk4sKMW8DCSODu4.vp/Z95ogTZWTeNaqECh1r1yeZyS"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 261
+    - production.documentcontrol@primerafood-nigeria.com
+    - "$2a$11$bVqi7/gWM.53NBG7vUnXMucyarmOaw4P2AkLOyH1jd5aMMnqUYQp2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 262
+    - production.sapadmin@primerafood-nigeria.com
+    - "$2a$11$QaVbkr/Wy0ejPPiWw8S2R.RveRNM6I8zD23ZMx8GEkP5YSLq9O4cW"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 263
+    - qualitycontrol.officer@primerafood-nigeria.com
+    - "$2a$11$6qgjEkFB2CVISom8AB.vQex9HaQULNGe.ttMoMlEdiAItyYqiJMsm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 264
+    - qualitycontrol.supervisor@primerafood-nigeria.com
+    - "$2a$11$xUrqR61r5ZMlxw0BdlkCPeDCZQnN5OXcjzriMxglHbVeNdhNXTBZu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 265
+    - raphael.fayemi@primerafood-nigeria.com
+    - "$2a$11$tHRj/akIUMRWxlmEL9shPupZZRb4PnBD3X0gD.YBmBPv8zkSrAKEm"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 266
+    - samson.ekujumi@primerafood-nigeria.com
+    - "$2a$11$2dFXWDUAwyAx/Fz4g.T/xeex9IY6rHmlfmac//QM86YrwxWjsp4GC"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 267
+    - stella@primerafood-nigeria.com
+    - "$2a$11$zUD6xXNpYQjnUWza/dtng.LlggVqTWar9v81LKoCJ289X3flNq0qa"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 268
+    - sys@primerafood-nigeria.com
+    - "$2a$11$J.rS2fu0GSAuHVFaV8pibuclRno72fKis/EwpdKBUtE2qeSjzE15e"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 269
+    - toyib.ghozali@primerafood-nigeria.com
+    - "$2a$11$Pk7Yral9oTFw/UQMG3Oteu8TGvDabwAZZKO.zlW.zKZfmR4nI.LpG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 270
+    - toyin.elefontuyi@primerafood-nigeria.com
+    - "$2a$11$4wC8FK5XgBecMsVypA2oQ.iZAVWCw3bHsHjBeI27LMyDYj0Ldgc4y"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 271
+    - utility@primerafood-nigeria.com
+    - "$2a$11$f6LuI7WS8/Vz7PTc2H5VDOsM2SbLTQSOUsjmZSZkk0uIEzWX2Z4F."
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 272
+    - warehouse.fg@primerafood-nigeria.com
+    - "$2a$11$04rLzOag8Ictsm0SHO4c9eXykb0hP2CR0NPN2p2nxjzq9pJvhODqe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 273
+    - warehouse.rm@primerafood-nigeria.com
+    - "$2a$11$hoK.oebDE5hB.z3ySe9Qlusj7D5ckGUk95Q4o84yL53lYm36KwfUG"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 274
+    - akinpelu.akintayo@gentle-supreme.com
+    - "$2a$11$gXxHcOlz.r//JKnIPIhGHexwM6DmAoSREg4ualkUR6r6kwOFLRkua"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 275
+    - amos.faith@gentle-supreme.com
+    - "$2a$11$xKvJKJFUWtXyMNqRXYKhw.QSKHDlthS/ZzDQoeGzBn.X/T.t8kFGe"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 276
+    - eddie.conde@gentle-supreme.com
+    - "$2a$11$sSGoLX68VOFy6qJeCX2Unuverjy/1waluGpri/0tHinOgEL1QwB7i"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 277
+    - importation@gentle-supreme.com
+    - "$2a$11$yWmaLN3pUoPMPnXflSjoHucMx.iibe6wfGyqDuE2Tv24RJ6miIKsu"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 278
+    - ini.nelson@gentle-supreme.com
+    - "$2a$11$vgBgsC9/Qj.b/gAh3QBhF.70iHOCquhsEcUotPLwpvRLLFbkfUrU2"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 279
+    - refky.putra@gentle-supreme.com
+    - "$2a$11$EFZNciUNu.46J2/sOuu63OISXt/8OyCAZgp3UVPy7MMxJUrLn0Bh6"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false
+  - - 280
+    - sunday.unogwu@gentle-supreme.com
+    - "$2a$11$GXScX/gEjaV5tcmaXJsrn.UdOKblZfnMfHjryWtD54N692bOv22We"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - false
+    - false

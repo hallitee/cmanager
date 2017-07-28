@@ -17,7 +17,7 @@
                     <div class="btn-group" role="group"></div>
                 </div>
 
-                <div class="col-md-8 col-md-offset-1" style="margin-top:5%;border:0.5% solid lightgrey;background-color:white">
+                <div class="col-md-10 " style="margin-top:5%;border:0.5% solid lightgrey;background-color:white">
 
                     <div class="table-responsive">
                     <table class="table table-hover table-striped">
@@ -26,6 +26,7 @@
                 
                       <th>TITLE</th>
                       <th>MEETING DATE</th>
+                      <th>MEETING ROOM</th>
                       <th>START TIME</th>
                       <th>END TIME</th>
                       <th>STATUS</th>
@@ -37,15 +38,17 @@
                  <%   @request.each do |f| %>
                         <tr>
                             <td><%= f.title %></td>
+                            <% @r = Room.where("id=?", f.room_id).first %>
+                             <td> <%= @r.name+""+""+ @r.location %> </td>
                             <td><%= f.date %></td>
       <% b = f.startd.to_s.split(" ") %>                        
                             <td><%= b[1] %></td>
               <% c = f.endd.to_s.split(" ") %>                              
                             <td><%= c[1] %></td>
                             <td> <%= f.status %> </td>
-                            <% if f.status == 'booked' || f.status == 'pending' || f.status == 'reschedule' || f.status == 'rejected' %>
+                            <% if f.status == 'booked' || f.status == 'pending' || f.status == 'rejected' %>
                             <% b = link_to 'Edit', edit_request_path(f) %>
-                            <% elsif f.status == 'approved' || f.status == 'cancelled' %>
+                            <% elsif f.status == 'completed' || f.status == 'reschedule' || f.status == 'cancelled' %>
                              <% b = link_to 'View', f %>
                             <% end %>
                             <td> <%= b %></td>

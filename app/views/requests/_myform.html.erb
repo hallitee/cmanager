@@ -14,7 +14,7 @@
 <div class="container">    
 <% state = "false" %>
 
-    <div id="signupbox" style="  margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div id="signupbox" style="  margin-top:2px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info" >
             <div class="panel-heading " >
                 <div class="panel-title" >Create New Request </div>
@@ -24,7 +24,7 @@
                         <div id="div_id_select" class="form-group required">
                             <label for="id_select"  class="control-label col-md-4  requiredField">Title<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 "  style="margin-bottom: 10px">
-                          <%= f.text_field(:title, style: 'margin-bottom: 10px', class:'input-md emailinput form-control') %>
+                           <%= f.text_field(:title, style: 'margin-bottom: 10px', class:'input-md emailinput form-control') %>
                             </div>
                         </div> 
    
@@ -32,8 +32,11 @@
                          <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                            
+                               <% if user_signed_in?  %>
+                           <%= f.text_field(:email, :value => @staff.email, style:'margin-bottom: 10px', class:'input-md emailinput form-control', data: {trigger: "blur"}, data: {required: "true" }, remote: true, id: 'email_box')%>
+                           <% else %>
                               <%= f.text_field(:email, style:'margin-bottom: 10px', class:'input-md emailinput form-control',data: {trigger: "blur"}, data: {required: "true" }, remote: true, id: 'email_box')%>
+                              <% end %>
                        <p id="email_error" style="display:none"> You are not eligible to request, contact Admin </p>
                             </div>     
                         </div> 
@@ -42,7 +45,7 @@
                             <label for="id_email" class="control-label col-md-4  requiredField"> Request By<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
                             
-                              <%= f.text_field(:requestby, style:'margin-bottom: 10px', id: 'requester_name', class:'input-md emailinput form-control')%>
+                              <%= f.text_field(:requestby, :value => @staff.name, style:'margin-bottom: 10px', id: 'requester_name', class:'input-md emailinput form-control')%>
 
                             </div>     
                         </div>      
@@ -51,8 +54,18 @@
 
                         <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Select Room<span class="asteriskField">*</span> </label>
-                      
-                            <%= render partial: 'roomlist', locals: {f: f}  %>
+                                    <div id="room_loc" class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                             <% if @staff.crossplatform %>
+                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {},{class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% elsif  @staff.location == 'IKOYI' %>
+                              
+                                    <%= f.collection_select(:room_id, Room.where("location= 'IKOYI'"), :id, :options_name, {},{class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% else %>
+                               <%= f.collection_select(:room_id, Room.where("company=?", @staff.company), :id, :options_name, {},{class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                          <% end %>
+                          <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
+                            </div>   
+                            <%# render partial: 'roomlist', locals: {f: f}  %>
 
                                <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
                         </div> 
@@ -71,7 +84,7 @@
                             <label for="id_username" class="control-label col-md-4  requiredField"> Start time<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 col-md-pull-0">
                         <div class="input-md emailinput form-control " style="margin-bottom: 10px; border: 1px solid white" > 
-                       <%= f.time_select(:startd, style:'margin-bottom: 10px',  :disabled => false, ignore_date: true)%> HH:MM
+                       <%= f.time_select(:startd, style:'margin-bottom: 10px',  :disabled => false, ignore_date: false)%> HH:MM
                           </div>
                                 <p id="time_error" style="display:none">  </p>
                             </div>
@@ -82,7 +95,7 @@
                             <div class="controls col-md-8 ">
                          
                              <div class="input-md emailinput form-control" style="margin-bottom: 10px; border: 1px solid white" > 
-                       <%= f.time_select(:endd, style:'margin-bottom: 10px', :disabled => false, ignore_date: true)%> HH:MM
+          <%= f.time_select(:endd, style:'margin-bottom: 10px', :disabled => false, ignore_date: false)%> HH:MM
                      
                           </div>
                             </div>     

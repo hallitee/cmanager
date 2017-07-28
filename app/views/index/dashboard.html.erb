@@ -29,8 +29,6 @@
                               <% else %>
                                <%= collection_select(:@r, :room_id, Room.where("company=?",@staff.company), :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
                           <% end %>
-                  
-
                     <div id="calendar"> </div>
                 <% else %>
                             <div class="carousel slide" data-ride="carousel" data-wrap="false" id="carousel-1">

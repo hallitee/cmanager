@@ -1,5 +1,7 @@
 class ConfigsController < ApplicationController
   before_action :set_config, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! 
+
 
   # GET /configs
   # GET /configs.json
@@ -14,8 +16,9 @@ class ConfigsController < ApplicationController
 
   # GET /configs/new
   def new
-    @config = Config.new
-  end
+
+      @config = Config.new
+end
 
   # GET /configs/1/edit
   def edit
@@ -69,6 +72,6 @@ class ConfigsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def config_params
-      params.require(:config).permit(:mgr_company, :mgr_location, :mgr_email, :projector, :mgr_refreshment, :mgr_hr, :mgr_it, :loc_resource1, :loc_resource2)
+      params.require(:config).permit(:company, :p_custodian, :r_custodian, :projector, :status)
     end
 end

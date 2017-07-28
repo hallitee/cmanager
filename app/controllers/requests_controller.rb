@@ -36,7 +36,12 @@ end
   @comp = 'all'
 
   end
-
+def check_projector
+   @date = Date.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i
+   @start = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["startd(4i)"].to_i, params["startd(5i)"].to_i
+   @end = Time.new params["date(1i)"].to_i, params["date(2i)"].to_i, params["date(3i)"].to_i,params["endd(4i)"].to_i, params["endd(5i)"].to_i
+   return "true"
+end 
   # GET /requests/1/edit
   def edit
   logged_in
@@ -89,8 +94,9 @@ end
         end  #end check if staff is nil 
   end
   def check_crossplatform
+    @email = current_user.email
     @room = Room.where("id= #{params[:room]}").first
-      @staff =  Staff.where("email= '#{session[:email]}'").first  
+      @staff =  Staff.where("email= ?", @email).first  
   if params[:act]!='reschedule'
       if !@staff.nil?
       if @staff.location == @room.location
@@ -122,7 +128,7 @@ end
           end
       end   
     else
-      redirect_to new_request_url, alert: "Email cannot be empty!"
+      #redirect_to new_request_url, alert: "Email cannot be empty!"
 
     end   #staff record must not be nil
   else
@@ -330,13 +336,21 @@ end
   # PATCH/PUT /requests/1.json
   def update
     @staff = current_user.email
-    if params[:status] = 'reschedule'
-      params[:status]= 'booked'
-      session[:reschedule]='reschedule'
-    elsif params[:status] = 'cancel'
-      params[:status]= 'cancelled'   
-      session[:cancelled]='cancelled'     
-    end 
+    if params[:request][:status] == 'reschedule'
+      params[:request][:status]= 'booked'    
+      puts "reschedule"
+      elsif params[:request][:status] == 'cancelled' 
+        params[:request][:status] = 'cancelled'
+        puts "cancelled"
+    end
+    if !params[:request]["date(1i)"].nil?
+        params[:request]["startd(1i)"]=params[:request]["date(1i)"]
+       params[:request]["startd(2i)"]=params[:request]["date(2i)"]
+        params[:request]["startd(3i)"]=params[:request]["date(3i)"]   
+        params[:request]["endd(1i)"]=params[:request]["date(1i)"]
+        params[:request]["endd(2i)"]=params[:request]["date(2i)"]
+        params[:request]["endd(3i)"]=params[:request]["date(3i)"]
+    end
     if @staff.nil?
         #redirect_back fallback_location: new_request_url
        redirect_to new_request_url, alert: "Email Record not found, contact Admin for registration"
@@ -352,20 +366,11 @@ end
          redirect_to (:back), alert: "Please check Attendees, should be greater than zero !!" 
       else
     respond_to do |format|
-     # @request.startd =  DateTime.new 2017,07,30,15,15
-     # @request.endd =  DateTime.new 2017,07,30,15,15
-        params[:request]["startd(1i)"]=params[:request]["date(1i)"]
-        params[:request]["startd(2i)"]=params[:request]["date(2i)"]
-        params[:request]["startd(3i)"]=params[:request]["date(3i)"]   
-        params[:request]["endd(1i)"]=params[:request]["date(1i)"]
-        params[:request]["endd(2i)"]=params[:request]["date(2i)"]
-        params[:request]["endd(3i)"]=params[:request]["date(3i)"]
 
       if @request.update(request_params)
       if @request.status == 'reschedule'
             RequestMailer.reschedule(@request).deliver_later!(wait: 30.seconds)
           elsif @request.status == 'cancelled'
-            
           RequestMailer.rejected(@request).deliver_later!(wait: 30.seconds)
           end
           if user_signed_in?
@@ -406,7 +411,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-
       params.require(:request).permit(:title, :date, :startd, :endd, :desc, :requestby,
        :email, :reschedule, :room_id, :staff_id, :projector, :refreshment, :special, :attendees, :status, :approval, :final, :remarks)
 

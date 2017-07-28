@@ -102,6 +102,12 @@ $("#request_room_id1 option[value='"+$prev_res+"']").prop("selected", true);
 $("#request_room_id1 option[value='"+$temp+1+"']").attr("selected", true);
 });
 
+ $("#request_status").bind("change", function(){
+
+console.log('status changed');
+
+
+});
 
  $("#request_room_id1").bind("change", function(){
   $new_val = $(this).val();

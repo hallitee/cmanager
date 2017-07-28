@@ -99,28 +99,79 @@ $.ajaxSetup({
 });
     //$room_id = $("#_r_room_id").val();
     //console.log($room_id);
-$("#request_status").bind("change", function(){
+$("#request_projector").bind("click", function(){
+  if (this.checked){
+$.ajax({
+    type: 'POST',
+    url: "/check_projector",
+    beforeSend: function(xhr) {
+    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: { "email": $("#email_box").val(),
+            "projector":$(this).val(),
+      "room_id":$("#request_room_id").val(),
+      "date(3i)": $("#request_date_3i").val(),
+    "date(2i)": $("#request_date_2i").val(),
+    "date(1i)": $("#request_date_1i").val(),
+    "startd(4i)": $("#request_startd_4i").val(),
+    "startd(5i)": $("#request_startd_5i").val(),    
+    "endd(4i)": $("#request_endd_4i").val(),
+    "endd(5i)": $("#request_endd_5i").val()            
+
+    },                                                                                  
+    error: function( xhr ){ 
+     // alert("ERROR ON SUBMIT");
+      console.log("error");
+    },
+    success: function( data ){ 
+      //data response can contain what we want here...
+      console.log("SUCCESS, data="+data);
+    }
+  });
+}
+});
+
+$("#request_status").bind("load change", function(){
   $txt=$(this).val();
   if ($txt == 'reschedule'){
   $("#request_room_id1").removeAttr('disabled');    
   $("#request_date_3i").removeAttr('disabled');//attr('disabled', 'disabled');//.siblings().removeAttr('disabled');
    $("#request_date_2i").removeAttr('disabled');//.attr('disabled', 'disabled');
    $("#request_date_1i").removeAttr('disabled');//.attr('disabled', 'disabled');
+$("#request_startd_1i").removeAttr('disabled');
+$("#request_startd_2i").removeAttr('disabled');   
+$("#request_startd_3i").removeAttr('disabled');
 $("#request_startd_4i").removeAttr('disabled');
 $("#request_startd_5i").removeAttr('disabled');
+$("#request_endd_1i").removeAttr('disabled');
+$("#request_endd_2i").removeAttr('disabled');
+$("#request_endd_3i").removeAttr('disabled');
 $("#request_endd_4i").removeAttr('disabled');
 $("#request_endd_5i").removeAttr('disabled');
+$("#refresh1").removeAttr('disabled');
+$("#projector1").removeAttr('disabled');
+$("#request_refreshment").prop('disabled', false);
+$("#request_projector").prop('disabled', false);
+console.log("disabled removed");
    //$("#request_room_id1").attr('disabled', 'disabled').siblings().removeAttr('disabled');
 
   }else{
+     $("#request_refreshment").attr('disabled', 'disabled');
+  $("#request_projector").attr('disabled', 'disabled');
       $("#request_room_id1").attr('disabled', 'disabled'); 
  $("#request_date_3i").attr('disabled', 'disabled');//removeAttr('disabled');//attr('disa
  $("#request_date_2i").attr('disabled', 'disabled');
   $("#request_date_1i").attr('disabled', 'disabled');
+  $("#request_startd_1i").attr('disabled', 'disabled');//removeAttr('disabled');
+$("#request_startd_2i").attr('disabled', 'disabled');//removeAttr('disabled');
+  $("#request_startd_3i").attr('disabled', 'disabled');//removeAttr('disabled');
   $("#request_startd_4i").attr('disabled', 'disabled');//removeAttr('disabled');
 $("#request_startd_5i").attr('disabled', 'disabled');//removeAttr('disabled');
+$("#request_endd_1i").attr('disabled', 'disabled');//removeAttr('disabled');
+$("#request_endd_2i").attr('disabled', 'disabled');//removeAttr('disabled');
+$("#request_endd_3i").attr('disabled', 'disabled');//removeAttr('disabled');
 $("#request_endd_4i").attr('disabled', 'disabled');//removeAttr('disabled');
 $("#request_endd_5i").attr('disabled', 'disabled');//removeAttr('disabled');
+console.log("disabled enabled");
   }
 });
    $("#_r_room_id").bind("change", function(){
@@ -233,7 +284,9 @@ $.ajax({
     type: 'POST',
     url: "/check_crossplatform",
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-    data: { "room": $(this).val()},                                                                                  
+    data: { "room": $(this).val()
+
+  },                                                                                  
     error: function( xhr ){ 
      // alert("ERROR ON SUBMIT");
       console.log("error");

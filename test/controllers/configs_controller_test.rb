@@ -17,7 +17,7 @@ class ConfigsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create config" do
     assert_difference('Config.count') do
-      post configs_url, params: { config: { loc_resource1: @config.loc_resource1, loc_resource2: @config.loc_resource2, mgr_company: @config.mgr_company, mgr_email: @config.mgr_email, mgr_hr: @config.mgr_hr, mgr_it: @config.mgr_it, mgr_location: @config.mgr_location, mgr_refreshment: @config.mgr_refreshment, projector: @config.projector } }
+      post configs_url, params: { config: { company: @config.company, p_custodian: @config.p_custodian, projector: @config.projector, r_custodian: @config.r_custodian, status: @config.status } }
     end
 
     assert_redirected_to config_url(Config.last)
@@ -34,7 +34,7 @@ class ConfigsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update config" do
-    patch config_url(@config), params: { config: { loc_resource1: @config.loc_resource1, loc_resource2: @config.loc_resource2, mgr_company: @config.mgr_company, mgr_email: @config.mgr_email, mgr_hr: @config.mgr_hr, mgr_it: @config.mgr_it, mgr_location: @config.mgr_location, mgr_refreshment: @config.mgr_refreshment, projector: @config.projector } }
+    patch config_url(@config), params: { config: { company: @config.company, p_custodian: @config.p_custodian, projector: @config.projector, r_custodian: @config.r_custodian, status: @config.status } }
     assert_redirected_to config_url(@config)
   end
 

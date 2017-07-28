@@ -83,7 +83,7 @@
                       
                        <div class="input-md emailinput form-control " style="margin-bottom: 10px; border: 1px solid white" >
 
-                       <%= f.time_select(:startd, style:'margin-bottom: 10px', :value => @request.startd, :disabled => false, ignore_date: false)%> HH:MM
+                       <%= f.time_select(:startd, style:'margin-bottom: 10px', :value => @request.startd, :disabled => true, ignore_date: false)%> HH:MM
  
                           </div> 
                           <p id="time_error" style="display:none">  </p>
@@ -97,7 +97,7 @@
                           
                         <div class="input-md emailinput form-control" style="margin-bottom: 10px; border: 1px solid white" > 
                     
-                       <%= f.time_select(:endd, style:'margin-bottom: 10px',:value => @request.endd, :disabled => false, ignore_date: false)%> HH:MM
+                       <%= f.time_select(:endd, style:'margin-bottom: 10px',:value => @request.endd, :disabled => true, ignore_date: false)%> HH:MM
 
                            <p id="time_error" style="display:none">  </p>
                           </div>
@@ -116,7 +116,7 @@
                          <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField">Number of Attendees<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                                 <input type="number" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="attendees" value="<%= @request.attendees %>" readonly >
+                                 <input type="number" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="request[attendees]" value="<%= @request.attendees %>" readonly >
                           
                             </div>     
                         </div> 
@@ -139,18 +139,17 @@
                         <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField">Projector<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                      <input type="checkbox" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="projector" value="<%= @request.projector %>" <% if @request.projector == true %>
-                        <%= "checked" %>
-                        <% end %> >           
+          <%= f.check_box(:projector, style:'margin-bottom: 10px', class:'input-md emailinput form-control')%>
                             </div>     
                         </div>
 
                          <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField">Refreshment<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
-                      <input type="checkbox" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="refreshment" value="<%= @request.refreshment %>" <% if @request.refreshment == true %>
-                        <%= "checked" %>
-                        <% end %> >           
+                  
+<%= f.check_box(:refreshment, style:'margin-bottom: 10px', class:'input-md emailinput form-control')%>
+
+
                             </div>     
                         </div>
 

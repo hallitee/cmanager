@@ -1,0 +1,2 @@
+_pa.setPartners({pub:true,opx:true,yah:true})
+_pa.looperReady()

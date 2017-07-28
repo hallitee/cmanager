@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :configs
+  match '/check_projector' =>"requests#check_projector", :via => :post, :as => :chk_projector
 match '/get_events' =>"index#get_events", :via => :post, :as => :get_events
 match '/check_email' =>"requests#check_email", :via => :post, :as => :chk_email
 match '/check_crossplatform' =>"requests#check_crossplatform", :via => :post, :as => :check_crossplatform

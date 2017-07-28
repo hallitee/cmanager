@@ -1,6 +1,6 @@
 style:'margin-bottom: 10px', class:'input-md emailinput form-control',data: {trigger: "blur"}, data: {required: "true" }, remote: true, id: 'email_box'
 
- if @staff.crossplatform
+if @staff.crossplatform
       
       else
       @room = Room.where("location= '#{@staff.location}' ")
@@ -17,7 +17,7 @@ if current_user.try(:admin?)
   # do something
 end
 
-<div class="carousel slide" data-ride="carousel" data-wrap="false" id="carousel-1">
+            <div class="carousel slide" data-ride="carousel" data-wrap="false" id="carousel-1">
                         <div class="carousel-inner" role="listbox">
                             <div class="item active"><%= image_tag 'ConferenceRoom1.jpg' %></div>
                             <div class="item"><%= image_tag 'presenting.jpg' %></div>
@@ -228,5 +228,31 @@ end
           elsif @request.status == 'pending'
             RequestMailer.reminder(@request).deliver_later!(wait: 30.seconds)
           end 
-              
- 
+
+          ===========================================================
+                          <% if @staff.crossplatform %>
+                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                                <% else %>
+                                <% if @staff.priviledge && @staff.company != @room.company %>
+                                <%= f.collection_select(:room_id, Room.where("company='HQ'"), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                                <% else %>
+                                <%= f.collection_select(:room_id, Room.where("company=?", @staff.company), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+
+                                <% end %>
+                              <% end %>
+===================================================================================
+                                        
+                                             <% if @staff.crossplatform %>
+                                     <%= f.collection_select(:room_id, Room.all, :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% elsif  @staff.location == 'IKOYI' %>
+                                           <%= f.collection_select(:room_id, Room.where("location='IKOYI'"), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% else %>
+                                      <%= f.collection_select(:room_id, Room.where("company=?", @staff.company), :id, :options_name, {:selected => @request.room_id.to_i } ,{id:'request_room_id1', :disabled => true, class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+
+                          <% end %>
+ ======================================================
+ User.where("state IN (?) AND salary >= ?", ["AL", "MI", "MA"], 1000)
+
+     <input id="refresh1" type="checkbox" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="refreshment"  <% if @request.refreshment %>
+                        <%= "checked" %>
+                        <% end %> > 

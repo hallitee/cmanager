@@ -10,20 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727093234) do
+ActiveRecord::Schema.define(version: 20170728135834) do
 
   create_table "configs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "mgr_company"
-    t.string   "mgr_location"
-    t.string   "mgr_email"
+    t.string   "company"
+    t.string   "p_custodian"
+    t.string   "r_custodian"
     t.integer  "projector"
-    t.string   "mgr_refreshment"
-    t.string   "mgr_hr"
-    t.string   "mgr_it"
-    t.integer  "loc_resource1"
-    t.integer  "loc_resource2"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "delayed_jobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

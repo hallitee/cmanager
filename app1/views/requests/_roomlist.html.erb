@@ -1,0 +1,10 @@
+							<div id="room_loc" class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
+                             <% if @comp == 'all' %>
+
+
+                              <%= f.collection_select(:room_id, Room.all, :id, :options_name, {},{class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% else %>
+                              	    <%= f.collection_select(:room_id, Room.where("company= '#{@comp}'"), :id, :options_name, {},{class:'input-md emailinput form-control', style:'margin-bottom: 10px'})%>
+                        	<% end %>
+                        	<p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
+                            </div>    

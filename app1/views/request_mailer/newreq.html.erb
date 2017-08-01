@@ -1,0 +1,42 @@
+  
+<br>
+<%= @greeting %> <b> <%= @req.requestby %></b>
+
+<br>
+<br>
+
+<p>
+Your Booking for <%= @room.company + " \s" + @room.name %> has been received and accepted. <br>
+
+Please find details to your request below:
+ <br>
+ <br>
+ <p> Meeting Room 				: <%= @room.codename + " > "+ @room.company+" "+@room.name %> </p>
+<br>
+ <p> Meeting Location		    : <%= @room.location %></p>
+<br> 
+ <p> Date 						: <%= @req.date.strftime("%d-%m-%Y") %> </p>
+<br>
+<% b=@req.startd.to_s(:time) %>
+<% c=@req.endd.to_s(:time)%>
+ <p> Start Time		    		: <%= b %></p>
+<br> 
+ <p> End Time		    		: <%= c %></p>
+<br>
+ <p> Reference/Booking Number   : <%= @req.id %> </p>
+<br>
+ <p> Email Address       		: <%= @req.email %></p>
+<br>
+<br>
+<br>
+<h4> 
+To <%= link_to 'view/reschedule/cancel', request_url(@req) %> booking at any time please click the link below <br>
+<br>
+<br>
+
+<%= link_to 'Show Booking status', request_url(@req) %>
+</h4>
+<br>
+<br>
+Warm regards, 
+

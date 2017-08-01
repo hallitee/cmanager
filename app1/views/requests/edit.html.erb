@@ -1,0 +1,11 @@
+<%= render 'statusform', request: @request do |f| %>
+
+                         <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Reservation <span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 10px">
+                                 
+                          	<%= f.select :status, ['booked','cancelled', 'reschedule'], 
+                          	class: 'control-label col-md-8', style: 'margin-bottom:20px' %>
+                            </div>     
+                        </div> 
+                      <%end %>

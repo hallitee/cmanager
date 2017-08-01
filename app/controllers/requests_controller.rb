@@ -32,6 +32,9 @@ end
   # GET /requests/new
   def new
   logged_in
+  @email = current_user.email
+  @staff = Staff.where("email=?", @email).first
+  @r = Room.all
   @request = Request.new
   @comp = 'all'
 
@@ -85,6 +88,12 @@ end
         format.html { redirect_to index_dashboard_url, notice: 'Request was successfully created.'}
         format.json { render :show, status: :created, location: @request }
         RequestMailer.delay.newreq(@request)
+        if @request.projector
+        RequestMailer.delay.projectormail(@request)
+        end
+        if @request.refreshment
+        RequestMailer.delay.refreshmentmail(@request)
+      end
       else
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking</title>
+
+
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row visible-xs-block visible-sm-block visible-md-block visible-lg-block visible-xs-inline">
+                <div class="col-md-2"></div>
+
+                <div class="col-md-2 col-md-push-1 col-md-pull-2">
+                    <button class="btn btn-primary btn-block btn-sm" type="button" style="border-radius:30px">Booked Meetings<span><span class="badge" style="font-size:22px; border: 2px solid blue"><%= @pending %></span></span>
+                    </button>
+                </div>
+                <div class="col-md-2 col-md-push-1 col-md-pull-2">
+                    <button class="btn btn-info btn-block btn-sm" type="button" style="border-radius:30px">Upcoming Events<span><span class="badge" style="font-size:22px; border: 2px solid purple"><%= @ongoing %></span></span>
+                    </button>
+                </div>
+
+                <div class="col-md-2 col-md-push-1 col-md-pull-2">
+                    <button class="btn btn-danger btn-block btn-sm" type="button" style="border-radius:30px">Cancelled <span><span class="badge" style="font-size:22px; border: 2px solid red"><%= @cancel %></span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section>
+        <div class="container visible-xs-block visible-sm-block visible-md-block visible-lg-block visible-xs-inline">
+            <div class="row">
+                <div class="col-md-2 " style="margin-top:5%; border: 0px solid lightgrey; background-color:lightgrey">
+                    <div style="margin:10px;">
+ <%= link_to("ALL REQUEST", admin_user_path, class: "btn btn-default btn-block btn-md" ) %>                       
+                    </div>
+                    <div style="margin:10px;">
+<%= link_to("BOOKED", admin_user_path(:ps=> "booked"), class: "btn btn-default btn-block btn-md" ) %>
+                    </div>
+                    <div style="margin:10px;">
+<%= link_to("UPCOMING EVENTS", admin_user_path(:ps=>"coming"), class: "btn btn-default btn-block btn-md" ) %>
+                    </div>
+                   
+                    <div style="margin:10px;">
+                    <%= link_to 'CHANGE PASSWORD', edit_user_registration_path, :class => 'btn btn-default btn-block btn-md' %>
+                       
+                    </div>
+                    <div class="btn-group" role="group"></div>
+                </div>
+
+                <div class="col-md-9 " style="margin-top:5%;border:0.5% solid lightgrey;background-color:white">
+
+                    <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                    <thead>
+                      <tr>
+                
+                      <th>TITLE</th>
+                       <th>MEETING ROOM</th>
+                      <th>MEETING DATE</th>
+                      <th>START TIME</th>
+                      <th>END TIME</th>
+                      <th>STATUS</th>
+                      <th>UPDATE</th>
+                     
+                      </tr>  
+                    </thead>   
+                    <tbody>
+                 <%   @request.each do |f| %>
+                        <tr>
+                            <td><%= f.title %></td>
+            <% @room = Room.where("id=?", f.room_id).first %>
+                            <td><%= @room.name+" "+@room.location %></td>
+                            <td><%= f.date %></td>
+      <% b = f.startd.to_s.split(" ") %>                        
+                            <td><%= b[1] %></td>
+              <% c = f.endd.to_s.split(" ") %>                              
+                            <td><%= c[1] %></td>
+                            <td><%= f.status %></td>
+                            <% if f.status == 'booked' ||f.status == 'pending' ||  f.status == '' %>
+                            <% b = link_to 'change', edit_request_path(f) %>
+                            <% elsif f.status == 'cancelled' || f.status == 'completed' || f.status == 'reschedule' %>
+                             <% b = link_to 'View', f %>
+                            <% end %>
+                            <td> <%= b %></td>
+                           
+                        </tr>   
+
+
+                        <% end %>                                           
+                    </tbody>
+
+                    </table>
+                        
+
+                    </div>
+                    <div> <h4> <%= will_paginate @request %></h4></div>
+                    <div>
+                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

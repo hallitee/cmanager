@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170728135834) do
 
-  create_table "configs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "configs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "company"
     t.string   "p_custodian"
     t.string   "r_custodian"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170728135834) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "delayed_jobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "delayed_jobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "priority",                 default: 0, null: false
     t.integer  "attempts",                 default: 0, null: false
     t.text     "handler",    limit: 65535,             null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170728135834) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
   end
 
-  create_table "requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "title"
     t.date     "date"
     t.datetime "startd"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20170728135834) do
     t.index ["staff_id"], name: "index_requests_on_staff_id", using: :btree
   end
 
-  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
     t.string   "codename"
     t.string   "company"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20170728135834) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "staffs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "staffs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
     t.string   "email"
     t.string   "company"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20170728135834) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"

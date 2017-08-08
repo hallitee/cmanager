@@ -12,7 +12,26 @@ class RequestMailer < ApplicationMailer
        @room = Room.where("id=?", @req.room_id).first
     mail to: "#{@req.email}", subject: "New Booking Received"
   end
-
+ def projectormail(req)
+@req = req
+@greeting = "Hi"
+@room = Room.where("id=?", @req.room_id).first
+@s = Staff.where("id=?",@req.staff_id).first
+    if @s.location == 'IKOYI'
+      @con = Config.where("company='HQ'").first
+      mail to: "#{@con.p_custodian}", subject: "New Projector Request"
+    else 
+      @con  = Config.where("company=?", @s.company).first
+       mail to: "#{@con.p_custodian}", subject: "New ProjectorP Request"
+    end 
+ end
+ def refreshmentmail(req, f)
+  @f=f
+@req = req
+@greeting = "Hi"
+@room = Room.where("id=?", @req.room_id).first
+mail to: "#{@f}", subject: "New Refreshment Request"
+ end
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -76,3 +95,4 @@ c = @req.endd.to_s.split(" ")
 mail to: "#{@req.email}", subject: "Conference Room Booking Rescheduled"
   end
 end
+

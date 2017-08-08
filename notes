@@ -1,3 +1,5 @@
+netsh interface portproxy add v4tov4 listenaddress=192.168.200.123 listenport=3000 connectaddress=192.168.88.128 connectport=3000
+----------------------------------------
 style:'margin-bottom: 10px', class:'input-md emailinput form-control',data: {trigger: "blur"}, data: {required: "true" }, remote: true, id: 'email_box'
 
 if @staff.crossplatform
@@ -256,3 +258,43 @@ end
      <input id="refresh1" type="checkbox" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="refreshment"  <% if @request.refreshment %>
                         <%= "checked" %>
                         <% end %> > 
+
+                        
+                        
+                     <input id="projector1" type="checkbox" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="projector" <% if @request.projector %>
+                        <%= "checked" %>
+                        <% end %> >   
+========================================================
+Request.joins(:room).where("rooms.company=?", 'HQ')  
+
+Request.joins(:room).select("*").where(rooms: {company: 'HQ', location: 'IKOYI'}).where(requests: {status: 'reschedule'})
+
+
+Request.joins(:room).where("rooms.company=? AND requests.status IN (?)", 'HQ', ['booked', 'reschedule'])
+===========================================================================
+                <% if user_signed_in? %>
+
+                <% if @staff.crossplatform %>
+                                        <%= collection_select(:@r, :room_id, Room.all, :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% elsif  @staff.location == 'IKOYI' %>
+                                          <%= collection_select(:@r, :room_id, Room.where("location='IKOYI'"), :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% else %>
+                               <%= collection_select(:@r, :room_id, Room.where("company=?",@staff.company), :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
+                          <% end %>
+                    <div id="calendar"> </div>
+                <% else %>
+                            <div class="carousel slide" data-ride="carousel" data-wrap="false" id="carousel-1">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active"><%= image_tag 'ConferenceRoom1.jpg' %></div>
+                            <div class="item"><%= image_tag 'presenting.jpg' %></div>
+                            <div class="item"><%= image_tag 'ConferenceRoom4.jpg' %></div>
+                        </div>
+                        <div><a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-1" role="button"
+                            data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a></div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-1" data-slide-to="1"></li>
+                            <li data-target="#carousel-1" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                    <% end %>

@@ -1,0 +1,38 @@
+<br>
+<%= @greeting+" " %><%= @f.split(',')[0].upcase_first %>
+
+<br>
+<br>
+<br>
+<br>
+ A new request for refreshment has been received from 
+
+ <%= @req.requestby.upcase %>, please find details of meeting below: 
+
+
+ <br>
+ <br>
+ <p> Meeting Room 				: <%= @room.codename + " > "+ @room.company+" "+@room.name %> </p>
+<br>
+ <p> Meeting Location		    : <%= @room.location %></p>
+<br> 
+ <p> Date 						: <%= @req.date.strftime("%d-%m-%Y") %> </p>
+<br>
+<% b=@req.startd.to_s(:time) %>
+<% c=@req.endd.to_s(:time)%>
+ <p> Start Time		    		: <%= b %></p>
+<br> 
+ <p> End Time		    		: <%= c %></p>
+<br>
+<br>
+ <p> Attendees		    		: <%= @req.attendees %></p>
+<br> 
+ <p> Special Request    		: <%= @req.special %></p>
+<br>
+<br>
+<br>
+For further clarification regarding this request please call user on office extension. 
+<br>
+<br>
+<br>
+Warm regards, 

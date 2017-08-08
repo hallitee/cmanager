@@ -13,8 +13,20 @@
 
 <div class="container">    
 <% state = "false" %>
+<div class="row">
+<div  style="margin-top:2px" class="col-md-4 col-sm-8">
+                <% if @staff.crossplatform %>
+                                        <%= collection_select(:@r, :room_id, Room.all, :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% elsif  @staff.location == 'IKOYI' %>
+                                          <%= collection_select(:@r, :room_id, Room.where("location='IKOYI'"), :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
+                              <% else %>
+                               <%= collection_select(:@r, :room_id, Room.where("company=?",@staff.company), :id, :options_name, {},{class:'input-sm emailinput form-control', style:'margin-bottom: 10px'})%>
+                          <% end %>
+                    <div id="calendar"> </div>
 
-    <div id="signupbox" style="  margin-top:2px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            </div>
+
+    <div style="margin-top:2px" class="col-md-6 col-sm-8">
         <div class="panel panel-info" >
             <div class="panel-heading " >
                 <div class="panel-title" >Create New Request </div>
@@ -28,7 +40,7 @@
                             </div>
                         </div> 
    
-
+                        <%= f.hidden_field(:staff_id, :value=> @staff.id) %>
                          <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
                             <div class="controls col-md-8 " style="margin-top: 5px; margin-bottom: 5px">
@@ -69,7 +81,7 @@
 
                                <p id="domain_error" style="display:none"> Error: Please choose room within company/location </p>
                         </div> 
-                        <%= f.hidden_field(:staff_id, {id: 'staff_id'}) %>
+                  
 
                         <div id="div_id_As" class="form-group required">
                             <label for="id_As"  class="control-label col-md-4  requiredField">Meeting Date<span class="asteriskField">*</span></label>
@@ -163,7 +175,11 @@
             </div>
         </div>
     </div> 
+
+
 </div>
+</div>
+
 
 
 <% end %>

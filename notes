@@ -1,3 +1,5 @@
+netsh interface portproxy add v4tov4 listenaddress=192.168.200.123 listenport=3000 connectaddress=192.168.88.128 connectport=3000
+----------------------------------------
 style:'margin-bottom: 10px', class:'input-md emailinput form-control',data: {trigger: "blur"}, data: {required: "true" }, remote: true, id: 'email_box'
 
 if @staff.crossplatform

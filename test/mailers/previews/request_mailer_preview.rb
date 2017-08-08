@@ -12,7 +12,7 @@ class RequestMailerPreview < ActionMailer::Preview
   end
     def refreshmentmail
     @req = Request.last
-    RequestMailer.refreshmentmail(@req)
+    RequestMailer.refreshmentmail(@req, @f, @con)
   end
   # Preview this email at http://localhost:3000/rails/mailers/request_mailer/approved
   def approved

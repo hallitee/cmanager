@@ -92,7 +92,28 @@ end
         RequestMailer.delay.projectormail(@request)
         end
         if @request.refreshment
-        RequestMailer.delay.refreshmentmail(@request)
+          @room = Room.where("id=?", @request.room_id).first
+          #@s = Staff.where("id=?",@request.staff_id).first
+
+if @staff.location == 'IKOYI'
+      @con = Config.where("company='HQ'").first
+      mails = @con.r_custodian.split(',')
+      mails.each{|f| 
+        RequestMailer.delay.refreshmentmail(@request, f)
+        #mail to: "#{f}", subject: "New Refreshment Request"
+      }
+      #mail to: "#{@con.r_custodian}", subject: "New Refreshment Request"
+    else 
+      @con  = Config.where("company=?", @staff.company).first
+      mails = @con.r_custodian.split(',')      
+      mails.each{|f| 
+        RequestMailer.delay.refreshmentmail(@request, f)
+        #mail to: "#{f}", subject: "New Refreshment Request"
+      }
+      # mail to: "#{@con.r_custodian}", subject: "New Refreshment Request"
+    end 
+
+       # RequestMailer.delay.refreshmentmail(@request)
       end
       else
         format.html { render :new }

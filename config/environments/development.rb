@@ -63,7 +63,7 @@ domain: 'gmail.com',
 authentication: :login,
 #user_name: ENV["GMAIL_USERNAME"],
 #password: ENV["GMAIL_PASSWORD"],
-user_name: 'conferencemanager1@gmail.com',
+user_name: 'nprnlconferencemanager@gmail.com',
 password: 'Quick@2017',
 enable_starttls_auto: true
 }

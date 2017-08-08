@@ -1,70 +1,29 @@
+<p id="notice"><%= notice %></p>
 
-<div class="container">    
+<p>
+  <strong>Company:</strong>
+  <%= @config.company %>
+</p>
 
+<p>
+  <strong>P custodian:</strong>
+  <%= @config.p_custodian %>
+</p>
 
-    <div id="signupbox" style="  margin-top:2px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <div class="panel panel-info" >
-            <div class="panel-heading " >
-                <div class="panel-title" >New Config Parameters </div>
-            </div>  
-            <div class="panel-body" >
+<p>
+  <strong>R custodian:</strong>
+  <%= @config.r_custodian %>
+</p>
 
-                        <div id="div_id_select" class="form-group required">
-                            <label for="id_select"  class="control-label col-md-4  requiredField">Company<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
-                      
-  <input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="title" value="<%= @config.company %>" readonly >
+<p>
+  <strong>Projector:</strong>
+  <%= @config.projector %>
+</p>
 
-                            </div>
-                        </div> 
-   
-                        <div id="div_id_select" class="form-group required">
-                            <label for="id_select"  class="control-label col-md-4  requiredField">Projector Custodian Email<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
-<input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="title" value="<%= @config.p_custodian %>" readonly >                 
-                            </div>
-                        </div> 
+<p>
+  <strong>Status:</strong>
+  <%= @config.status %>
+</p>
 
-                        <div id="div_id_select" class="form-group required">
-                            <label for="id_select"  class="control-label col-md-4  requiredField">Refreshment Organizer Email<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
-<input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="title" value="<%= @config.r_custodian %>" readonly >             
-                            </div>
-                        </div>                         
-
-                        <div id="div_id_select" class="form-group required">
-                            <label for="id_select"  class="control-label col-md-4  requiredField">Available Projector<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
-<input type="text" style='margin-bottom: 10px' class= "input-md emailinput form-control" name="title" value="<%= @config.projector %>" readonly >                     
-
-
-                            </div>
-                        </div>    
-
-                        <div id="div_id_select" class="form-group required">
-                            <label for="id_select"  class="control-label col-md-4  requiredField">Status Enable/Disable<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
-    <%= check_box(:@config, :status, style:'margin-bottom: 10px', class:'input-md emailinput form-control', value: @config.status)%>
-                  
-
-
-                            </div>
-                        </div>                                              
-                         <div id="div_id_email" class="form-group required">
-                            
-                            <div class="control-label col-md-4  requiredField" > <%= link_to 'Back', configs_path, class: 'btn btn-default' %>  </div>
-                               
-                            <div class="controls col-md-8 ">
-                          
-<%= link_to 'Edit', edit_config_path(@config), class: 'btn btn-default' %> 
-                            
-                            </div>     
-                        </div>     
-      
-
-
-
-            </div>
-        </div>
-    </div> 
-</div>
+<%= link_to 'Edit', edit_config_path(@config) %> |
+<%= link_to 'Back', configs_path %>

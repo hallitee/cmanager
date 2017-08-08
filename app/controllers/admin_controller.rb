@@ -31,24 +31,22 @@ class AdminController < ApplicationController
      elsif params[:ps]=='coming'
       @request = Request.where("startd >= ? AND email=? AND status IN (?) ",Time.now, @email, ['booked', 'reschedule']).paginate(:page => params[:page], :per_page=>10)
    else
-   @request = Request.where("email=?", @email).order("startd DESC").paginate(:page => params[:page], :per_page=>10)
+   @request = Request.where("email=?", @email).paginate(:page => params[:page], :per_page=>10)
    end
    count1
 
   end
   def manager
-  @email = current_user.email 
-  @mgr = Staff.where("email=?", @email)
-  @st = Staff.where("email=?", @email).first
-  #@request=Request.joins(:room).select("*").where(rooms: {company: 'NPRNL'})
- @request = Request.joins(:room).select("*").where(rooms: {company: @st.company, location: @st.location}).order("date DESC").paginate(:page => params[:page], :per_page=>10)   
-  #@request = Request.all.order("date DESC").paginate(:page => params[:page], :per_page=>10)   
+    @email = current_user.email 
+    @mgr = Staff.where("email=?", @email)
+    #@request=Request.joins(:room).select("*").where(rooms: {company: 'NPRNL'})
+   @request = Request.all.paginate(:page => params[:page], :per_page=>10)   
       if params[:ps]=='booked'
     @request = Request.where("status = 'booked' or status='reschedule'").order(date: :asc).paginate(:page => params[:page], :per_page=>10)
      elsif params[:ps]=='coming'
      @request = Request.where("date >= ? AND status=? or status= ?",Date.today, 'booked', 'reschedule').paginate(:page => params[:page], :per_page=>10)
    else
-   #@request = Request.all.paginate(:page => params[:page], :per_page=>10)  
+   @request = Request.all.paginate(:page => params[:page], :per_page=>10)  
    end 
    counts
   end 
@@ -80,25 +78,13 @@ class AdminController < ApplicationController
   end
 
   def counts
-   @email = current_user.email 
-   @st = Staff.where("email=?",@email).first
-
-if @st.location == 'IKOYI'
-  @pending = Request.joins(:room).where("rooms.company=? AND requests.status IN (?)", 'HQ', ['booked', 'reschedule']).count
-
-  #Request.where("status = 'booked' OR status='reschedule'").count
-	@approved = Request.joins(:room).where("rooms.company=? AND requests.status IN (?)", 'HQ', ['booked', 'reschedule']).where("requests.startd >= ? ", Time.now).count
-	@ongoing = Request.joins(:room).where("rooms.company=? AND requests.status IN (?)", 'HQ', ['booked', 'reschedule']).where("requests.startd >= ? ", Time.now).count
+  @pending = Request.where("status = 'booked' OR status='reschedule'").count
+	@approved = Request.where("date = ? and status = ?", "#{Date.today}", "booked").count
+	@ongoing = Request.where("date < ? AND status= ? OR status=?", Date.today+5.day, 'booked', 'reschedule').count
 	@cancel = Request.where("status = 'cancelled'").count
   #@r = Room.joins(:requests).select("*").where(requests: {id: 12}).first
-else 
-  @pending = Request.joins(:room).where("rooms.company=? AND requests.status IN (?)", @st.company, ['booked', 'reschedule']).count
-  #Request.where("status = 'booked' OR status='reschedule'").count
-  @approved = Request.joins(:room).where("rooms.company=? AND requests.status IN (?)", @st.company , ['booked', 'reschedule']).where("requests.date = ? ", Date.today).count
-  @ongoing = Request.where("date < ? AND status= ? OR status=?", Date.today+5.day, 'booked', 'reschedule').count
-  @cancel = Request.where("status = 'cancelled'").count
+
   end
-end
     def count1
   @email = current_user.email
   @pending = Request.where("email=? AND status IN (?)", current_user.email, ['booked','reschedule']).count

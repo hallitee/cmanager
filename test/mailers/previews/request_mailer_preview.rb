@@ -6,14 +6,7 @@ class RequestMailerPreview < ActionMailer::Preview
     @req = Request.last
     RequestMailer.newreq(@req)
   end
-  def projectormail
-    @req = Request.last
-    RequestMailer.projectormail(@req)
-  end
-    def refreshmentmail
-    @req = Request.last
-    RequestMailer.refreshmentmail(@req, @f, @con)
-  end
+
   # Preview this email at http://localhost:3000/rails/mailers/request_mailer/approved
   def approved
     @req = Request.last

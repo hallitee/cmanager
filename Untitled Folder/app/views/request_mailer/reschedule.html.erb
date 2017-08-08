@@ -1,0 +1,26 @@
+<p>
+  <%= @greeting %> <b> <%= @req.requestby %> </b>,
+</p>
+  <br>
+  <br>
+<p>
+We regret to inform you that your booking for NPRNL conference room can not be approved
+for the chosen date, we advice rescheduling to available date below 
+  <br>
+  <br>
+<b>
+  <p> Date: 		 <%= @req.date%> </p>
+
+  <p> End Time:		<%= @endd %></p>
+</b>
+ <br>
+ <p>To reschedule your booking please click on link below</p><br>
+ <p><%= link_to "Reschedule Booking", [:edit, @req] %></p>
+
+ <p> <%= link_to 'Edit', edit_request_url(@req) %></p>
+</p>
+<br>
+<br>
+<p>We regret any incoveniences caused. 
+
+<p> Warm regards,</p>

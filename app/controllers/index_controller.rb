@@ -17,7 +17,7 @@ endd = endd.to_time.iso8601
 
 #start = Time.new(task.date.year, task.date.month, task.date.day, task.startd.hour, task.startd.min)
 #endd = Time.new(task.date.year, task.date.month, task.date.day, task.endd.hour, task.endd.min)
-	events << { :id => "#{task.id}", :title => "#{task.requestby.upcase_first}", :start => 
+	events << { :id => "#{task.id}",  :start => 
 	"#{start}", :end => "#{endd}"  }
 end
 #render plain: events.to_json

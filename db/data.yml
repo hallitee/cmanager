@@ -8,101 +8,124 @@ ar_internal_metadata:
   - updated_at
   records: 
   - - environment
-    - production
+    - development
     - 2017-06-06 10:21:04.000000000 +01:00
-    - 2017-07-24 16:04:06.000000000 +01:00
+    - 2017-06-06 10:21:04.000000000 +01:00
 
 ---
-configs:
+delayed_jobs:
   columns:
   - id
-  - company
-  - p_custodian
-  - r_custodian
-  - projector
-  - status
+  - priority
+  - attempts
+  - handler
+  - last_error
+  - run_at
+  - locked_at
+  - failed_at
+  - locked_by
+  - queue
   - created_at
   - updated_at
   records: 
   - - 1
-    - HQ
-    - taofik.alli-balogun@natural-prime.com
-    - yinka.olaniyi@esrnl.com,frieda.oshomah@esrnl.com
-    - 3
-    - false
-    - 2017-07-31 14:11:53.000000000 +01:00
-    - 2017-08-05 10:41:53.000000000 +01:00
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: 58247c68-178e-4182-a791-e094778c990f\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:07:11.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:07:11.000000000 +01:00
+    - 2017-07-24 10:07:11.000000000 +01:00
   - - 2
-    - ESRNL
-    - moji.luwaji@esrnl.com
-    - ayodeji.adewumi@esrnl.com,obieze.joy@esrnl.com
-    - 1
-    - false
-    - 2017-08-01 13:22:11.000000000 +01:00
-    - 2017-08-03 11:19:43.000000000 +01:00
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: c0771c54-6697-44b7-b529-19cde41553fd\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:10:25.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:10:25.000000000 +01:00
+    - 2017-07-24 10:10:25.000000000 +01:00
   - - 3
-    - NPRNL
-    - olatawura.esther@natural-prime.com
-    - abifarin.blessing@natural-prime.com,timothy.adekunle@natural-prime.com
-    - 1
-    - false
-    - 2017-08-01 13:22:54.000000000 +01:00
-    - 2017-08-03 11:20:01.000000000 +01:00
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: b859c6c3-921f-41e5-bafd-aeadd40b6576\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:15.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:14:15.000000000 +01:00
+    - 2017-07-24 10:14:15.000000000 +01:00
   - - 4
-    - PFNL
-    - chinedu.chukwudum@primerafood-nigeria.com
-    - chinyere.bologun@primerafood-nigeria.com,evelyn.iwuchukwu@primerafood-nigeria.com
-    - 1
-    - false
-    - 2017-08-01 13:23:30.000000000 +01:00
-    - 2017-08-03 11:20:12.000000000 +01:00
-
----
-requests:
-  columns:
-  - id
-  - title
-  - date
-  - startd
-  - endd
-  - desc
-  - requestby
-  - email
-  - reschedule
-  - projector
-  - refreshment
-  - special
-  - attendees
-  - status
-  - approval
-  - final
-  - remarks
-  - staff_id
-  - room_id
-  - created_at
-  - updated_at
-  records: 
-  - - 18
-    - meeting
-    - 2017-08-08
-    - 2017-08-08 09:00:00.000000000 +01:00
-    - 2017-08-08 10:30:00.000000000 +01:00
-    - Organised by Aby Mathew
-    - yinka olaniyi
-    - yinka.olaniyi@esrnl.com
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: 06567a5a-c439-4085-9947-6167f1974a06\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
     - 
-    - false
-    - true
-    - 'No'
-    - 2
-    - booked
+    - 2017-07-24 10:14:20.000000000 +01:00
     - 
     - 
     - 
-    - 384
-    - 1
-    - 2017-08-05 12:15:40.000000000 +01:00
-    - 2017-08-05 12:15:40.000000000 +01:00
+    - default
+    - 2017-07-24 10:14:20.000000000 +01:00
+    - 2017-07-24 10:14:20.000000000 +01:00
+  - - 5
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: e07aa465-d802-4903-a5c2-57a7fc80a2b3\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:21.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:14:21.000000000 +01:00
+    - 2017-07-24 10:14:21.000000000 +01:00
+  - - 6
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: 981bdd10-9072-479d-9724-85b36ffcb71a\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:22.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:14:22.000000000 +01:00
+    - 2017-07-24 10:14:22.000000000 +01:00
+  - - 7
+    - 0
+    - 0
+    - "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n
+      \ job_class: CheckCompletedRequestJob\n  job_id: 7c925a91-af2d-4ce7-8308-e3a67c9164a8\n
+      \ queue_name: default\n  priority: \n  arguments: []\n  locale: en\n"
+    - 
+    - 2017-07-24 10:14:25.000000000 +01:00
+    - 
+    - 
+    - 
+    - default
+    - 2017-07-24 10:14:25.000000000 +01:00
+    - 2017-07-24 10:14:25.000000000 +01:00
 
 ---
 rooms:
@@ -149,7 +172,7 @@ rooms:
     - 2017-07-04 13:49:43.000000000 +01:00
     - 2017-07-04 13:49:43.000000000 +01:00
   - - 4
-    - Factory Conference Room
+    - ESRNL Factory Conference Room
     - Sunflower
     - ESRNL
     - AGBARA
@@ -157,9 +180,9 @@ rooms:
     - GOOD
     - ''
     - 2017-07-04 13:51:34.000000000 +01:00
-    - 2017-08-02 11:13:36.000000000 +01:00
+    - 2017-07-04 13:51:34.000000000 +01:00
   - - 5
-    - Factory Conference Room
+    - NPRNL Factory Conference Room
     - Rose
     - NPRNL
     - AGBARA
@@ -167,9 +190,9 @@ rooms:
     - GOOD
     - ''
     - 2017-07-04 13:57:35.000000000 +01:00
-    - 2017-08-02 11:14:04.000000000 +01:00
+    - 2017-07-04 13:57:35.000000000 +01:00
   - - 6
-    - Training Room
+    - NPRNL Training Room
     - Tulip
     - NPRNL
     - AGBARA
@@ -177,7 +200,7 @@ rooms:
     - GOOD
     - ''
     - 2017-07-04 13:59:28.000000000 +01:00
-    - 2017-08-02 11:14:25.000000000 +01:00
+    - 2017-07-04 13:59:28.000000000 +01:00
   - - 7
     - Guest Room 1 Gr. Floor
     - Aster
@@ -255,19 +278,19 @@ staffs:
     - adedoyin.aiyeola@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 274
     - adetutu popoola
     - adetutu.popoola@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 275
     - afolabi okesanjo
     - afolabi.okesanjo@esrnl.com
@@ -300,28 +323,28 @@ staffs:
     - akeem.oyalowo@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 279
     - akinyoade gabriel
     - akinyoade.gabriel@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 280
     - albert afagbon
     - albert.afagbon@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 281
     - alex setiabudi
     - alex.setiabudi@esrnl.com
@@ -354,19 +377,19 @@ staffs:
     - anjola.babatunde@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 285
     - antonio deogracias
     - antonio.deogracias@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 286
     - asep tomy
     - asep.tomy@esrnl.com
@@ -381,10 +404,10 @@ staffs:
     - austin.asindi@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 288
     - ayodeji adewumi
     - ayodeji.adewumi@esrnl.com
@@ -399,28 +422,28 @@ staffs:
     - babalola.toye@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 290
     - chibuzor obiekwe
     - chibuzor.obiekwe@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:30.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:30.000000000 +01:00
   - - 291
     - chidimma anyanwu
     - chidimma.anyanwu@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 292
     - chimezie obidimma
     - chimezie.obidimma@esrnl.com
@@ -435,10 +458,10 @@ staffs:
     - chukwunonso.anyadike@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 294
     - 'cooperative '
     - cooperative@esrnl.com
@@ -462,19 +485,19 @@ staffs:
     - dare.ojo@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 297
     - david egurube
     - david.egurube@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 298
     - dayo agunbiade
     - dayo.agunbiade@esrnl.com
@@ -507,37 +530,37 @@ staffs:
     - emeka.onuoha@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 302
     - esrnl info
     - esrnl.info@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 303
     - falaiye lara
     - falaiye.lara@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:24.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 304
     - fatoki ibikunle
     - fatoki.ibikunle@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 305
     - feisal aditya
     - feisal.aditya@esrnl.com
@@ -570,37 +593,37 @@ staffs:
     - frieda.oshomah@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 309
     - funmi akinbohunje
     - funmi.akinbohunje@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 310
     - garry turin
     - garry.turin@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 311
     - gbolahan adebola
     - gbolahan.adebola@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 312
     - godfrey anungar
     - godfrey.anungar@esrnl.com
@@ -615,10 +638,10 @@ staffs:
     - gordon.mines@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 314
     - 'helpdesk '
     - helpdesk@esrnl.com
@@ -633,28 +656,28 @@ staffs:
     - hendra.sunardi@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 316
     - henry david
     - henry.david@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 317
     - hilda dimgba
     - hilda.dimgba@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 318
     - 'hr-agtcms '
     - hr-agtcms@esrnl.com
@@ -687,10 +710,10 @@ staffs:
     - importation@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 322
     - 'it '
     - it@esrnl.com
@@ -732,10 +755,10 @@ staffs:
     - jones.ogodo@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 327
     - joseph sebastian
     - joseph.sebastian@esrnl.com
@@ -777,10 +800,10 @@ staffs:
     - lekan.oladimeji@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 332
     - leonard hutagalung
     - leonard.hutagalung@esrnl.com
@@ -813,19 +836,19 @@ staffs:
     - marvel.joseph@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 336
     - mercy agu
     - mercy.agu@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 337
     - michael adeyemi
     - michael.adeyemi@esrnl.com
@@ -849,10 +872,10 @@ staffs:
     - michael.okosun@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 340
     - mojisola luwaji
     - mojisola.luwaji@esrnl.com
@@ -867,10 +890,10 @@ staffs:
     - moses.oloruntola@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 342
     - ndubuisi kalu
     - ndubuisi.kalu@esrnl.com
@@ -885,10 +908,10 @@ staffs:
     - nurudeen.akinsanya@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 344
     - obieze joy
     - obieze.joy@esrnl.com
@@ -912,19 +935,19 @@ staffs:
     - okikiola.grace@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 347
     - olaitan akintayo
     - olaitan.akintayo@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 348
     - olakunle macaulay
     - olakunle.macaulay@esrnl.com
@@ -939,19 +962,19 @@ staffs:
     - olamide.falaiye@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 350
     - olusoji badiah
     - olusoji.badiah@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 351
     - onyegbule okechukwu
     - onyegbule.okechukwu@esrnl.com
@@ -975,10 +998,10 @@ staffs:
     - oyeshola.george@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 354
     - oyindamola bishi
     - oyindamola.bishi@esrnl.com
@@ -1029,10 +1052,10 @@ staffs:
     - raphael.ogunremi@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:31.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:31.000000000 +01:00
   - - 360
     - 'rawmat-whs '
     - rawmat-whs@esrnl.com
@@ -1065,46 +1088,46 @@ staffs:
     - samson.obikunle@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 364
     - samuel akinrimisi
     - samuel.akinrimisi@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 365
     - samuel daminabo
     - samuel.daminabo@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:25.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 366
     - scott ikewun
     - scott.ikewun@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 367
     - segun oreniyi
     - segun.oreniyi@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 368
     - sheu odu-onikosi
     - sheu.odu-onikosi@esrnl.com
@@ -1119,10 +1142,10 @@ staffs:
     - steve.nwankwo@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 370
     - 'steven '
     - steven@esrnl.com
@@ -1155,19 +1178,19 @@ staffs:
     - tarek.darwiche@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 374
     - tarek2 darwiche
     - tarek2.darwiche@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 375
     - torezi obaro
     - torezi.obaro@esrnl.com
@@ -1182,10 +1205,10 @@ staffs:
     - tosin.babalola@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 377
     - 'travel '
     - travel@esrnl.com
@@ -1227,10 +1250,10 @@ staffs:
     - wachjudi.kalman@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 382
     - 'weighbridge '
     - weighbridge@esrnl.com
@@ -1245,19 +1268,19 @@ staffs:
     - willy.ertanto@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 384
     - yinka olaniyi
     - yinka.olaniyi@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 385
     - yohanes budi
     - yohanes.budi@esrnl.com
@@ -1272,10 +1295,10 @@ staffs:
     - yonatan.refa@esrnl.com
     - ESRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:55:32.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:55:32.000000000 +01:00
   - - 387
     - abifarin blessing
     - abifarin.blessing@natural-prime.com
@@ -1290,19 +1313,19 @@ staffs:
     - abimbola.alabi@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 389
     - aby mathew
     - aby.mathew@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 390
     - adedayo oluwaseun
     - adedayo.oluwaseun@natural-prime.com
@@ -1326,64 +1349,64 @@ staffs:
     - adetutu.okunola@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 393
     - admin nprnl
     - admin.nprnl@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 394
     - agus pendriyanto
     - agus.pendriyanto@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 395
     - agus priyono
     - agus.priyono@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 396
     - alexander kuku
     - alexander.kuku@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 397
     - alexander valentino
     - alexander.valentino@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 398
     - alexander2 valentino
     - alexander2.valentino@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 399
     - andy gunawan
     - andy.gunawan@natural-prime.com
@@ -1416,10 +1439,10 @@ staffs:
     - ayodele.sanni@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:26.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 403
     - bamidele rotimi
     - bamidele.rotimi@natural-prime.com
@@ -1434,10 +1457,10 @@ staffs:
     - didy.supriyadi@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:04.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:04.000000000 +01:00
   - - 405
     - donny susinggih
     - donny.susinggih@natural-prime.com
@@ -1506,19 +1529,19 @@ staffs:
     - gbolahan.awoyale@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 413
     - herry wijayanto
     - herry.wijayanto@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 414
     - hse nprnl
     - hse.nprnl@natural-prime.com
@@ -1542,28 +1565,28 @@ staffs:
     - importation.@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 417
     - 'info '
     - info.@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 418
     - jemmy akinbola
     - jemmy.akinbola@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 419
     - joshua thomas
     - joshua.thomas@natural-prime.com
@@ -1623,28 +1646,28 @@ staffs:
     - kunle.ojelade@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 426
     - 'mailbagging '
     - mailbagging.@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 427
     - marvel joseph
     - marvel.joseph@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 428
     - mbigbo emmanuel
     - mbigbo.emmanuel@natural-prime.com
@@ -1677,10 +1700,10 @@ staffs:
     - nwachukwu.priscillia@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 432
     - odufuwa abdulazeez
     - odufuwa.abdulazeez@natural-prime.com
@@ -1722,10 +1745,10 @@ staffs:
     - olawale.orija@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 437
     - olojede olabode
     - olojede.olabode@natural-prime.com
@@ -1749,10 +1772,10 @@ staffs:
     - onyecheme.nene@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 440
     - otoide omofoma
     - otoide.omofoma@natural-prime.com
@@ -1830,37 +1853,37 @@ staffs:
     - regina.kadiri@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 449
     - renaldi chaidarsyah
     - renaldi.chaidarsyah@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 450
     - renaldi chaidarsyah2
     - renaldi.chaidarsyah2@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 451
     - rhoda tumanan
     - rhoda.tumanan@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 452
     - ricky mativo
     - ricky.mativo@natural-prime.com
@@ -1920,10 +1943,10 @@ staffs:
     - sunday.awoyale@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:23:27.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 459
     - surung marpaung
     - surung.marpaung@natural-prime.com
@@ -1947,10 +1970,10 @@ staffs:
     - taofik.alli-balogun@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:05.000000000 +01:00
-    - 2017-07-25 12:20:53.000000000 +01:00
+    - 2017-07-24 15:56:05.000000000 +01:00
   - - 462
     - timothy adekunle
     - timothy.adekunle@natural-prime.com
@@ -1983,10 +2006,10 @@ staffs:
     - umoh.daniel@natural-prime.com
     - NPRNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:06.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:06.000000000 +01:00
   - - 466
     - 'utility '
     - utility.@natural-prime.com
@@ -2037,10 +2060,10 @@ staffs:
     - benson.caroline@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 472
     - beresman panjaitan
     - beresman.panjaitan@primerafood-nigeria.com
@@ -2064,19 +2087,19 @@ staffs:
     - charles@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 475
     - chiaka eluchie
     - chiaka.eluchie@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 476
     - chidiebere okarah
     - chidiebere.okarah@primerafood-nigeria.com
@@ -2190,10 +2213,10 @@ staffs:
     - hendra.sunardi@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 489
     - herrytius frankie
     - herrytius.frankie@primerafood-nigeria.com
@@ -2217,19 +2240,19 @@ staffs:
     - ibeh.obinna@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 492
     - ijeoma nwuju
     - ijeoma.nwuju@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 493
     - 'importation '
     - importation.@primerafood-nigeria.com
@@ -2262,10 +2285,10 @@ staffs:
     - ketut.widiarta@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 497
     - kingsley ogine
     - kingsley.ogine@primerafood-nigeria.com
@@ -2316,19 +2339,19 @@ staffs:
     - maria.florencia@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 503
     - marjun cular
     - marjun.cular@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 504
     - mbigbo roseline
     - mbigbo.roseline@primerafood-nigeria.com
@@ -2361,19 +2384,19 @@ staffs:
     - moyo.arinola@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 508
     - oduro kwame
     - oduro.kwame@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 509
     - oghenekaro onoruvie
     - oghenekaro.onoruvie@primerafood-nigeria.com
@@ -2388,28 +2411,28 @@ staffs:
     - oke.idisi@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 511
     - okwum daniel
     - okwum.daniel@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 512
     - olajuwon balogun
     - olajuwon.balogun@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 513
     - olufemi ojo
     - olufemi.ojo@primerafood-nigeria.com
@@ -2433,10 +2456,10 @@ staffs:
     - onyensoh.esther@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:24.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:24.000000000 +01:00
   - - 516
     - oriola olayemi
     - oriola.olayemi@primerafood-nigeria.com
@@ -2532,28 +2555,28 @@ staffs:
     - samson.ekujumi@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:25.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
   - - 527
     - 'stella '
     - stella@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:25.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
   - - 528
     - 'sys '
     - sys@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:25.000000000 +01:00
-    - 2017-07-25 12:23:28.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
   - - 529
     - toyib ghozali
     - toyib.ghozali@primerafood-nigeria.com
@@ -2568,10 +2591,10 @@ staffs:
     - toyin.elefontuyi@primerafood-nigeria.com
     - PFNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:25.000000000 +01:00
-    - 2017-07-25 12:23:29.000000000 +01:00
+    - 2017-07-24 15:56:25.000000000 +01:00
   - - 531
     - 'utility '
     - utility@primerafood-nigeria.com
@@ -2631,10 +2654,10 @@ staffs:
     - importation@gentle-supreme.com
     - GSNL
     - IKOYI
-    - 1
+    - 
     - false
     - 2017-07-24 15:56:51.000000000 +01:00
-    - 2017-07-25 12:23:29.000000000 +01:00
+    - 2017-07-24 15:56:51.000000000 +01:00
   - - 538
     - ini nelson
     - ini.nelson@gentle-supreme.com
@@ -2686,9 +2709,9 @@ users:
     - 
     - 
     - 
-    - 14
-    - 2017-07-31 14:08:45.000000000 +01:00
-    - 2017-07-26 11:49:37.000000000 +01:00
+    - 11
+    - 2017-07-20 16:59:33.000000000 +01:00
+    - 2017-07-19 21:08:51.000000000 +01:00
     - 127.0.0.1
     - 127.0.0.1
     - false
@@ -2709,12 +2732,12 @@ users:
   - - 10
     - taofik.alli-balogun@natural-prime.com
     - "$2a$11$3V5A549o5fa1iGxsgSJc0.dpxUhJ.dYHfB.E6Up9DC2Bb4U2a7PmK"
-    - b6970103d564e378fe0341ca88e0a44c7021c2cc80af255313a5a979c7228919
-    - 2017-08-03 12:57:04.000000000 +01:00
     - 
-    - 37
-    - 2017-08-05 10:28:03.000000000 +01:00
-    - 2017-08-05 10:10:28.000000000 +01:00
+    - 
+    - 
+    - 16
+    - 2017-07-21 15:52:39.000000000 +01:00
+    - 2017-07-21 14:13:12.000000000 +01:00
     - 127.0.0.1
     - 127.0.0.1
     - false
@@ -2725,12 +2748,12 @@ users:
     - 
     - 
     - 
-    - 8
-    - 2017-07-26 11:52:15.000000000 +01:00
-    - 2017-07-25 09:04:46.000000000 +01:00
+    - 5
+    - 2017-07-20 17:22:18.000000000 +01:00
+    - 2017-07-20 16:59:16.000000000 +01:00
     - 127.0.0.1
-    - 192.168.88.1
-    - true
+    - 127.0.0.1
+    - false
     - false
   - - 12
     - abosede.ajibare@esrnl.com
@@ -3518,11 +3541,11 @@ users:
     - 
     - 
     - 
-    - 1
-    - 2017-08-03 09:51:00.000000000 +01:00
-    - 2017-08-03 09:51:00.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 73
@@ -3583,11 +3606,11 @@ users:
     - 
     - 
     - 
-    - 1
-    - 2017-08-01 12:13:39.000000000 +01:00
-    - 2017-08-01 12:13:39.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 78
@@ -4103,11 +4126,11 @@ users:
     - 
     - 
     - 
-    - 2
-    - 2017-08-04 08:42:09.000000000 +01:00
-    - 2017-08-04 08:38:56.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 118
@@ -4207,11 +4230,11 @@ users:
     - 
     - 
     - 
-    - 2
-    - 2017-08-05 12:10:58.000000000 +01:00
-    - 2017-08-05 12:08:51.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 126
@@ -4233,10 +4256,10 @@ users:
     - 
     - 
     - 
-    - 3
-    - 2017-07-26 14:33:14.000000000 +01:00
-    - 2017-07-24 16:10:36.000000000 +01:00
-    - 192.168.88.1
+    - 1
+    - 2017-07-20 20:27:15.000000000 +01:00
+    - 2017-07-20 20:27:15.000000000 +01:00
+    - 127.0.0.1
     - 127.0.0.1
     - false
     - false
@@ -5039,11 +5062,11 @@ users:
     - 
     - 
     - 
-    - 1
-    - 2017-07-24 16:35:29.000000000 +01:00
-    - 2017-07-24 16:35:29.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 190
@@ -5403,11 +5426,11 @@ users:
     - 
     - 
     - 
-    - 1
-    - 2017-08-01 15:34:26.000000000 +01:00
-    - 2017-08-01 15:34:26.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 218
@@ -5650,11 +5673,11 @@ users:
     - 
     - 
     - 
-    - 3
-    - 2017-08-05 10:56:42.000000000 +01:00
-    - 2017-08-01 13:21:10.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 237
@@ -5767,11 +5790,11 @@ users:
     - 
     - 
     - 
-    - 1
-    - 2017-08-01 16:32:49.000000000 +01:00
-    - 2017-08-01 16:32:49.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 246
@@ -5871,11 +5894,11 @@ users:
     - 
     - 
     - 
-    - 1
-    - 2017-08-02 17:20:07.000000000 +01:00
-    - 2017-08-02 17:20:07.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 254
@@ -5932,15 +5955,15 @@ users:
     - false
   - - 258
     - packaging@primerafood-nigeria.com
-    - "$2a$11$vgQmcXg017lafnkjspM2ieh1MBaTwffLk7/wcvdzPbPuFl/tpMoLy"
+    - "$2a$11$9eMgpNrpaAWrFuvuQkqdceKWgmJ0vBFfK4JvlsjarfCT27lBRDcTu"
     - 
     - 
     - 
-    - 1
-    - 2017-08-01 16:15:59.000000000 +01:00
-    - 2017-08-01 16:15:59.000000000 +01:00
-    - 192.168.88.1
-    - 192.168.88.1
+    - 0
+    - 
+    - 
+    - 
+    - 
     - false
     - false
   - - 259
